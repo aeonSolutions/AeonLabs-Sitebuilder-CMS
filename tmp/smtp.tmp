@@ -1,0 +1,9 @@
+
+		<?PHP
+		// SMTP Settings
+		$_SESSION['smtp']['enable']=0;
+		$_SESSION['smtp']['host']='';
+		$_SESSION['smtp']['user']='';
+		$_SESSION['smtp']['password']='';
+		$_SESSION['smtp']['admin_mail']='';
+		?>

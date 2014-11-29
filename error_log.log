@@ -1,0 +1,1 @@
+<errorentry>	<datetime>2014-06-08 15:23:13 (MSK)</datetime>	<errornum>8</errornum>	<errortype>Notice</errortype>	<errormsg>Undefined index: id</errormsg>	<scriptname>/home/boxvenue/public_html/sitebuilder/index.php</scriptname>	<scriptlinenum>33</scriptlinenum></errorentry>

@@ -1,0 +1,212 @@
+/* --------------- Einstellung für alle Elemente ---------------*/
+html * { 
+			margin: 0; 
+			padding:0; 
+		}
+
+body {
+	background-color:#363b42;
+	text-align: center;
+	font-size: 82.50%;
+	font-family: Verdana, Tahoma, Arial, sans-serif;
+	color: #ccc;
+}
+
+
+/* --------------- Header ---------------*/
+#cheader {
+	width:100%;
+	height: 254px;
+	background: url(bg_page.jpg) left bottom repeat-x;
+	text-align: center;
+}
+#header {
+	width: 797px;
+	height: 254px;
+	margin: 0px auto 0px auto;
+	background: url(bg_header.jpg) left bottom no-repeat;
+	text-align: left;
+	overflow: hidden;
+}
+#header #logo{
+	float: left;
+	margin: 19px 0px 0px 0px;
+	width: 215px;
+	height: 84px;
+}
+
+#header #hm{
+	float: left;
+	width: 540px;
+	margin: 0px 0px 0px 40px;
+	height: 108px;
+}
+#header #hm ul{
+	list-style-type: none;
+}
+#header #hm ul li{
+	list-style-type: none;
+	float: left;
+	color: #fff;
+}
+#header #hm ul li a{
+	display: block;
+	float: left;
+	width: 108px;
+	height: 93px;
+	padding: 15px 0px 0px 0px;
+	background: url(bg_hm.gif) left top no-repeat;
+	font-family: "Trebuchet MS", Verdana, Tahoma, Arial, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+#header #hm ul li a:hover,
+#header #hm ul li a:hover.active,
+#header #hm ul li a.active{
+	height: 30px;
+	padding: 78px 0px 0px 0px;
+	background: url(bg_hm_active.gif) left top no-repeat;
+}
+
+/* --------------- Page ---------------*/
+#page {
+	width:100%;
+	text-align: center;
+}
+#ccontent {
+	width: 797px;
+	margin: 0px auto 0px auto;
+	text-align: left;
+	overflow: hidden;
+}
+#cleftmenue {
+	clear: left;
+	float: left;
+	width: 213px;
+	background: url(bg_submenue.jpg) left top repeat-x;
+}
+/* --------------- leftmenue ---------------*/
+#leftmenue {
+	clear: left;
+	float: left;
+	width: 173px;
+	margin: 30px 0px 0px 20px;
+	font-size: 82.50%;
+}
+#leftmenue h2{
+	margin: 0px 0px 5px 0px;
+	font-family: "Trebuchet MS", Verdana, Tahoma, Arial, sans-serif;
+	font-size: 137.50%;
+	font-weight: bold;
+	color: #80d900;
+	text-transform: uppercase;
+}
+#leftmenue a{
+	color: #ccc;
+}
+#leftmenue ul{
+	margin: 0px 0px 30px 0px;
+	list-style-type: none;
+}
+#leftmenue ul li{
+	margin: 6px 0px 6px 0px;
+	padding: 0px 0px 0px 20px;
+	list-style-type: none;
+	background: url(pointer01.gif) left 3px no-repeat;
+}
+#leftmenue ul li a{
+	text-decoration: none;
+}
+#leftmenue ul li a:hover.active,
+#leftmenue ul li a.active{
+	color: #80d900;
+}
+#leftmenue div.news{
+	margin: 0px 0px 30px 0px;
+	line-height: 1.5em;
+}
+
+/* --------------- content ---------------*/
+#content {
+	float: left;
+	width: 510px;
+	margin: 30px 0px 20px 53px;
+	line-height: 1.7em;
+}
+#content h1{
+	margin: 0px 0px 1em 0px;
+	font-family: "Trebuchet MS", Verdana, Tahoma, Arial, sans-serif;
+	font-size: 182.50%;
+	font-weight: normal;
+	color: #fff;
+}
+#content h2{
+	margin: 0px 0px 1em 0px;
+	font-family: "Trebuchet MS", Verdana, Tahoma, Arial, sans-serif;
+	font-size: 150.00%;
+	font-weight: normal;
+	color: #fff;
+}
+#content p{
+	margin: 0px 0px 2em 0px;
+}
+#content a{
+	color: #80d900;
+}
+
+
+/* --------------- footer ---------------*/
+#cfooter {
+	width:100%;
+	height: 50px;
+	background-color: #282e34;
+	border-top: 1px solid #5f5f5f;
+	text-align: center;
+}
+#footer {
+	width: 797px;
+	margin: 0px auto 0px auto;
+	text-align: left;
+	overflow: hidden;
+}
+#hpv24 {
+	float: right;
+	margin: 16px 0px 0px 0px;
+	font-size: 75.00%;
+	color: #999;
+}
+#hpv24 a{
+	color: #999;
+}
+
+/* --------------- Formulare ---------------*/
+#content form {
+	clear: left;
+	line-height: normal;
+	width: 360px;
+}
+#content label {
+	clear: left;
+	float: left;
+	margin: 10px 0px 0px 0px;
+}
+#content label.plabel {
+	font-weight: bold;
+}
+#content input,
+#content select,
+#content textarea {
+	clear: left;
+	float: left;
+	width: 360px;
+}
+#content input.submit {
+	width: auto;
+	float: right;
+	margin: 10px 0px 0px 0px;
+}
+#content input.reset {
+	width: auto;
+	margin: 10px 0px 0px 0px;
+}

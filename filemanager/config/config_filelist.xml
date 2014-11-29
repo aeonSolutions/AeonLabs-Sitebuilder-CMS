@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+AVAIABLE FUNCTIONS:
+ liAutoUpdateOnOpen_UL('#_ATTRIBUTE[id]');
+ liAutoUpdateOnClosed_UL('#_ATTRIBUTE[id]');
+ liAutoUpdate('#_ATTRIBUTE[id]');
+ ulAutoUpdate('#_ATTRIBUTE[id]')
+ openAndCloseNode_UL('#_ATTRIBUTE[id]');
+ openNode_UL('#_ATTRIBUTE[id]');
+ closeNode_UL('#_ATTRIBUTE[id]');
+ selectedLabelOfLi('#_ATTRIBUTE[id]');
+ changeClassNameById(obj_id,className);
+ replaceClassName(obj_id,classOut,classOver);
+ replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]',obj_id,classOpen,classClose);
+ changeImage(obj_id,imgSrc);
+ replaceImage(obj_id,imgOut,imgOver);
+ replaceImageIfUlIsOpenOrClose('#_ATTRIBUTE[id]',obj_id,imgOpen,imgClose);
+ 
+EXAMPLE:
+ openAndCloseNode_UL('#_ATTRIBUTE[id]');
+ replaceClassName('icon_plus_#_ATTRIBUTE[id]','plus','minus');
+ replaceClassName('icon_folder_#_ATTRIBUTE[id]','tree-icon folderClosed','tree-icon folderOpen');
+ replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]','icon_plus_#_ATTRIBUTE[id]','minus','plus');
+-->
+<resultado>
+	<mainUlClass>ul_closed</mainUlClass>
+	<tags>
+		<row>
+			<tag>complex</tag>
+			<html><![CDATA[
+				<div class="groupdiv"> 
+					<div id="icon_plus_#_ATTRIBUTE[id]" class="plus" onClick="openAndCloseNode_UL('#_ATTRIBUTE[id]');replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]','icon_plus_#_ATTRIBUTE[id]','minus','plus');replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]','icon_folder_#_ATTRIBUTE[id]','tree-icon folderOpen','tree-icon folderClosed');"></div>
+					<div id="icon_line_#_ATTRIBUTE[id]" class="line"></div>
+					<div id="icon_folder_#_ATTRIBUTE[id]" class="tree-icon folderClosed" onClick="openAndCloseNode_UL('#_ATTRIBUTE[id]');replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]','icon_plus_#_ATTRIBUTE[id]','minus','plus');replaceClassNameIfUlIsOpenOrClose('#_ATTRIBUTE[id]','icon_folder_#_ATTRIBUTE[id]','tree-icon folderOpen','tree-icon folderClosed');"></div>
+					<a id="a_#_ATTRIBUTE[id]" href="#path=#_ATTRIBUTE[id]" onClick="selectedLabelOfLi('#_ATTRIBUTE[id]');updateFileSearchLocation('#_ATTRIBUTE[id]');"><label id="label_#_ATTRIBUTE[id]" class="tree-item-unselected">#_DATA</label></a>
+				</div> 
+			]]></html>
+			<liAttributes></liAttributes>
+		</row>
+		<row>
+			<tag>simple</tag>
+			<html><![CDATA[ 
+				<div class="groupdiv"> 
+					<div class="tree-simple"></div>
+					<div id="icon_folder_#_ATTRIBUTE[id]" class="tree-icon document"></div>
+					<a id="a_#_ATTRIBUTE[id]" href="#path=#_ATTRIBUTE[id]" onClick="selectedLabelOfLi('#_ATTRIBUTE[id]');updateFileSearchLocation('#_ATTRIBUTE[id]');"><label id="label_#_ATTRIBUTE[id]" class="tree-item-unselected">#_DATA</label></a>
+				</div> 
+			]]></html>
+			<liAttributes></liAttributes>
+		</row>
+		<row>
+			<tag>complex2</tag>
+			<html><![CDATA[ 
+				<div class="groupdiv"> 
+					<div id="icon_line_#_ATTRIBUTE[id]" class="tree-simple"></div>
+					<div id="icon_folder_#_ATTRIBUTE[id]" class="tree-icon folderClosed" onClick="liAutoUpdateOnOpen_UL('#_ATTRIBUTE[id]');"></div>
+					<a id="a_#_ATTRIBUTE[id]" href="#path=#_ATTRIBUTE[id]" onClick="selectedLabelOfLi('#_ATTRIBUTE[id]');updateFileSearchLocation('#_ATTRIBUTE[id]');"><label id="label_#_ATTRIBUTE[id]" class="tree-item-unselected">#_DATA</label></a>
+				</div> 
+			]]></html>
+			<liAttributes></liAttributes>
+		</row>
+	</tags>
+
+</resultado>

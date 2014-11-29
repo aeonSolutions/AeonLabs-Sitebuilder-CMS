@@ -1,0 +1,145 @@
+body {
+	background-color: #FFFFFF;
+	
+	scrollbar-face-color:#FBFBFB;
+	scrollbar-arrow-color:#D4D0C8;
+	scrollbar-track-color:#FFFFFF;
+	scrollbar-shadow-color:#D4D0C8;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#CCCCCC;
+	scrollbar-darkshadow-Color:#FBFBFB;
+	
+	padding:0px;
+	margin:0px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+td {
+	font-family: "MS Sans Serif", Verdana, Arial;
+	font-size: 9pt;
+}
+
+a:link	{  
+	font-size: 11px; 
+	color: #000000; 
+	text-decoration: none;
+}
+
+a:active	{  
+	text-decoration: underline;
+}
+
+a:visited	{  
+	font-size: 11px; 
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover	{  	
+	text-decoration: underline;
+}
+
+.filelist {
+	position:absolute;
+	top: 60px;
+	bottom: 30px;
+	padding: 0px;
+	overflow: auto;
+	overflow-y: auto;
+	width: 100%;
+}
+
+* html .filelist { /* IE */
+	height:100%;
+	margin-top:1px;
+}
+
+.filelistHeadRow td {
+	/*background-color: #D4D0C8;*/
+	background-color: #F0F0EE;
+	border-top: 1px solid buttonhighlight;
+	border-left: 1px solid buttonhighlight;
+	border-bottom: 1px solid buttonshadow;
+	border-right: 1px solid buttonshadow;
+	font-weight: bold;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height:20px;
+}
+
+.filelistHeadCol a, .filelistHeadCol a:visited {
+	color: #000000;
+}
+
+.filelistFileName, .filelistCutFileName {
+	padding-left: 4px;
+}
+
+.filelistRowOdd {
+	background-color: #FFFFFF;
+}
+
+.filelistRowOdd:hover {
+	background-color: #F5F5F5;
+}
+.filelistRowOdd_over {
+	background-color: #F5F5F5;
+}
+
+.filelistRowEven {
+	background-color: #F9F9F9;
+}
+
+.filelistRowEven:hover {
+	background-color: #F5F5F5;
+}
+.filelistRowEven_over {
+	background-color: #F5F5F5;
+}
+
+.selectedFilelistRow {
+	background-color: #335EA8 !important;
+}
+
+.filelistCol1 { width:15px; display:none;}
+.filelistCol2 { width:20px;}
+.filelistCol3 {}
+.filelistCol4 { width:70px;}
+.filelistCol5 { width:100px;}
+.filelistCol6 { width:170px; text-align:left;}
+.filelistCol6Tools {float: left; width:170px; overflow:hidden;}
+
+.filelistCol3 label input {
+	height:10px;
+	font-size:9px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#666666;
+	width:150px;
+}
+
+/* Status */
+
+.status {
+	background-color: #F0F0EE;
+	border: 1px solid #CCCCCC;
+	border-top: 0px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-family: "MS Sans Serif", Verdana, Arial;
+	font-size: 9pt;
+}
+
+.statusError {
+	color: #880000;
+}
+
+.statusMsg {
+	color: #000000;
+}

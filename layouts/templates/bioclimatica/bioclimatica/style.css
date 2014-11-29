@@ -1,0 +1,366 @@
+* { 
+padding : 0;
+margin : 0;
+} 
+body { 
+font-family : Arial, Helvetica, sans-serif;
+color : #666666;
+font-size : 12px;
+} 
+#wrapper { 
+width : 800px;
+margin : 5px auto 0 auto;
+} 
+img { 
+padding : 3px;
+border : 1px solid #bce296;
+} 
+img.floatTL { 
+float : left;
+margin-right : 7px;
+margin-bottom : 7px;
+margin-top : 7px;
+margin-left : 10px;
+} 
+img.floatTR { 
+float : right;
+margin-left : 7px;
+margin-bottom : 7px;
+margin-top : 7px;
+margin-right : 10px;
+} 
+#one { 
+display : inline;
+width : 200px;
+float : left;
+min-height : 70px;
+background-color : #000000;
+} 
+* html #one { 
+height : 70px;
+} 
+#one h1 {
+color: #fafafa;
+font-size: 1.4em;
+padding-left: 15px;
+padding-top: 10px;
+}
+#two { 
+display : inline;
+width : 199px;
+float : left;
+min-height : 70px;
+background-color : #299ad4;
+border-left : 1px solid #fff;
+} 
+* html #two { 
+height : 70px;
+} 
+#three { 
+border-left : 1px solid #fff;
+border-right : 1px solid #fff;
+display : inline;
+width : 198px;
+float : left;
+min-height : 70px;
+background-color : #6c9626;
+} 
+* html #three { 
+height : 70px;
+} 
+#four { 
+display : inline;
+width : 200px;
+float : left;
+min-height : 70px;
+background-color : #e48f00;
+} 
+* html #four { 
+height : 70px;
+} 
+#two a, #three a, #four a { 
+color : #fffffe;
+font-family : Verdana;
+font-size : 25px;
+text-decoration : none;
+float : right;
+padding-right : 5px;
+padding-top : 40px;
+} 
+#navigation { 
+display : inline;
+width : 199px;
+float : left;
+background-color : #f2f2f2;
+min-height : 179px;
+border-top : 3px solid #fff;
+border-left : 1px solid #ccc;
+border-right : 1px solid #fff;
+border-bottom : 1px solid #ccc;
+} 
+* html #navigation { 
+height : 179px;
+} 
+.navigation { 
+float : left;
+margin-left : 17px;
+margin-top : 17px;
+width : 158px;
+} 
+.navigation ul { 
+margin : 0;
+padding : 0;
+} 
+.navigation li { 
+border-bottom : 1px solid #d5e8ad;
+list-style : none;
+text-transform : lowercase;
+} 
+.navigation li a { 
+color : #553;
+display : block;
+padding : 4px 4px 5px 12px;
+text-decoration : none;
+font-family : Verdana;
+font-size : 0.75em;
+font-weight : bold;
+} 
+.navigation li a:hover { 
+color : #553;
+} 
+#header { 
+display : inline;
+width : 598px;
+float : left;
+min-height : 180px;
+background-image : url(bioclimatica/header.jpg);
+background-repeat : no-repeat;
+border-top : 3px solid #fff;
+border-right : 1px solid #ccc;
+} 
+* html #header { 
+height : 180px;
+} 
+#brdl { 
+background-color : #299ad4;
+display : inline;
+float : left;
+width : 799px;
+height : 25px;
+border-top : 3px solid #fff;
+margin-bottom : 3px;
+} 
+#col_one { 
+display : inline;
+width : 198px;
+float : left;
+min-height : 440px;
+background-color : #fff;
+border-top : 1px solid #ccc;
+border-left : 1px solid #ccc;
+border-bottom : 1px solid #ccc;
+} 
+* html #col_one { 
+height : 440px;
+} 
+#col_one h2 { 
+background-color : #000;
+color : #f1f1f1;
+font-family : verdana;
+font-size : 16px;
+padding-left : 5px;
+padding-top : 3px;
+padding-bottom : 4px;
+margin-right : 1px;
+} 
+#col_one h3 { 
+font-family : verdana;
+font-size : 0.9em;
+padding-top : 10px;
+padding-left : 15px;
+padding-bottom : 5px;
+color : #a06314;
+background-image : url(bioclimatica/news.gif);
+background-repeat : no-repeat;
+background-position : left 10px;
+margin-left : 10px;
+} 
+#col_one p { 
+font-family : verdana;
+font-size : 0.75em;
+padding-left : 15px;
+padding-bottom : 5px;
+margin-left : 10px;
+margin-right : 10px;
+text-align : justify;
+padding-right : 20px;
+background-color : #eff6ff;
+} 
+#col_one a { 
+margin-left : 25px;
+margin-bottom : 2px;
+color : #48b033;
+font-size : 0.8em;
+font-weight : bold;
+padding : 2px;
+} 
+#col_two { 
+display : inline;
+width : 200px;
+float : left;
+min-height : 440px;
+background-color : #fff;
+border-top : 1px solid #ccc;
+border-bottom : 1px solid #ccc;
+} 
+* html #col_two { 
+height : 440px;
+} 
+#col_two p { 
+font-size : 0.9em;
+text-align : justify;
+background-color : #e6e6e6;
+margin-left : 5px;
+margin-right : 5px;
+margin-top : 5px;
+padding : 3px;
+} 
+#col_two h2 { 
+background-color : #299ad4;
+color : #f1f1f1;
+font-family : verdana;
+font-size : 16px;
+padding-top : 3px;
+padding-left : 5px;
+padding-bottom : 4px;
+} 
+#col_two img { 
+margin-top : 5px;
+margin-left : 5px;
+} 
+#col_two h3 { 
+text-align : center;
+font-family : verdana;
+font-size : 14px;
+padding-top : 10px;
+padding-bottom : 5px;
+font-weight : lighter;
+} 
+#col_two ul { 
+margin-left : 15px;
+margin-top : 5px;
+color : #667dff;
+} 
+#col_two li { 
+padding-top : 5px;
+padding-left : 10px;
+list-style-type : square;
+list-style-position : inside;
+} 
+#col_two a { 
+color : #667dfe;
+font-weight : bold;
+text-decoration : underline;
+font-size : 0.8em;
+} 
+#col_three { 
+border-left : 1px solid #fffff0;
+border-right : 1px solid #fffff0;
+display : inline;
+width : 198px;
+float : left;
+min-height : 440px;
+background-color : #fff;
+border-top : 1px solid #ccc;
+border-bottom : 1px solid #ccc;
+} 
+* html #col_three { 
+height : 440px;
+} 
+#col_three p { 
+font-size : 0.9em;
+text-align : justify;
+background-color : #e6e6e6;
+margin-left : 5px;
+margin-right : 5px;
+margin-top : 5px;
+padding : 3px;
+} 
+#col_three h2 { 
+background-color : #6c9626;
+color : #f1f1f1;
+font-family : verdana;
+font-size : 16px;
+padding-left : 5px;
+padding-top : 3px;
+padding-bottom : 4px;
+} 
+#col_three img { 
+margin-top : 5px;
+margin-left : 5px;
+} 
+#col_three h3 { 
+text-align : center;
+font-family : verdana;
+font-size : 14px;
+padding-top : 10px;
+padding-bottom : 5px;
+font-weight : lighter;
+} 
+#col_three a { 
+color : #667dfe;
+font-weight : bold;
+text-decoration : underline;
+font-size : 0.8em;
+} 
+#col_four { 
+display : inline;
+width : 200px;
+float : left;
+min-height : 440px;
+background-color : #fff;
+border-top : 1px solid #ccc;
+border-right : 1px solid #ccc;
+border-bottom : 1px solid #ccc;
+} 
+* html #col_four { 
+height : 440px;
+} 
+#col_four p { 
+font-family : verdana;
+font-size : 0.75em;
+padding-bottom : 5px;
+margin-top : 5px;
+margin-left : 10px;
+margin-right : 10px;
+text-align : justify;
+background-color : #eff6ff;
+} 
+#col_four h2 { 
+background-color : #e48f00;
+color : #f1f1f1;
+font-family : verdana;
+font-size : 16px;
+padding-left : 5px;
+padding-top : 3px;
+padding-bottom : 4px;
+} 
+#col_four a { 
+color : #48b033;
+} 
+#footer { 
+margin-top : 3px;
+border : 1px solid #ccc;
+background-color : #299ad4;
+display : inline;
+float : left;
+width : 800px;
+padding-top : 5px;
+padding-bottom : 5px;
+text-align : center;
+} 
+#footer p { 
+padding-top : 5px;
+padding-bottom : 5px;
+font-size : 0.8em;
+} 

@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+.style1 {color: #FFFFFF;}
+.style2 {color: #5D6593;}
+.style3 {font-size: 24px;}
+.style4 {color: #567182;}
+.style5 {color: #B2B4BF;}
+.style6 {font-size: 13px; color: #567182;}
+.style7 {color: #48616F}
+.style8 {font-size: 14px}
+.style9 {font-size: 15px}
+.style10 {font-size: 12px}
+.style11 {font-size: 12px; color: #FFFFFF;}
+
+h1 {
+	font-size: 15px;
+	color: #FFFFFF;
+	font: bold;
+	font-family: Verdana;
+}
+h2 {
+	font-size: 14px;
+	font-style:italic;
+	color: #CCCCCC;
+	font: Helvetica;
+}
+h3 {
+	font: bold;
+	font-size: 16px;
+	font: Arial;
+	color: #48616F;
+}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {	text-decoration: underline; color: #B2B4BF;}
+a:active {text-decoration: none;}
+
+body  {
+	background: #CECAA8;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #000000;
+	left: 150px;
+	right: 0px;
+}
+#caixa {
+	position: relative;
+	width: 780px;
+	background-color: #E4E4E4;
+	margin: 0 auto;
+	text-align: left;
+} 
+#cabecalho {
+	height: 125px;
+	background-color: #567182;
+}
+#inicio {
+	right: 5px;
+	top: 100px;
+	position: absolute;
+}
+#menu {
+	position: absolute;
+	top: 125px;
+	left: 0px;
+	background-color: #E4E4E4;
+	width: 780px;
+}
+#conteudo {
+	margin: 40px 25px 0 25px;
+	border: #567182 1px solid;
+}
+#actualizacao{
+	right: 5px;
+	position: absolute;
+}
+#rodape {
+	background-color: #567182;
+}
+#rodape p{
+	background-color: #567182;
+	margin: 0;
+	margin-top: 10px;
+}
+.logo {
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+}

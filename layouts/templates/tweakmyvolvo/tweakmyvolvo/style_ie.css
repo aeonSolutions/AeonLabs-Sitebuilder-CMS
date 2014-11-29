@@ -1,0 +1,22 @@
+
+#main .featured-post .post-entry {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#main .post-sm .post-sm-entry {
+	padding-top: 5px;
+}
+
+#main .post-sm .post-sm-info {
+	margin-top: 5px;
+}
+
+#main .post .post-entry {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#main .post #commentform {
+	margin-top: 10px;
+}

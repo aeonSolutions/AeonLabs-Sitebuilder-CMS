@@ -1,0 +1,13 @@
+body{background-color:#FFFFFF;scrollbar-face-color:#FBFBFB;scrollbar-arrow-color:#D4D0C8;scrollbar-track-color:#FFFFFF;scrollbar-shadow-color:#D4D0C8;scrollbar-highlight-color:#FFFFFF;scrollbar-3dlight-color:#CCCCCC;scrollbar-darkshadow-Color:#FBFBFB;padding:0px;margin:0px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;}form{margin:0px;padding:0px;}a:link{font-size:11px;color:#000000;text-decoration:underline;}a:active{text-decoration:underline;}a:visited{font-size:11px;color:#000000;text-decoration:none;}a:hover{text-decoration:underline;}.thwrapper{position:absolute;top:60px;bottom:30px;padding:0px;overflow:auto;overflow-y:auto;width:100%;}* html .thwrapper{height:100%;margin-top:3px;}.thwrapperwrapper{margin-left:12px;margin-top:15px}.statusError{color:#880000;}.statusMsg{color:#000000;}.image{position:absolute;top:0px;left:0px;width:152px;height:152px;background:url(../images/im-topleft.gif) no-repeat top left;}.loading{}.error{background-image:url('../images/error.gif');background-position:center center;background-repeat:no-repeat;}.image img{cursor:hand;}.thumbnail{position:relative;float:left;display:inline;width:152px;height:170px;margin:0 5px 5px 5px;background:url(../images/im-topright.gif) no-repeat top right;}.imagename{overflow:hidden;font-family:Verdana,Arial Helvetica,sans-serif;font-size:10px;width:150px;height:15px;background:url(../images/im.gif) repeat bottom right;}.imagewrapper{position:absolute;top:0px;left:0px;z-index:10;}.imageinfo{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background-color:#FFFFFF;line-height:14px;position:absolute;top:16px;left:0px;clear:both;overflow:hidden;display:none;z-index:100;width:148px;border:1px solid #CCCCCC;}.infowrap{width:100%;}.infowrap div{width:49%;float:left;}.infotable,.infotable td,.infotable .tr{background-color:#ffffff;font-size:10px;}table,td,tr{background-color:transparent;}td{font-family:"MS Sans Serif",Verdana,Arial;font-size:9pt;}
+
+.imagename label input {
+	height:11px;
+	font-size:10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#666666;
+	text-align:center;
+	width:95%;
+	top:-1px;
+	position:relative;
+	border-color:#FFFFFF;
+}

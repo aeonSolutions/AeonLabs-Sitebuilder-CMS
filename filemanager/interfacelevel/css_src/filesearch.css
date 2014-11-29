@@ -1,0 +1,36 @@
+body {
+	background-color: #F0F0EE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	
+	scrollbar-face-color:#FBFBFB;
+	scrollbar-arrow-color:#D4D0C8;
+	scrollbar-track-color:#FFFFFF;
+	scrollbar-shadow-color:#D4D0C8;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#CCCCCC;
+	scrollbar-darkshadow-Color:#FBFBFB;
+}
+
+#searchlocationbrowser {
+	clear:both;
+	width:95%;
+	height:100px;
+	overflow:auto;
+	background-color:#FFFFFF;
+	border: 1px solid #cccccc;
+	padding:5px 1px 10px 1px;
+}
+
+#searchfilelocation input {
+	float:left;
+}
+
+#searchfilelocationimg {
+	margin:1px 0px 0px 2px;
+}
+* html #searchfilelocationimg {
+	margin:1px 0px 0px 2px;
+}

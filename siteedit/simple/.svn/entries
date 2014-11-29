@@ -1,0 +1,49 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/simple
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+sa
+dir
+
+_notes
+dir
+
+shtml
+dir
+
+main.php
+file
+
+
+
+
+2008-07-09T17:17:57.540800Z
+991d9f1e20f2882e8defb66addad21ed
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+modules.php
+file
+
+
+
+
+2008-07-09T17:58:06.818800Z
+8242785756e2c42d53609597f975b36f
+2008-07-24T16:46:47.690704Z
+4
+admin
+

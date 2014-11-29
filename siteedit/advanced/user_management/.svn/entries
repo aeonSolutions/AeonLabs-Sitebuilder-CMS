@@ -1,0 +1,80 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/Advanced/user_management
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+tweak.gif
+file
+
+
+
+
+2007-06-28T10:34:40.000000Z
+16c90505ca2d2a34cacea85ee8563d83
+2008-07-24T16:46:47.690704Z
+4
+admin
+has-props
+
+send_mail.php
+file
+
+
+
+
+2008-07-18T15:35:40.683000Z
+d0e501f2a57f1856fab12f3bfd2ac1e7
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+_notes
+dir
+
+main.php
+file
+
+
+
+
+2008-07-18T15:22:28.483800Z
+e649b234e5f4007bb1f45d50ea75468c
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+edit.php
+file
+
+
+
+
+2008-07-18T15:30:38.526600Z
+d3dcda7f356b4ab38aec9ce4e6e1e903
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+add.php
+file
+
+
+
+
+2008-07-18T15:35:40.651800Z
+d4de667fb5c51967277a6b36b1a6b6bf
+2008-07-24T16:46:47.690704Z
+4
+admin
+

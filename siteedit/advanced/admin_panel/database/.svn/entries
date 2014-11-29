@@ -1,0 +1,55 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/Advanced/admin_panel/database
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+DB_backup.php
+file
+
+
+
+
+2007-07-09T18:08:36.000000Z
+8af83df03a024491756e61af9f0b5f6e
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+db_optimization.php
+file
+
+
+
+
+2008-07-13T10:47:06.955000Z
+b1f5904b0c4a3e549578b880dfdadc56
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+_notes
+dir
+
+db_bk.php
+file
+
+
+
+
+2008-07-13T10:47:06.933000Z
+22be45359a5d52ece088a47acea2e510
+2008-07-24T16:46:47.690704Z
+4
+admin
+

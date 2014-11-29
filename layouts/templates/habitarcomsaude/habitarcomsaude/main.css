@@ -1,0 +1,145 @@
+* { padding: 0; margin: 0; }
+
+body {
+ font: normal 73% 'Century Gothic', Arial, Helvetica, sans-serif;
+ line-height: 1.8em;
+ color: #000;
+ background: #002C0F;
+}
+#wrapper {
+ width: 922px;
+ margin: 0 auto;
+ border: 5px solid #fff;
+}
+#faux {
+ width: 100%;
+ margin-bottom: 0;
+ overflow: auto; /* Paul O Brien Fix for IE www.pmob.co.uk */
+ background-color:#FFFFFF;
+}
+#header {
+ width: 902px;
+ height: 150px;
+ margin: 0;
+ padding-right: 20px;
+ color: #000;
+ background: #fff url(header.jpg) no-repeat;
+}
+#header p{
+font: bold 200% Helvetica, 'Century Gothic', Arial, sans-serif;
+letter-spacing: 3px;
+padding: 15px;
+color: #fff;
+}
+#navigation {
+ width:auto;
+ padding: 0;
+ margin: 0;
+ color: #333;
+ background: #E2F2EC;
+}
+/* ^^^^^^^^ MENU ^^^^^^^^^^ */
+ul#menu{margin:0;padding:0;list-style-type:none;width:auto;position:relative;display:block;height:36px;text-transform:uppercase;font-size:12px;font-weight:bold;background:transparent url("bgOFF.gif") repeat-x top left;font-family:Helvetica,Arial,Verdana,sans-serif;border-bottom:4px solid #336666;border-top:1px solid #C0E2D4;}
+ul#menu li{display:block;float:left;margin:0;padding:0;}
+ul#menu li a{display:block;float:left;color:#880402;text-decoration:none;padding:12px 20px 0 20px;height:24px;background:transparent url("bgDIVIDER.gif") no-repeat top right;}
+ul#menu li a:hover{background:transparent url("bgHOVER.gif") no-repeat top right;}
+ul#menu li a.current,ul#menu li a.current:hover{color:#fff;background:transparent url("bgON.gif") no-repeat top right;}
+/* ^^^^^^^^ END MENU ^^^^^^^^^^ */
+#intro {
+ width: 902px;
+ height: 200px;
+ margin: 0;
+ padding: 10px;
+ color: #333;
+ background: #B6DACB;
+}
+.intro {
+ padding:20px;
+ font-size:200%;
+ letter-spacing: 2px;
+ color: #002C0F;
+ background: transparent;
+}
+#leftcolumn { 
+ display: inline;
+ margin: 10px;
+ padding: 0;
+ width: 200px;
+ float: left;
+}
+#centercolumn{ 
+ float: left;
+ margin: 10px 13px;
+ padding: 0;
+ width: 442px;
+ display: inline;
+ position: relative;
+}
+
+#rightcolumn { 
+ display: inline;
+ position: relative;
+ margin: 10px 10px 10px 17px;
+ padding: 0;
+ width: 200px;
+ float: left;
+}
+#navcontainer {
+padding-bottom: 20px;
+}
+#navlist {
+padding-left: 0;
+margin-left: 0;
+border-bottom: 1px solid gray;
+width: 200px;
+}
+#navlist li {
+list-style: none;
+margin: 0;
+padding: 0.25em;
+border-top: 1px solid gray;
+}
+#navlist li a {
+text-decoration: none;
+}
+#footer {
+ clear: both;
+ width: 902px;
+ margin: 0;
+ padding: 10px;
+ border-top: 4px solid #336666;
+ font-size: 90%;
+ color: #666;
+ background: #B6DACB;
+}
+.clear {
+ clear: both;
+ background: none;
+}
+h1 {
+ padding:30px;
+ font-size:125%;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: #366;
+ background: transparent url(bug_sm.png) right no-repeat;
+}
+.imgleft {
+ float: left;
+ padding: 10px;
+}
+a:link, a:visited {
+ text-decoration : none;
+ color : #880402;
+ background:inherit;
+}
+a:hover {
+text-decoration : none;
+color :#00515C;
+background:inherit;
+}
+a:active {
+ text-decoration : none;
+ color : #F5DE1E;
+ background:inherit;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Картинки</title>
+	<link href="css/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../../tiny_mce_popup.js?v=307"></script>
+	<script type="text/javascript" src="js/images.js"></script>
+	<base target="_self" />
+</head>
+<body style="display: none">
+	<table class="all">
+		<tr>
+			<td colspan="2" class="header">
+				<div class="path"><a href="" class="first"><img src="images/folder.gif" /></a><a href="">123</a><a href="">123</a><a href="">123</a><a href="">123</a></div>
+				<div class="panel"><div class="p1"><div class="p2"></div></div></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				<h1 class="blue_header">Медиатека</h1>
+				
+				<div class="folder"><a href="">...</a></div>
+				<div class="folder"><a href="">123</a></div>
+				<div class="folder">123</div>
+				<div class="folder">123</div>
+				<div class="folder">123</div>
+			</td>
+			<td><a href="javascript:ImagesDialog.insert('http://yandex.ru/favicon.ico','123');">center</a></td>
+		</tr>
+	</table>
+</body>
+</html>

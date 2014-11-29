@@ -1,0 +1,287 @@
+/**Author :Gen**/
+/**Project :Magzine Site**/
+/**Browser Dependencies**/ 
+* {
+    margin: 0;
+    padding: 0;
+}
+/**Body**/
+
+ 
+body 
+{
+ background:#565D6E url('images/background.jpg') repeat-x left top;
+ font: .8em normal small "Trebuchet MS", Tahoma, verdana, arial, helvetica, sans-serif;
+ color: #9F9A9F;
+ line-height: 1.6em;
+}
+
+/**Common Tags **/
+
+h3 a {
+    color: #08AAE7;
+}
+
+h3 a:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+} 
+
+/**Container **/
+#container {
+    margin: 0px auto;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid gray;
+    width: 1000px;
+}
+
+/**Top **/
+ 
+#top {
+ 
+    background: url(images/mainbg.png);
+    height: 114px;
+    padding: .1em;
+} 
+
+#navigation {
+    background: #fff;
+}
+
+ #top h1 {
+    padding: 10px 0px 0px 10px;
+    margin: 0;
+    color: #fff;
+    font: normal 2.8em Georgia, "Times New Roman", Arial;
+} 
+#top p {
+    color: #fff;
+    padding: 0px 0px 0px 10px;
+} 
+
+#navigation #menu ul {
+    border-bottom: 4px solid #5f5d5d;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: auto;
+    position: relative;
+    display: block;
+    height: 31px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    background: transparent url('images/1.gif') repeat-x top left;
+    border-top: 1px solid #C0E2D4;
+}
+
+ #navigation li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+
+ #navigation #menu li a {
+    display: block;
+    float: left;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 30px 0 30px;
+    height: 21px;
+    background: transparent url('images/divider2.gif') no-repeat top right;
+}
+
+ #navigation #menu li a:hover {
+    background: transparent url('images/navhover1.gif') no-repeat top right;
+}
+
+ #navigation #menu li a.current, #navigation #menu li a.current:hover {
+    color: #fff;
+    background: transparent url('images/navon1.gif') no-repeat top right;
+}
+
+ #subnav {
+    background: #EEEEEE url('images/subnav_gradient.png') repeat-x scroll 0 0;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 4px 0 1px;
+    text-align: right;
+}
+
+ #subnav a {
+    padding: 1px 14px 0 17px;
+    color: #333;
+}
+
+ #subnav a:hover {
+    text-decoration: underline;
+}
+
+ #subnav .shop a {
+    background: url('images/shirt.png') no-repeat;
+} #subnav .mail a {
+    background: url('images/envelope.png') no-repeat;
+} #subnav .feed a {
+    background: url('images/feed.png') no-repeat;
+} #leftnav {
+    margin: 0 0 0 65%;
+    padding: 1em;
+}
+
+/** Left Part **/
+/**Most read comment **/
+ .tabbed li {
+    display: inline;
+} .tabbed {
+    border: 1px solid #ccc;
+} .tabbed ul {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+} .tabbed ul li a, .headline-list li a, .thumb p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+} .tabbed ul li a {
+    padding: 2px 2px 0 20px;
+    border-right: 1px solid #ccc;
+} .tabbed ul li a:hover, .tabbed ul li a:active, .tabbed ul li a:focus {
+    color: #5DB8CD;
+}
+
+ol {
+    list-style: none;
+    list-style-image: none;
+} .tabbed-inner li {
+    display: block;
+} 
+/**Left part Hot jobs **/
+.thumb img {
+    float: left;
+} .thumb p {
+    margin-left: 70px;
+} .clearfix {
+    margin-top: 1em;
+    background: #ccc;
+}
+ #section {
+    background: #efefed;
+    border: 1px solid #ccc;
+}
+ #event, #news, #designs {
+    border: 1px solid #ccc;
+}
+ .news {
+    border: 1px solid #999999;
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 0;
+    width: 195px;
+}
+ .signup {
+    border: 1px solid #999999;
+    font-size: 11px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+}
+ #designs {
+    padding: 10px 10px 10px 10px;
+}
+
+/**Content part **/ 
+#content {
+    padding: 1em;
+    width: 65%;
+    float: left;
+}
+ #content #post {
+    margin: 0px 15px 0px 5px;
+}
+ .stand_first {
+    padding: 0px 0px 0px 140px;
+}
+ #content h2, #content h1 {
+    margin: 0 0 .5em 0;
+}
+ #content h1 {
+    font-size: 1.6em;
+}
+/**Post Article list part **/
+ .coll {
+    float: left;
+    width: 180px;
+    margin: 0;
+    padding: 1em;
+} .colr {
+    float: left;
+    width: 180px;
+    margin: 0;
+    padding: 1em;
+} .colc {
+  /*  margin-left: 210px;
+    margin-right: 210px;*/
+    padding: 1em;
+    float:left;
+	width: 180px;
+    margin: 0;
+    padding: 1em;
+} 
+
+
+.stamp {
+    font-size: 13px;
+} #box {
+    margin: 10px 10px 10px 15px;
+} .teaser-box .story-ref {
+    width: 240px;
+    float: left;
+} #box {
+    height: 120px;
+    border: 1px solid #E9EDF2;
+    padding: 5px 5px 5px 5px;
+} .cleaner {
+    clear: both;
+} .snap img {
+    float: left;
+} .snap a:hover, a {
+    text-decoration: none;
+} .snap p {
+    margin-left: 75px;
+}
+
+ul.headline-last {
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+} .snap ul li a {
+    font-size: 10px;
+    line-height: 0px;
+    color: #08AAE7;
+}
+
+/**Footer part **/
+ #footer {
+    border-top: 1px dotted gray;
+    clear: both;
+    margin: 0;
+    color: #333;
+    text-align: center;
+    font-size: .9em;
+}
+ #footer {
+    min-height: 22px;
+    background: transparent url(images/footbg.png) repeat;
+} #footer p, p a {
+    color: #fff;
+}
+#footer a {
+    text-decoration: none;
+}

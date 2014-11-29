@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>{page_title}</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+
+
+<style type="text/css">
+<!--
+html, body, div, p, form, fieldset, h1, h2, h3, h4, h5, h6   { margin: 0; padding: 0; }
+
+body		{ font: normal 10pt Arial, Helvetica, sans-serif; background: #fff; color: #000; }
+a			  { color: #153F7B; }
+a:hover	{ text-decoration: underline !important; color: #DB2032 !important;}
+a:hover { color: #DB2032; }
+a img   { border:0; }
+
+h1	{ font-size: 1.8em; margin-bottom: .5em; }
+h2	{ font-size: 1.45em; }
+h3	{ font-size: 1.4em; }
+h4	{ font-size: 1.2em; }
+h5	{ font-size: 1.1em; }
+h6	{ font-size: 1em; }
+
+fieldset { border: 0 !important; }
+
+/* -- Tables and lists -- */
+table     { border-collapse: collapse; width: 100%; }
+table th,
+table td  { border: 1px black solid; padding: 5px; }
+
+ul li { padding-left: 10px; }
+ol li { padding-left: 10px; }
+
+/* -- Basic layout -- */
+#view    { }
+#head    { font-size: 1.1em; position: relative; z-index: 1; display: none; }
+#content { font-size: 1.1em; position: relative; z-index: 1; }
+#foot    { font-size: 1.1em; position: relative; z-index: 1; display: none; }
+
+/* -- Main classes -- */
+.fr		    { float: right !important; }
+.fl		    { float: left !important; }
+.clear    { clear: both !important; }
+.right	  { text-align: right !important; }
+.left		  { text-align: left !important; }
+.center	  { text-align: center !important; }
+.last		  { margin-right: 0 !important; margin-bottom: 0 !important; border-bottom: none !important; }
+.small	  { font-size: .90em; }
+.big      { font-size: 1.5em; }
+.item     { margin-bottom: 1.5em; border-bottom: 1px #d8d8d8 solid; clear: both; }
+.info     { font-size: .95em; margin: 2px 0 6px !important; }
+.col1     { width: 49%; float: left; }
+.col2     { width: 49%; float: right; }
+img.left  { margin-left: 0 !important; }
+img.right { margin-right: 0 !important; }
+
+/* -- NoPrint items -- */
+.hidden,
+#menuBlock { display: none; }
+
+/* -- Content items -- */
+#contentBlock p,
+#contentBlock ul,
+#contentBlock ol,
+#contentBlock table { margin-bottom: 2em; }
+
+table_brd {
+	border: 1px solid #000;
+}
+.table_bdr {
+	border: 1px solid #000;
+}
+-->
+</style>
+<h2>Paper Revision</h2>
+  <table width="98%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="left"><h4>Paper n&ordm;</h4></td>
+      <td width="15" rowspan="6">&nbsp;</td>
+      <td align="left"><h4>Authors</h4></td>
+    </tr>
+    <tr>
+      <td align="left" class="table_bdr">&nbsp;p-{cod_paper}</td>
+      <td rowspan="2" align="left" class="table_bdr">&nbsp;{authors}</td>
+    </tr>
+    <tr>
+      <td align="left"><h4>Date sent</h4></td>
+    </tr>
+    <tr>
+      <td align="left" class="table_bdr">&nbsp;{date_sent}</td>
+      <td align="left"><h4>Title</h4></td>
+    </tr>
+    <tr>
+      <td align="left"><h4>Reviewer</h4></td>
+      <td rowspan="2" align="left" class="table_bdr">&nbsp;{title}</td>
+    </tr>
+    <tr>
+      <td align="left" class="table_bdr">&nbsp;{reviewer}</td>
+    </tr>
+  </table>
+  <p></p>
+  <p><strong>Please tick as appropriate and expand where necessary on the comments for editors field bellow</strong></p>
+  <p id="p1"><strong>1.Subject topic</strong></p>
+  <p>
+    <input type="checkbox" name="stw" id="stw" {stw} />
+Within the scope of {site_name}</p>
+  <p>
+    <input type="checkbox" name="stn" id="stn" {stn}/>
+    Not appropriate for     {site_name}</p>
+<p id="p2"><strong>2.General Assessment</strong></p>
+  <blockquote style="text-align:left">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2" align="right"><strong>Excellent</strong></td>
+        <td align="center"><strong>Good</strong></td>
+        <td align="center"><strong>Fair</strong></td>
+        <td align="center"><strong>Poor</strong></td>
+      </tr>
+      <tr>
+        <td width="200" align="left">Originality</td>
+        <td width="70" align="center"><input type="checkbox" {gaoe1} /></td>
+        <td width="70" align="right"><input type="checkbox"   {gaoe2} /></td>
+        <td width="70" align="right"><input type="checkbox" {gaoe3} /></td>
+        <td width="70" align="right"><input type="checkbox"  {gaoe4} /></td>
+      </tr>
+      <tr>
+        <td align="left">Technical Quality</td>
+        <td align="center"><input type="checkbox"  {gatq1} /></td>
+        <td align="right"><input type="checkbox"  {gatq2} /></td>
+        <td align="right"><input type="checkbox"   {gatq3} /></td>
+        <td align="right"><input type="checkbox" {gatq4} /></td>
+      </tr>
+      <tr>
+        <td align="left">Clarity of Presentation</td>
+        <td align="center"><input type="checkbox"   {gacp1}/></td>
+        <td align="right"><input type="checkbox"  {gacp2}/></td>
+        <td align="right"><input type="checkbox"   {gacp3}/></td>
+        <td align="right"><input type="checkbox"  {gacp4}/></td>
+      </tr>
+      <tr>
+        <td align="left">Importance in Field</td>
+        <td align="center"><input type="checkbox"  {gaif1}/></td>
+        <td align="right"><input type="checkbox" {gaif2}/></td>
+        <td align="right"><input type="checkbox"   {gaif3}/></td>
+        <td align="right"><input type="checkbox"  {gaif4}/></td>
+      </tr>
+    </table>
+  </blockquote>
+  <blockquote style="text-align:left">&nbsp; </blockquote>
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="49%"><p id="p3"><strong>3.Title</strong></p></td>
+      <td valign="top"><p id="p4"><strong>4.Language</strong></p></td>
+    </tr>
+    <tr>
+      <td width="49%" valign="top"><p>
+        <input type="checkbox" name="ta" id="ta"  {taz1}/>
+        Accuratly reflects contents<br />
+        <input type="checkbox" name="tn" id="tn"  {taz2}/>
+        Needs revision (suggest alternative)
+      </p></td>
+      <td valign="top"><p>
+        <input type="checkbox" name="lg" id="lg" {lag1}/>
+        Grammatically good
+        <br />
+        <input type="checkbox" name="ln" id="ln" {lag2}/>
+        Needs revision
+      </p></td>
+    </tr>
+    <tr>
+      <td width="49%" height="20" valign="top">&nbsp;</td>
+      <td height="20" valign="top">&nbsp;</td>
+    </tr>
+</table>
+  {split_page}
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="50%" valign="top"><p>
+        <strong>5.Abstract</strong><br />
+<input type="checkbox" name="aca" id="aca" {absc1}/>
+        Clear and adequate<br />
+        <input type="checkbox" name="asr" id="asr" {absc2}/>
+        Should be rewritten<br />
+        <input type="checkbox" name="asc" id="asc" {absc3}/>
+        Should be condensed<br />
+        <input type="checkbox" name="am" id="am" {absc4}/>
+      Missing</p></td>
+      <td width="50%" valign="top"><p>
+        <strong>6.Presentation</strong><br />
+<input type="checkbox" name="pg" id="pg" {pres1}/>
+        Good<br />
+        <input type="checkbox" name="ptb" id="ptb" {pres2}/>
+        Too Brief<br />
+        <input type="checkbox" name="ptl" id="ptl" {pres3}/>
+        Too lengthy<br />
+        <input type="checkbox" name="pc" id="pc" {pres4}/>
+        Containing irrelevant material<br />
+        <input type="checkbox" name="ps" id="ps" {pres5}/>
+      Should be rearranged</p></td>
+    </tr>
+	</table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="50%" valign="top"><p><strong>7.Illustrations</strong><br />
+<input type="checkbox" name="ig" id="ig" {ils1}/>
+        Good<br />
+        <input type="checkbox" name="ie" id="ie" {ils2}/>
+        Extra figures required<br />
+        <input type="checkbox" name="iq" id="iq" {ils3}/>
+        Quality inadequate<br />
+        <input type="checkbox" name="iff" id="iff" {ils4}/>
+      Fig(s) 
+      <input name="iff_txt" type="text" id="iff_txt" size="10" maxlength="255" value="{ils_txt}"/>
+      may be omitted</p></td>
+      <td width="50%" valign="top"><p>
+        <strong>8.Tables</strong><br />
+	<input type="checkbox" name="tg" id="tg" {tabs1}/>
+        Good<br />
+        <input type="checkbox" name="ts" id="ts" {tabs2}/>
+        Should be rearranged<br />
+        <input type="checkbox" name="tt" id="tt" {tabs3}/>
+        Tables 
+       
+        <input name="tt_txt" type="text" id="tt_txt" size="10" maxlength="255" value="{tabs_txt}" />
+may be omitted</p></td>
+    </tr>
+	</table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="50%" valign="top"><p><strong>9.Abbreviations, formulae, units</strong><br />
+<input type="checkbox" name="afu_c" id="afu_c" {afus1} />
+        Conform to acceptable standards<br />
+        <input type="checkbox" name="afu_n" id="afu_n" {afus2}/>
+        Need revision<br />
+        <input type="checkbox" name="afu_s" id="afu_s" {afus3}/>
+        Should be explained<br />
+        <input type="checkbox" name="afu_a" id="afu_a" {afus4} />
+      A notation list is necessary</p></td>
+      <td width="50%" valign="top"><p><strong>10.References</strong><br />
+<input type="checkbox" name="ra" id="ra" {ref1} />
+        Appropriate<br />
+        <input type="checkbox" name="rin" id="rin" {ref2}/>
+        Incorrect<br />
+        <input type="checkbox" name="ri" id="ri" {ref3}/>
+        Insufficient<br />
+        <input type="checkbox" name="rt" id="rt" {ref4} />
+      Too extensive</p></td>
+  </tr>
+	</table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="50%" valign="top"><p>
+        <strong>11.Grading of article</strong><br />
+<input type="checkbox"  {gaess1} />
+        Excellent<br />
+        <input type="checkbox" {gaess2} />
+        Good<br />
+        <input type="checkbox" {gaess3} />
+        Weak<br />
+        <input type="checkbox" {gaess4} />
+      Mark Awarded (%) 
+      <input  type="text"  size="5" maxlength="3" value="{gae_txt}" />
+      </p></td>
+      <td width="50%" valign="top"><p>
+        <strong>12.Recommendation</strong><br />
+        <input type="checkbox" name="reca" id="reca" {reca1} />
+        Accept<br />
+        <input type="checkbox" name="recam" id="recam" {reca2}/>
+        Accept after minor amendments<br />
+        <input type="checkbox" name="recama" id="recama" {reca3}/>
+        Major amendments required<br />
+        <input type="checkbox" name="recad"  id="recad" {reca4}/>
+      Do not accept</p></td>
+    </tr>
+	</table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top"><p id="sig"><strong>Signature</strong> <font style="font-size:9px">(write your full name)</font></p></td>
+      <td valign="top"><p id="dat"><strong>Date</strong></p></td>
+    </tr>
+    <tr>
+      <td width="75%" valign="top">{signature}</td>
+      <td width="25%" valign="top">{today_date}</td>
+    </tr>
+</table>
+  {split_page}
+<p><strong>Comments for the editors</strong></p>
+  <p>{comment_editors}<br /></p>
+  {split_page}
+<p> <strong>Comments for the authors</strong></p>
+  <p>{comment_auhtors}</p>
+
+<p class="fl">&copy;{footer}</p>
+</body>
+</html>
+

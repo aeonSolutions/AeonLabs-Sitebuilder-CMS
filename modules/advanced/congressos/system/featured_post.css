@@ -1,0 +1,97 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+#main .featured-post .post-title {
+	width: 630px;
+	color: #848484;
+	font: normal 10px Arial, Verdana, Sans-Serif;
+}
+
+#main .featured-post .post-title a {
+	color: #848484;
+	text-decoration: none;
+}
+
+#main .featured-post .post-title a:hover {
+	text-decoration: underline;
+}
+
+#main .featured-post .post-title h2 {
+	color: #2771a5;
+	font: normal 24px/30px "Trebuchet MS", Arial, Verdana, Sans-Serif;
+	border-bottom: 1px dotted #1c4670;
+}
+
+#main .featured-post .post-title h2 a {
+	color: #2771a5;
+	text-decoration: none;
+}
+
+#main .featured-post .post-title h2 a:hover {
+	text-decoration: underline;
+}
+
+#main .featured-post .post-title-info {
+	width: 630px;
+	height: 22px;
+}
+
+	.post-date {
+		float: left;
+		background: url("../images/icon_date.gif") no-repeat;
+		padding-left: 18px;
+		line-height: 22px;
+	}
+	
+	.post-comments {
+		float: right;
+		background: url("../images/icon_comments.gif") no-repeat;
+		padding-left: 16px;
+		line-height: 22px;
+	}
+
+/* Featured Post - Entry */
+
+#main .featured-post .post-entry {
+	font: normal 11px/18px Arial, Verdana, Sans-Serif;
+	color: #606060;
+	width: 630px;
+	padding: 1px 0;
+}
+
+#main .featured-post .post-entry a {
+	color: #226198;
+	text-decoration: none;
+}
+
+#main .featured-post .post-entry a:hover {
+	text-decoration: underline;
+}
+
+#main .featured-post .post-entry blockquote {
+	border-left: 10px solid #efefef;
+	margin: 0px 30px;
+	padding-left: 15px;
+}
+
+#main .featured-post .post-entry img {
+	padding: 5px;
+	border: 1px solid #bfbfbf;
+}
+
+/* Featured Post - Category */
+
+#main .featured-post .post-category {
+	width: 616px;
+	background: url("../images/icon_category.gif") no-repeat;
+	padding-left: 14px;
+	line-height: 22px;
+	height: 22px;
+	font: normal 11px/22px Arial, Verdana, Sans-Serif;
+	color: #0a2844;
+	border-top: 1px dotted #1c4670;
+}
+
+#main .featured-post .post-category a {
+	color: #0a2844;
+}

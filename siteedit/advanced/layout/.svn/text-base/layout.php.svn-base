@@ -1,0 +1,149 @@
+<?php 
+$task=mysql_escape_string(@$_GET['id']);
+$mod=mysql_escape_string(@$_GET['mod']);
+if(isset($_POST['skin'])):
+	$skin=mysql_escape_string(@$_POST['skin']);
+else:
+	$skin=mysql_escape_string(@$_GET['skin']);
+endif;
+if (isset($_POST['del_full']) or isset($_POST['del_pos']) or isset($_POST['drop_add']) or isset($_POST['max_pos'])):
+	include($local_root.'update_db/layout_setup.php');
+endif;
+include($globvars['site']['directory'].'kernel/settings/layout.php');
+			if(isset($_GET['mode'])):
+				if ($_GET['mode']=='wizard'):
+					$address=strip_address($local_root,"step",$_SERVER['REQUEST_URI']);
+					$address=strip_address($local_root,"file",$address);
+					if (isset($_GET['step'])):
+						$step=$_GET['step']+1;
+					else:
+						$step=$step+1;
+					endif;
+					$address=$address.'&step='.$step;
+					?>
+					<img src="<?=$site_path;?>/images/button_ok.png" alt="ok"  height="32"/>Se j&aacute; acabou de configurar o Layout, Clique <a href="<?=$address;?>">aqui</a> para continuar o Wizard. <?php
+				endif;
+			endif;
+			?>	</font>
+				<table style="border: 1px dotted #999999" cellpadding="0" cellspacing="0" align="center" width="90%">
+					<tr>
+						<td>
+							<?php
+							if ($layout=='dynamic'):	
+								if (isset($_POST['skin'])):
+									$query=$db->getquery("select cod_skin, ficheiro from skin where cod_skin='".$skin."'");				
+								else:
+									$query=$db->getquery("select cod_skin, ficheiro from skin where active='s'");
+									$skin=$query[0][0];
+								endif;
+							else:
+								$query[0][0]=1;
+								$query[0][1]=$layout_name;
+								$skin=1;
+							endif;
+							if($query[0][0]==''):
+									echo'<font class="header_text_1">N&atilde;o existe uma skin activa!</font>';
+							else:
+								if ($mod<>'' and $skin<>''):
+									include($globvars['local_root'].'siteedit/advanced/layout/layout-edit_cell.php');
+								else:
+									$_SESSION['def']='layout';
+									$_SESSION['id']=$task;
+									$_SESSION['sid']=@$_GET['SID'];
+									$_SESSION['local_root']=$globvars;
+									$_SESSION['template']=$query[0][1];
+									$_SESSION['skin']=@$skin;
+									echo'<IFRAME name="target_iframe" align="center" frameBorder="0" width="100%" height="500" src="'.$site_path.'/siteedit/advanced/layout/layout_frame.php?SID='.$_GET['SID'].'&id='.$_GET['id'].'&mode='.$_GET['mode'].'&skin='.@$_GET['skin'].'" scrolling="auto"></IFRAME>';
+								endif;
+							endif;
+							?>
+						</td>
+					</tr>
+					<?php
+					if ($mod==''):
+						?>
+						<tr>
+						  <td height="5"></td>
+						</tr>
+						<tr>
+						  <td height="5" align="center">
+							<form  method="post" action="<?=session_setup($globvars,$site_path.'/index.php?&id='.$task);?>"  enctype="multipart/form-data">
+							<table height="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td align="center">
+									<?
+									if ($layout=='dynamic'):	
+										$query=$db->getquery("select ficheiro, cod_skin from skin where active='s'");
+										if ($query[0][0]<>''):
+											if ($skin==''):
+												$skin=$query[0][1];	
+											endif;
+											$selected=$query[0][0];
+										else:
+											$selected='n&atilde;o existe nenhuma skin activa';
+										endif;
+										$query2=$db->getquery("select cod_skin, ficheiro, num_cells, default_cell from skin");
+										$selected=0;
+										$option[0][0]='none';
+										$option[0][1]='--------------------';
+										if ($query2[0][0]<>''):
+											for ($i=1;$i<=count($query2);$i++):
+												$option[$i][0]=$query2[$i-1][0];
+												$option[$i][1]=$query2[$i-1][1];
+												if ($skin==$query2[$i-1][0]):
+													$selected=$i;
+												endif;
+											endfor;
+										endif;
+									else:
+										$selected=0;
+										$option[0][0]=$layout_name;
+										$option[0][1]=$layout_name;
+										$query2[0][0]=1;
+									endif;
+									?>
+									<select size="1" name="skin" class="form_input">
+										<?php
+										for ($k=0 ; $k<count($option); $k++):
+											?>
+											<option value="<?php echo $option[$k][0];?>" <?php if ($selected==$k){?>selected<?php } ?>>
+											<?php echo $option[$k][1]; ?></option>
+											<?php
+										endfor; ?>
+									</select>&nbsp;&nbsp;
+									<input class="form_submit" value=" view " type="submit" <? if($layout=='static') echo ' disabled="disabled"';?> name="user_input">
+									</td>
+								</tr>
+							</table>
+							</form>
+						  </td>
+						</tr>
+						<tr>
+						  <td height="5"></td>
+						</tr>
+						<tr>
+						  <td height="5" align="center">
+							<?php
+							if ($query2[0][0]<>'' and $layout<>'static'):									
+							?>
+							<form  method="post" action="<?=session_setup($globvars,$site_path.'/index.php?&id='.$task);?>"  enctype="multipart/form-data">
+							<table height="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td align="center">
+									<input type="hidden" value="<?=$skin;?>" name="skin" />
+									<input type="checkbox" name="del_full">
+									<font class="body_text">Apagar por completo o layout da skin actual:&nbsp;</font>
+									<input type="image" src="<?=$globvars['site_path'].'/images/buttons/en/';?>apagar.gif">
+									</td>
+								</tr>
+							</table>
+							</form>
+							<?php
+							endif;
+							?>
+						  </td>
+						</tr>
+					<?php
+					endif;
+					?>
+				</table>

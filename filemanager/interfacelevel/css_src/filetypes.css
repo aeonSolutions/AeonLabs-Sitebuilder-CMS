@@ -1,0 +1,64 @@
+.filetype_icon {
+	width:16px;
+	height:16px;
+	background-image: url(../images/filetypes/undefined.gif);
+}
+
+.folder { background-image: url(../images/filetypes/folder.gif); !important}
+.folder_xp { background-image: url(../images/filetypes/folder_xp.gif); !important}
+.tif { background-image: url(../images/filetypes/image.gif); !important }
+.png { background-image: url(../images/filetypes/png.gif); !important }
+.jpg, .jpeg { background-image: url(../images/filetypes/jpg.gif); !important }
+.gif { background-image: url(../images/filetypes/gif.gif); !important }
+.bmp { background-image: url(../images/filetypes/bmp.gif); !important }
+.html, .htm { background-image: url(../images/filetypes/htm.gif); !important }
+.wmv { background-image: url(../images/filetypes/movie.gif); !important }
+.mov, .avi, .rm, .qt, .mpg, .mpeg { background-image: url(../images/filetypes/mov.gif); !important }
+.ppt, .ppm { background-image: url(../images/filetypes/ppt.gif); !important }
+.pdf { background-image: url(../images/filetypes/pdf.gif); !important }
+.txt, .nfo { background-image: url(../images/filetypes/txt.gif); !important }
+.swf, .flv { background-image: url(../images/filetypes/swf.gif); !important }
+.fla { background-image: url(../images/filetypes/fla.gif); !important }
+.doc, .dot { background-image: url(../images/filetypes/doc.gif); !important }
+.mdb { background-image: url(../images/filetypes/mdb.gif); !important }
+.xls { background-image: url(../images/filetypes/xls.gif); !important }
+.zip { background-image: url(../images/filetypes/zip.gif); !important }
+.rar, .tar, .tgz, .gz { background-image: url(../images/filetypes/rar.gif); !important }
+.arj, .zoo, .lha, .lzh { background-image: url(../images/filetypes/archive.gif); !important }
+.xml, .xsl, .xsd, .dtd { background-image: url(../images/filetypes/xml.gif); !important }
+.asp, .aspx, .jsp, .cfm { background-image: url(../images/filetypes/asp.gif); !important }
+.wav { background-image: url(../images/filetypes/wav.gif); !important }
+.mp3, .mp2, .aif, .aiff { background-image: url(../images/filetypes/sound.gif); !important }
+.exe, .com { background-image: url(../images/filetypes/exe.gif); !important }
+.php { background-image: url(../images/filetypes/php.gif); !important }
+.js { background-image: url(../images/filetypes/js.gif); !important }
+
+
+.filetype_big_icon {
+	width:60px;
+	height:60px;
+	background-image: url(../images/filetypes/big_undefined.gif);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+.big_folder { background-image: url(../images/filetypes/big_folder.gif); !important}
+.big_html, .big_htm { background-image: url(../images/filetypes/big_htm.gif); !important }
+.big_wmv { background-image: url(../images/filetypes/big_movie.gif); !important }
+.big_mov, .big_avi, .big_rm, .big_qt, .big_mpg, .big_mpeg { background-image: url(../images/filetypes/big_mov.gif); !important }
+.big_ppt, .big_ppm { background-image: url(../images/filetypes/big_ppt.gif); !important }
+.big_pdf { background-image: url(../images/filetypes/big_pdf.gif); !important }
+.big_txt, .big_nfo { background-image: url(../images/filetypes/big_txt.gif); !important }
+.big_swf, .big_flv { background-image: url(../images/filetypes/big_swf.gif); !important }
+.big_fla { background-image: url(../images/filetypes/big_fla.gif); !important }
+.big_doc, .big_dot { background-image: url(../images/filetypes/big_doc.gif); !important }
+.big_mdb { background-image: url(../images/filetypes/big_mdb.gif); !important }
+.big_xls { background-image: url(../images/filetypes/big_xls.gif); !important }
+.big_zip { background-image: url(../images/filetypes/big_zip.gif); !important }
+.big_rar, .big_tar, .big_tgz, .big_gz { background-image: url(../images/filetypes/big_rar.gif); !important }
+.big_arj, .big_zoo, .big_lha, .big_lzh { background-image: url(../images/filetypes/big_archive.gif); !important }
+.big_xml, .big_xsl, .big_xsd, .big_dtd { background-image: url(../images/filetypes/big_xml.gif); !important }
+.big_asp, .big_aspx, .big_jsp, .big_cfm { background-image: url(../images/filetypes/big_asp.gif); !important }
+.big_wav, .big_mp3, .big_mp2, .big_aif, .big_aiff { background-image: url(../images/filetypes/big_sound.gif); !important }
+.big_php { background-image: url(../images/filetypes/big_php.gif); !important }
+.big_js { background-image: url(../images/filetypes/big_js.gif); !important }

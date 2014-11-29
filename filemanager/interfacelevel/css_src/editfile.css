@@ -1,0 +1,11 @@
+#filecontents {
+	width:98%;	
+	height:80%;
+
+	position: absolute; 
+	top:60px; 
+	left:15px; 
+	right:15px; 
+	bottom:10px;
+	border:1px inset #CCCCCC;
+}

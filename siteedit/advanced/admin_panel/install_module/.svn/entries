@@ -1,0 +1,43 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/Advanced/admin_panel/install_module
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+require.php
+file
+
+
+
+
+2007-07-09T18:08:36.000000Z
+2913bf0be60f055bc40922230e465d84
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+auto_install.php
+file
+
+
+
+
+2007-07-09T18:08:36.000000Z
+37565b17f801518d6414ec42f6ec1984
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+_notes
+dir
+

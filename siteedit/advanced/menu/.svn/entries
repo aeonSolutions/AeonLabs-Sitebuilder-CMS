@@ -1,0 +1,106 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/Advanced/menu
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+menu_edit.php
+file
+
+
+
+
+2008-07-18T15:45:54.137400Z
+103ce8886c0e930ec616d04e2bb41686
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+arrow_up.gif
+file
+
+
+
+
+2007-06-28T10:34:28.000000Z
+61ea7b0b898b282f57395688e9ad26c5
+2008-07-24T16:46:47.690704Z
+4
+admin
+has-props
+
+arrow_down.gif
+file
+
+
+
+
+2007-06-28T10:34:28.000000Z
+1848103e22eb3477e618fa8d7ee10c01
+2008-07-24T16:46:47.690704Z
+4
+admin
+has-props
+
+menu_management.php
+file
+6
+
+
+
+2008-07-28T19:26:35.123600Z
+c08bb254ee3098d87e313ca24f81c092
+2008-07-29T10:50:03.299200Z
+6
+admin
+
+_notes
+dir
+
+menu.php
+file
+
+
+
+
+2008-07-18T15:35:40.433400Z
+9cfef87705cc2791bf53d2c9ff13f4c4
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+constructor.php
+file
+
+
+
+
+2008-07-18T15:40:03.964200Z
+34d7b1ad6c8b4c2f107c4d439957a253
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+arrow_empty.gif
+file
+
+
+
+
+2007-06-28T10:34:28.000000Z
+627d039a18c4604e4bd0668b77cecc7f
+2008-07-24T16:46:47.690704Z
+4
+admin
+has-props
+

@@ -1,0 +1,31 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/simple/sa
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+settings.php
+file
+
+
+
+
+2008-07-09T16:25:06.725800Z
+7d0541223347e47084b124b998e36130
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+_notes
+dir
+

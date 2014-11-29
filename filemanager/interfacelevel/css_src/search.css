@@ -1,0 +1,95 @@
+body {
+	background-color: #F0F0EE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight:bold;
+	margin: 0px;
+	padding: 0px;
+	
+	scrollbar-face-color:#FBFBFB;
+	scrollbar-arrow-color:#D4D0C8;
+	scrollbar-track-color:#FFFFFF;
+	scrollbar-shadow-color:#D4D0C8;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#CCCCCC;
+	scrollbar-darkshadow-Color:#FBFBFB;
+}
+
+.inputText, .inputFile {
+	background: #FFFFFF;
+	border: 1px solid #cccccc;
+}
+
+.inputFile:button {
+	background: #DDDDDD;
+	border: 1px solid #888888;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+
+.button {
+   font-weight: bold;
+   width: 90px;
+   height: 21px;
+   border: 0;
+   background-image: url('../images/button_bg.gif');
+   cursor: pointer;
+}
+
+.mcContent {
+	padding:10px 10px 10px 20px;
+	text-align:left;
+}
+* html .mcContent {
+	padding-left:10px;
+}
+
+#searchfilelocationlabel, #searchfilewordlabel, #searchfilenamelabel {
+	margin-top:5px;
+}
+
+#searchfileword, #searchfilename {
+	margin-bottom:10px;
+}
+
+#searchfilecasesensitivelabel, #searchfilesubfolderslabel {
+	float:left;
+	width:120px;
+}
+
+#searchlocationbrowser {
+	clear:both;
+	width:100%;
+	height:100px;
+	overflow:auto;
+	background-color:#FFFFFF;
+	border: 1px solid #cccccc;
+	padding:5px 1px 10px 1px;
+}
+
+#searchfilelocation input {
+	float:left;
+}
+
+#searchfilelocationimg {
+	position:absolute;
+	float:left;
+	width:20px;
+	height:20px;
+	clear:both;
+	/*top:155px;
+	left:237px;*/
+	top:160px;
+	left:245px;
+}
+* html #searchfilelocationimg {
+	top:160px;
+	left:245px;
+}
+
+#searchButton {
+	clear:both;
+	width:100%;
+	margin:10px 0px 0px 0px;
+	text-align:center;
+}

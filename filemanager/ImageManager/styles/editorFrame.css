@@ -1,0 +1,34 @@
+body { margin: 0; padding: 0;  background-color: #eee; }
+table { width: 100%; }
+table td { text-align: center; }
+.crop{cursor:crosshair;}
+.selection { border: dotted 1px #000000; position:absolute; width: 0px; height: 1px; z-index:5; }
+.selectionWhite{ border: dotted 1px #FFFFFF; position:absolute; width: 0px; height: 1px; z-index:5; }
+.handleBox{ z-index:105; }
+.error { font-size:large; font-weight:bold; color:#c00; font-family: Helvetica, sans-serif; } 
+
+
+#loadingbar {
+	position:absolute;
+	top:45%;
+	left:40%;
+	width:145px;
+	height:40px;
+	background-color:#FFFFC0;
+	border:1px outset #000000;
+}
+
+#subloadingbar {
+	width:100px;
+	height:15px;
+	background-image:url(../img/loading.gif);
+	background-repeat:no-repeat;
+	color:#000000;
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:15px;
+	margin-top:12px;
+	margin-left:20px;
+}

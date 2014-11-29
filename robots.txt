@@ -1,0 +1,46 @@
+User-agent: W3C-checklink
+Allow: /
+
+User-agent: MSIECrawler
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: psbot
+Allow: /
+
+User-agent: NetMechanic
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: sitecheck.internetseer.com
+Allow: /
+
+User-agent: LinkWalker
+Allow: /
+
+User-agent: FreeFind
+Allow: /
+
+User-agent: MondoSearch
+Allow: /
+
+User-agent: Spiderline
+Allow: /
+
+User-agent: fusionbot
+Allow: /
+
+User-agent: WebReaper
+Allow: /
+
+User-agent: NPBot
+Allow: /
+
+User-agent: *
+Disallow: /images/
+Disallow: /favicon.ico
+	

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#google_translations_dlg.title}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script>
+	  google.load("language", "1");
+	  
+</script>
+</head>
+<body>
+
+<form onsubmit="GoogleTranslationsDialog.insert();return false;" action="#">
+<p>{#google_translations_dlg.help}</p>	
+	<div style="width:70px;text-align:right;margin-right:5px;float:left">{#google_translations_dlg.text}:</div><input id="source" name="source" type="text" class="text" style="width:210px;"/>
+	<div style="clear:both;margin-bottom:10px;"></div>
+	<div style="width:70px;text-align:right;margin-right:5px;float:left">{#google_translations_dlg.translation}:</div><input id="translated" name="translated" type="text" class="text" style="width:210px;"/>
+
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="button" id="insert" name="insert" value="{#insert}" onclick="GoogleTranslationsDialog.insert();" />
+			<input type="button" class="updateButton" id="update" name="update" value="{#update}" onclick="GoogleTranslationsDialog.translate();" />
+		</div>
+
+		<div style="float: right">
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+	</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<?php
+$sid=@$_GET['SID'];
+if (isset($_GET['SID'])):
+	session_id($_GET['SID']);
+else:
+	echo 'no session found (layout frame)';
+	exit;
+endif;
+session_start();
+
+$task=@$_SESSION['id'] ? @$_SESSION['id'] : @$_GET['id'];
+$skin=$_SESSION['skin'];
+include('../../../copyfiles/advanced/general/db_class.php');
+include('../../../core/globvars.php');
+include($globvars['local_root'].'copyfiles/advanced/general/recursive_copy.php');
+$globvars=$_SESSION['local_root'];
+include($globvars['site']['directory'].'kernel/staticvars.php');
+include($globvars['local_root'].'core/functions.php');
+include($globvars['site']['directory'].'kernel\functions.php');
+
+$file=$_SESSION['template'];
+copy($globvars['site']['directory'].'layout/templates/'.$file, $globvars['local_root'].'tmp/'.$file);
+$dir=explode(".",$file);
+if(is_dir($globvars['site']['directory'].'layout/templates/'.$dir[0])):
+	copyr($globvars['site']['directory'].'layout/templates/'.$dir[0], $globvars['local_root'].'tmp/'.$dir[0]);
+endif;
+
+build_page($globvars,$dir[0].'.php');
+$staticvars['local_root']=$globvars['local_root'].'copyfiles/advanced/';
+include($globvars['local_root'].'tmp/'.$dir[0].'.php');
+
+
+function build_page($globvars,$file){
+	$code=file_get_contents($globvars['site']['directory']."layout/templates/".$file);
+	$filename=$globvars['site']['directory'].'kernel/staticvars.php';
+	include($filename);
+	$filename=explode(".",$file);
+	$dir_name=$filename[0];
+	$old_addr=explode("://",$staticvars['site_path']);
+	$new_addr=explode("://",$globvars['site_path']);
+	
+	$code=str_replace($old_addr,$new_addr,$code);
+	$code=str_replace("layout/templates/","tmp/",$code);
+	$filename=$globvars['local_root'].'tmp/'.$dir_name.'.php';
+	if (file_exists($filename)):
+		unlink($filename);
+	endif;
+	if (!$handle = fopen($filename, 'a')):
+		echo "<font class='style6' color='#FF0000'>Cannot open file (".$filename.")</font>";
+		exit;
+	endif;
+	if (fwrite($handle, $code) === FALSE):
+		echo "<font class='style6' color='#FF0000'>Cannot write to file (".$filename.")</font>";
+		exit;
+	endif;
+	fclose($handle);	
+
+	if (strpos("-".$code,"<link")):
+		// retrieve css file name
+		$init=strpos($code,"<link");
+		$final=strpos($code,"/>",$init);
+		$filename=substr($code,$init,$final-$init);
+		$filename=explode("href",$filename);
+		$filename=explode('"',$filename[1]);
+		$filename=explode("/",$filename[1]);
+		$css_file=$filename[count($filename)-1];
+		if ($css_file=='default.css' and strpos("-".$code,"<link",$final)):
+			// retrieve css file name
+			$init=strpos($code,"<link",$final);
+			$final=strpos($code,"/>",$init);
+			$filename=substr($code,$init,$final-$init);
+			$filename=explode("href",$filename);
+			$filename=explode('"',$filename[1]);
+			$filename=explode("/",$filename[1]);
+			$css_file=$filename[count($filename)-1];
+		endif;
+		if ($css_file<>'default.css'):					
+			$code_css=file_get_contents($globvars['site']['directory']."layout/templates/".$dir_name."/".$css_file);
+			$code_css=str_replace($old_addr,$new_addr,$code_css);
+			$code_css=str_replace("layout/templates/","tmp/",$code_css);
+			$filename=$globvars['local_root']."tmp/".$dir_name."/".$css_file;
+			if (file_exists($filename)):
+				unlink($filename);
+			endif;
+			if (!$handle = fopen($filename, 'a')):
+				echo "<font class='style6' color='#FF0000'>Cannot open file (".$filename.")</font>";
+				exit;
+			endif;
+			if (fwrite($handle, $code_css) === FALSE):
+				echo "<font class='style6' color='#FF0000'>Cannot write to file (".$filename.")</font>";
+				exit;
+			endif;
+			fclose($handle);	
+		endif;
+endif;
+
+
+
+};
+
+?>

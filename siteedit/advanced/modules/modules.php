@@ -1,0 +1,771 @@
+<?php
+if (isset($_POST['auto_install']) or isset($_POST['add_mod']) or isset($_POST['mod_del']) or isset($_POST['mod_modify']) or isset($_POST['publish']) 
+or isset($_POST['auto_delete']) or isset($_POST['unpublish']) or isset($_FILES['module_upload'])):
+	include($globvars['site']['directory'].'kernel/staticvars.php');
+	include($globvars['local_root'].'update_db/module_setup.php');
+endif;
+$query=$db->getquery("select cod_module, name, link from module order by link");
+$query2=$query;
+// a query tem que ser sempre nesta forma senao da erro! : select cod_module, name, link from module
+$option=build_drop_module($query,$task);
+$code=mysql_escape_string(@$_GET['code']);
+$task=@$_GET['id'];
+$view=@$_GET['view'];
+$type=@$_GET['type'];
+
+?>
+<link rel="StyleSheet" href="<?=$globvars['site_path'];?>/core/java/dtree.css" type="text/css" />
+<script type="text/javascript">
+var site_path='<?=$globvars['site_path'];?>/'
+</script>
+<script type="text/javascript" src="<?=$globvars['site_path'];?>/core/java/dtree.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+  function confirmAction() {
+	return confirm("Change to Box-Fx to Default ?")
+  }   
+</SCRIPT>
+<table width="100%" border="0" cellPadding="15" cellSpacing="0">
+<tr>
+  <td>
+	<div class="dtree">
+		<p align="center">
+		<a href="<?=session_setup($globvars,'index.php?type=6&id='.$task);?>" >Manually Add Module</a> | 
+		<a href="<?=session_setup($globvars,'index.php?type=1&id='.$task);?>" >Edit Module</a> |
+		<a href="<?=session_setup($globvars,'index.php?type=3&id='.$task);?>" >Automatic Install </a> |
+		<a href="<?=session_setup($globvars,'index.php?type=4&id='.$task);?>" onclick="return confirmAction()">Default Box-Fx </a> |
+		<a href="<?=session_setup($globvars,'index.php?type=5&id='.$task);?>" >Module Upload</a>		</p>
+			<?php
+			if($type==1):
+				edit_modules($globvars);
+			elseif($type==6 or $type==2):
+				add_modules($globvars);
+			elseif($type==3):
+				auto_install($globvars);
+			elseif($type==4):
+				include($globvars['local_root'].'update_db/module_setup.php');
+			elseif($type==5):
+				module_upload($globvars);
+			endif;
+			?>
+		<font class="body_text">Seleccione um módulo na &aacute;rvore de módulos de modo a poder visualizar os detalhes</font>
+		<hr class="gradient">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr valign="top">
+			<td>
+			<div class="dtree"><a href="javascript: d.openAll();">Open Contents</a> | <a href="javascript: d.closeAll();">Close Contents</a></div>
+			<script type="text/javascript">
+				<!--
+				<?php
+				$dir=glob($globvars['local_root']."modules/advanced/*",GLOB_ONLYDIR);
+				$j=1;
+				if ($dir[0]<>''):
+					echo "d = new dTree('d');";
+					echo "d.add(0,-1,'módulos existentes no directório de módulos');";
+					for($i=0; $i<count($dir);$i++):
+						$dirX=explode("/",$dir[$i]);
+						echo "d.add($j,0,'".$dirX[count($dirX)-1]."','');";
+						$j++;
+						$file_in_dir=glob($dir[$i]."/*.php");
+						if (isset($file_in_dir[0])):
+							for($k=0;$k<count($file_in_dir);$k++):
+								$fileX=explode("/",$file_in_dir[$k]);
+								$path=$dirX[count($dir[$i])]."/".$fileX[count($file_in_dir[$k])+1];
+								$query=$db->getquery("select cod_module from module where link='".$path."'");
+								if ($query[0][0]<>''):
+									echo "d.add($j+$k,$j-1,'".$fileX[count($fileX)-1]." [Instalado]','".session_setup($globvars,'index.php?type=1&view=directory&id='.$task.'&mod='.$query[0][0])."','','');";
+								else:
+									echo "d.add($j+$k,$j-1,'".$fileX[count($fileX)-1]." [N&atilde;O Instalado]','".session_setup($globvars,'index.php?type=2&view=directory&id='.$task.'&path='.$path)."','','');";
+								endif;
+							endfor;
+							$j=$j+count($file_in_dir);
+						endif;
+					endfor;
+				else:
+					echo 'document.write("n&atilde;o ha modulos no directorio!");';
+				endif;
+				?>
+		
+				document.write(d);
+				//-->
+			</script>
+			</td>
+			<td>
+			<?php
+			if(count($query2)>1):
+			?>
+			<div class="dtree"><a href="javascript: db.openAll();">Abrir conteúdos</a> | <a href="javascript: db.closeAll();">Fechar conteúdos</a></div>
+				<script type="text/javascript">
+					<!--
+					db = new dTree('db');
+					db.add(0,-1,'Módulos instalados na base de dados');
+					<?php
+					$j=1;
+					for($i=0; $i<count($option);$i++):
+						if ($option[$i][0]=='optgroup'):
+							echo "db.add($i+1,0,'".$option[$i][1]."','');";
+							$j=$i+1;
+						else:
+							echo "db.add($i+1,$j,'".$option[$i][1]."','".session_setup($globvars,'index.php?type=1&view=directory&id='.$task.'&mod='.$option[$i][0])."','','');";
+						endif;
+					endfor;
+					?>
+			
+					document.write(db);
+					//-->
+				</script>
+			<?php
+			else:
+			?>
+				<script type="text/javascript">
+					<!--
+					db = new dTree('db');
+					db.add(0,-1,'Módulos instalados na base de dados');
+					db.add(1,0,'N&atilde;o existem modulos instalados na base de dados.','');
+					document.write(db);
+					//-->
+				</script>
+			<?php
+			endif;
+			?>
+			</td>
+		  </tr>
+		</table>
+		<hr class="gradient">
+		<font class="body_text">Seleccione um módulo na &aacute;rvore de módulos de modo a poder visualizar os detalhes</font>
+	</div>		  
+  </td>
+</tr>
+</table>
+</DIV>
+</DIV>
+
+<?php
+function module_upload($globvars){
+include($globvars['site']['directory'].'kernel/staticvars.php');
+$task=@$_GET['id'];
+if (isset($_GET['lang'])):
+	$lang=$_GET['lang']; 
+else:
+	$lang=$main_language;
+endif;
+?>
+<form method="post" enctype="multipart/form-data" name="add_template" action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?id='.$task);?>">
+<table width="350" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td align="left" class="body_text"><p>Para poder adicionar um modulo, compacte num ficheiro ZIP todos os ficheiros e direct&oacute;rios pertencentes ao modulo.</p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="<?=$globvars['site_path'];?>/images/template_example1.gif" width="294" height="66" /></td>
+  </tr>
+  <tr>
+    <td align="left" class="body_text"><p><br />
+      O nome do ficheiro ZIP ter&aacute; que ser o nome do m&oacute;dulo a instalar no direct&oacute;rio de modulos de configura&ccedil;&atilde;o (SETUP) </p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="<?=$globvars['site_path'];?>/images/template_example2.gif" width="315" height="123" /></td>
+  </tr>
+  <tr>
+    <td align="left" class="body_text">
+      <p>Apos ter efectuado o Upload do modulo, ter&aacute; que instala-lo na base de dados.<br />
+        Ou de modo automatico ou manualmente. </p>      </td>
+  </tr>
+  <tr>
+    <td height="15"></td>
+  </tr>
+  <tr>
+    <td class="body_text"><strong>M&oacute;dulo a adicionar (ZIP)</strong> </td>
+  </tr>
+  <tr>
+    <td><label>
+    <input type="file" name="module_upload" accesskey="1" size="50" />
+    </label></td>
+  </tr>
+  <tr>
+    <td height="15" align="right">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right"><input name="add_template" type="image" src="<?=$globvars['site_path'].'/images/buttons/'.$lang.'/adicionar.gif';?>" /></td>
+  </tr>
+</table>
+
+</form>
+<?php
+};
+
+
+function build_drop_module($query,$task){
+// a query tem que ser sempre nesta forma senao da erro! 
+//       : select cod_module, name, link from module order by link
+	$t[0]='';
+	$t[1]='';
+	$k=0;
+	if ($query[0][0]==''):
+		$option[0]='';
+		$option[1]='There aren\'t modules installed in DB';
+		return $option;
+	endif;
+	for ($i=1;$i<=count($query);$i++):
+		$last_t=$t;
+		$t=explode("/",$query[$i-1][2]);
+		if (!isset($t[1])):
+			$t[1]="ModulesRoot";
+		endif;
+		if ($t[0]<>$last_t[0]):
+			$option[$k][0]='optgroup';
+			$option[$k][1]=$t[0];
+			$k++;
+		endif;
+		$option[$k][0]=$query[$i-1][0];
+		$option[$k][1]=$query[$i-1][1].' @ '.$t[1];
+		$k++;
+	endfor;
+
+return $option;
+};
+
+
+function auto_install($globvars){
+$task=@$_GET['id'];
+$view=@$_GET['view'];
+$type=@$_GET['type'];
+include($globvars['site']['directory'].'kernel/staticvars.php');
+?>
+
+<style>
+.equal {
+    display:table;
+	margin:10px auto;
+	border-spacing:10px;
+	width:100%;
+}
+.row {
+    display:table-row;
+}
+.row div {
+    display:table-cell;
+}
+
+.row div.mleft{
+	width:50%;
+	border: 1px solid #FFCC00;
+	background:#FFFFCC;
+	padding:5px;
+}
+.row div.mright{
+	width:50%;
+	border: 1px solid #009900;
+	background:#CCFF99;
+	padding:5px;
+}
+
+</style>
+<div class="equal">
+    <div class="row">
+        <div class="mleft">
+        <form action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?type=3&id='.$task.'&view='.$view);?>" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="auto_install" value="0" />
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:medium; font-weight:bold"><img src="<?=$globvars['site_path'];?>//images/contents.jpg">&nbsp;Instala&ccedil;&atilde;o autom&aacute;tica dos módulos<hr size="1" color="#666666" /></td>
+          </tr>
+        </table>
+        <?php
+        $dir=glob($globvars['local_root']."modules/advanced/*",GLOB_ONLYDIR);
+        $query=$db->getquery("select link from module");
+        if ($dir[0]<>''):
+            $k=0;
+            for($i=0;$i<count($dir);$i++):
+                $dirX=explode("/",$dir[$i]);
+                $install=true;
+                if (!file_exists($globvars['local_root'].'modules/advanced/'.$dirX[count($dirX)-1].'/install_module/auto_install.php')):
+                    $install=false;
+                endif;
+        
+                for ($j=0;$j<count($query);$j++):
+                    $link=explode("/",$query[$j][0]);
+                    if ($link[0]==$dirX[count($dirX)-1]):
+                        $install=false;
+                        break;
+                    endif;
+                endfor;
+                if ($install):
+                    $k=1;
+                    ?>
+                    <input type="checkbox" name="<?=$dirX[count($dirX)-1];?>">&nbsp;<?=$dirX[count($dirX)-1];?><br/>
+                    <?php
+                endif;
+            endfor;
+            if ($k==0):
+                echo "Foram encontrados módulos mas j&aacute; est&atilde;o instalados ou n&atilde;o é possível a sua instala&ccedil;&atilde;o autom&aacute;tica.";
+            else:
+                ?>
+                <input type="submit" name="auto_install" value="Install" class="form_input">
+                </form>
+                <?php
+            
+            endif;
+        else:
+            echo "n&atilde;o ha modulos no directorio!";
+        endif;
+		?>
+        </div>
+        <div class="mright">
+         <form action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?type=3&id='.$task.'&view='.$view);?>" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="auto_delete" value="0" />
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:medium; font-weight:bold"><img src="<?=$globvars['site_path'];?>//images/contents.jpg">Uninstall Modules<hr size="1" color="#666666" /></td>
+          </tr>
+        </table>
+        <?php
+        $dir=glob($globvars['site']['directory']."modules/*",GLOB_ONLYDIR);
+        $query=$db->getquery("select link from module");
+        if ($dir[0]<>''):
+            $k=0;
+            for($i=0;$i<count($dir);$i++):
+                $dirX=explode("/",$dir[$i]);
+				?>
+				<input type="checkbox" name="<?=$dirX[count($dirX)-1];?>">&nbsp;<?=$dirX[count($dirX)-1];?><br/>
+				<?php
+            endfor;
+                ?>
+                <input type="submit" name="auto_delete" value="Delete" class="form_input">
+                </form>
+                <?php
+           else:
+            echo "n&atilde;o ha modulos no directorio!";
+        endif;
+		?>
+          
+        </div>
+    </div>
+</div>
+<?php
+};
+
+function add_modules($globvars){
+$task=@$_GET['id'];
+$view=@$_GET['view'];
+$type=@$_GET['type'];
+include($globvars['site']['directory'].'kernel/staticvars.php');
+		if (isset($_GET['path'])):
+			$path=$_GET['path'];
+		else:
+			$path='';
+		endif;
+		$query=$db->getquery("SHOW TABLES LIKE 'user_type'");
+		$selected=0;
+		if ($query[0][0]<>''):
+			$query2=$db->getquery("select cod_user_type,name from user_type");
+			$option2[0][0]='none';
+			$option2[0][1]='----------------------';
+			for ($i=1;$i<=count($query2);$i++):
+				$option2[$i][0]=$query2[$i-1][0];
+				$option2[$i][1]=$query2[$i-1][1];
+			endfor;
+		else:
+			$option2[0][0]='-1';
+			$option2[0][1]='----------------------';
+		endif;
+		$option3[0][0]='no';
+		$option3[0][1]='N&atilde;o';
+		$option3[1][0]='yes';
+		$option3[1][1]='Sim';
+		$selected3=0;
+		if (is_file($globvars['site']['directory'].'kernel/settings/layout.php')):
+			include($globvars['site']['directory'].'kernel/settings/layout.php');
+		else:
+			$box_fx='static';
+		endif;
+		if($box_fx=='installed'):
+			$query4=$db->getquery("select box_code,nome from box_effects where active='s'");
+			$selected4=0;
+			$option4[0][0]='-1';
+			$option4[0][1]='----------------------';
+			if ($query4[0][0]<>''):
+				for ($i=1;$i<=count($query4);$i++):
+					$option4[$i][0]=$query4[$i-1][0];
+					$option4[$i][1]=$query4[$i-1][1];
+				endfor;
+			endif;
+		else:
+			$selected4=0;
+			$option4[0][0]='-1';
+			$option4[0][1]='Box-FX are not active';
+		endif;
+		?>
+		<form name="form_module_edit" method="post" action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?type='.$type.'&id='.$task.'&view='.$view);?>"  enctype="multipart/form-data">
+		<table border="0" cellpadding="0" cellspacing="0" align="center">
+		  <tr>
+		    <td>
+			Nome:&nbsp;<input type="text" name="mod_nome" size="40" maxlength="255">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Link:&nbsp;<input type="text" name="mod_link" size="40" maxlength="255" value="<?=$path;?>">
+			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">
+			</td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="middle">
+				Tipo utilizador:&nbsp;
+				<select size="1" name="mod_user_type" class="form_input">
+					<?php
+					for ($i=0 ; $i<count($option2); $i++):
+						 if ($option2[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option2[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option2[$i][0];?>" <?php if ($selected==$i){?>selected<?php } ?>>
+							<?php echo $option2[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Self Skin:&nbsp;
+				<select size="1" name="mod_self_skin" class="form_input">
+					<?php
+					for ($i=0 ; $i<count($option3); $i++):
+						 if ($option3[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option3[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option3[$i][0];?>" <?php if ($selected3==$i){?>selected<?php } ?>>
+							<?php echo $option3[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>
+			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">
+			</td>
+		  </tr>
+		  <tr>
+		    <td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Skin:&nbsp;
+				<select size="1" name="skin" class="form_input">
+					<?php
+					$query_skin=$db->getquery("select cod_skin, ficheiro, active from skin");
+					$selected=0;
+					$option[0][0]='0';
+					$option[0][1]='-----------------';
+					if($query_skin[0][0]<>''):
+						for ($i=0;$i<count($query_skin);$i++):
+							$option[$i+1][0]=$query_skin[$i][0];
+							$option[$i+1][1]=$query_skin[$i][1];
+							if ($query_skin[$i][2]=='s'):
+								$selected=$i+1;
+							endif;
+						endfor;
+					endif;
+					for ($i=0 ; $i<count($option); $i++):
+						 if ($option[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option[$i][0];?>" <?php if ($selected==$i){?>selected<?php } ?>>
+							<?php echo $option[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Box Fx:&nbsp;
+				<select size="1" name="mod_box_fx" class="form_input" <?php if($box_fx=='installed') echo 'disabled="disabled"';?>>
+					<?php
+					for ($i=0 ; $i<count($option4); $i++):
+						 if ($option4[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option4[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option4[$i][0];?>" <?php if ($selected4==$i){?>selected<?php } ?>>
+							<?php echo $option4[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>				
+			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">
+			</td>
+		  </tr>
+		  <tr>
+		    <td align="center">
+				Display Name:<br>
+				ex.: en=calendar||pt=calend&aacute;rio<br>
+				<input type="text" name="mod_disp_name" size="70" maxlength="255"></td>
+		  </tr>
+		  <tr>
+		    <td height="15">
+			</td>
+		  </tr>
+		  <tr>
+		    <td align="center">
+			  <input name="add_mod" type="submit" value="Gravar" class="form_submit">
+			</td>
+		  </tr>
+		</table>
+		</form>
+		<?php
+
+};
+
+function edit_modules($globvars){
+if (isset($_POST['drop'])):
+	$mod=$_POST['drop'];
+else:
+	$mod=@$_GET['mod'];
+endif;
+$task=@$_GET['id'];
+include($globvars['site']['directory'].'kernel/staticvars.php');
+	if ($mod==''):
+		$query=$db->getquery("select cod_module, name, link from module order by link");
+		if ($query[0][0]<>''):
+			// a query tem que ser sempre nesta forma senao da erro! : select cod_module, name, link from module
+			$option1=build_drop_module($query,$task,$globvars['site_path']);
+			$selected=0;
+			for($i=0;$i<count($option1);$i++):
+				if ($option1[$i][0]==$mod):
+					$selected=$i;
+				endif;
+			endfor;
+		else:
+			$selected=0;
+			$option1[0][0]='none';
+			$option1[0][1]='----------------------';		
+		endif;
+		?>
+		<form method="post" action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?type=1&id='.$task);?>"  enctype="multipart/form-data">
+		<table border="0" cellpadding="0" cellspacing="0" align="center">
+		  <tr>
+			<td align="center" valign="middle">
+				<select size="1" name="drop" class="form_input">
+					<?php
+					for ($i=0 ; $i<count($option1); $i++):
+						 if ($option1[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option1[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option1[$i][0];?>" <?php if ($selected==$i){?>selected<?php } ?>>
+							<?php echo $option1[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <input name="view" type="submit" class="form_submit" value="View">
+			</td>
+		  </tr>
+		</table>
+		</form>
+		<?php
+	elseif ($mod<>''):
+		$query=$db->getquery("select name, link, published, cod_user_type,self_skin,box_code,display_name, cod_skin from module where cod_module=".$mod);
+		if ($query[0][2]=='s'):
+			$name='unpublish';
+			$value='UnPublish';
+		else:
+			$name='publish';
+			$value='Publish';
+		endif;
+		include($globvars['site']['directory'].'kernel/settings/ums.php');
+		if($ug_type=='static'):
+			$selected=0;
+			$option2[0][0]='-1';
+			$option2[0][1]='Without UMS';
+		else:
+			$query2=$db->getquery("select cod_user_type,name from user_type");
+			$selected=0;
+			$option2[0][0]='none';
+			$option2[0][1]='----------------------';
+			for ($i=1;$i<=count($query2);$i++):
+				$option2[$i][0]=$query2[$i-1][0];
+				$option2[$i][1]=$query2[$i-1][1];
+				if ($query2[$i-1][0]==$query[0][3]):
+					$selected=$i;
+				endif;
+			endfor;
+		endif;
+		$option3[0][0]='no';
+		$option3[0][1]='N&atilde;o';
+		$option3[1][0]='yes';
+		$option3[1][1]='Sim';
+		if ($query[0][4]=='no'):
+			$selected3=0;
+		else:
+			$selected3=1;
+		endif;
+		if (is_file($globvars['site']['directory'].'kernel/settings/layout.php')):
+			include($globvars['site']['directory'].'kernel/settings/layout.php');
+		else:
+			$box_fx='static';
+		endif;
+		if($box_fx=='installed'):
+			$query4=$db->getquery("select box_code,nome from box_effects where active='s'");
+			$selected4=0;
+			$option4[0][0]='-1';
+			$option4[0][1]='----------------------';
+			if ($query4[0][0]<>''):
+				for ($i=1;$i<=count($query4);$i++):
+					$option4[$i][0]=$query4[$i-1][0];
+					$option4[$i][1]=$query4[$i-1][1];
+				endfor;
+			endif;
+		else:
+			$selected4=0;
+			$option4[0][0]='-1';
+			$option4[0][1]='Box-FX are not active';
+		endif;
+		?>
+		<form name="form_module_edit" method="post" action="<?=session_setup($globvars,$globvars['site_path'].'/index.php?type=1&mod='.$mod.'&id='.$task.'&view='.@$_GET['view']);?>"  enctype="multipart/form-data">
+		<table border="0" cellpadding="0" cellspacing="0" align="center">
+		  <tr>
+		    <td><strong>C&oacute;digo na DB:
+            <?=$mod;?>
+		    </strong></td>
+	      </tr>
+		  <tr>
+		    <td>
+			Nome:&nbsp;<input type="text" name="mod_nome" size="40" maxlength="255" value="<?=$query[0][0];?>">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Link:&nbsp;<input type="text" name="mod_link" size="40" maxlength="255" value="<?=$query[0][1];?>">			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">			</td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="middle">
+				Tipo utilizador:&nbsp;
+				<select size="1" name="mod_user_type" class="form_input" <?php if($ug_type=='static') echo 'disabled="disabled"';?>>
+					<?php
+					for ($i=0 ; $i<count($option2); $i++):
+						 if ($option2[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option2[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option2[$i][0];?>" <?php if ($selected==$i){?>selected<?php } ?>>
+							<?php echo $option2[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Self Skin:&nbsp;
+				<select size="1" name="mod_self_skin" class="form_input">
+					<?php
+					for ($i=0 ; $i<count($option3); $i++):
+						 if ($option3[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option3[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option3[$i][0];?>" <?php if ($selected3==$i){?>selected<?php } ?>>
+							<?php echo $option3[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">			</td>
+		  </tr>
+		  <tr>
+		    <td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Skin:&nbsp;
+				<select size="1" name="skin" class="form_input">
+					<?php
+					$query_skin=$db->getquery("select cod_skin, ficheiro, active from skin");
+					$selected=0;
+					$option[0][0]='0';
+					$option[0][1]='-----------------';
+					if($query_skin[0][0]<>''):
+						for ($i=0;$i<count($query_skin);$i++):
+							$option[$i+1][0]=$query_skin[$i][0];
+							$option[$i+1][1]=$query_skin[$i][1];
+							if ($query_skin[$i][0]==$query[0][7]):
+								$selected=$i+1;
+							endif;
+						endfor;
+					endif;
+					for ($i=0 ; $i<count($option); $i++):
+						 if ($option[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option[$i][0];?>" <?php if ($selected==$i){?>selected<?php } ?>>
+							<?php echo $option[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				Box Fx:&nbsp;
+				<select size="1" name="mod_box_fx" class="form_input" <?php if($box_fx<>'installed') echo 'disabled="disabled"';?>>
+					<?php
+					for ($i=0 ; $i<count($option4); $i++):
+						 if ($option4[$i][0]=='optgroup'):
+						 ?>
+							<optgroup disabled label="<?=$option4[$i][1];?>"></optgroup>
+						 <?php
+						 else:
+							?>
+							<option value="<?php echo $option4[$i][0];?>" <?php if ($selected4==$i){?>selected<?php } ?>>
+							<?php echo $option4[$i][1]; ?></option>
+						<?php
+						endif;
+					endfor; ?>
+				</select>			</td>
+		  </tr>
+		  <tr>
+		    <td height="15">			</td>
+		  </tr>
+		  <tr>
+		    <td align="center">
+				Display Name:<br>
+				ex.: en=calendar||pt=calend&aacute;rio<br>
+				<input type="text" name="mod_disp_name" size="70" maxlength="255" value="<?=$query[0][6];?>"></td>
+		  </tr>
+		  <tr>
+		    <td height="15">			</td>
+		  </tr>
+		  <tr>
+		    <td align="center"><input name="<?=$name;?>" type="submit" value="<?=$value;?>" class="form_submit" />		      &nbsp;&nbsp&nbsp;
+			  <input name="mod_modify" type="submit" value="Gravar" class="form_submit">
+			  &nbsp;&nbsp&nbsp;
+		    <input name="mod_del" type="submit" value="Apagar" class="form_submit">			</td>
+		  </tr>
+		</table>
+		</form>
+		<?php
+	endif;
+
+
+};
+
+?>
+
+
+

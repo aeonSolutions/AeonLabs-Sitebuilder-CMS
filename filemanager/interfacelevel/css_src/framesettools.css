@@ -1,0 +1,65 @@
+body {
+	padding:0px;
+	margin:0px;
+	border:0px;
+}
+
+.body_vertical {
+	background-image: url(../images/back_frame_open_close_vertical.png); 
+	background-repeat:repeat-y;
+}
+
+.body_horizontal {
+	background-image: url(../images/back_frame_open_close_horizontal.png); 
+	background-repeat:repeat-x;
+}
+
+.tool_frame_vertical {
+	position:absolute; 
+	top:50%;
+	left:0px; 
+	width:7px;
+	height:48px;
+	background-color:#000000;
+}
+
+.tool_frame_horizontal {
+	position:absolute; 
+	top:0px; 
+	left:45%;
+	width:50px;
+	height:7px;
+	background-color:#000000;
+}
+
+.tool_frame_left {
+	background-image: url(../images/tool_frame_left.png) !important;
+}
+
+.tool_frame_left_on {
+	background-image: url(../images/tool_frame_left_on.png) !important;
+}
+
+.tool_frame_right {
+	background-image: url(../images/tool_frame_right.png) !important;
+}
+
+.tool_frame_right_on {
+	background-image: url(../images/tool_frame_right_on.png) !important;
+}
+
+.tool_frame_top {
+	background-image: url(../images/tool_frame_top.png) !important;
+}
+
+.tool_frame_top_on {
+	background-image: url(../images/tool_frame_top_on.png) !important;
+}
+
+.tool_frame_bottom {
+	background-image: url(../images/tool_frame_bottom.png) !important;
+}
+
+.tool_frame_bottom_on {
+	background-image: url(../images/tool_frame_bottom_on.png) !important;
+}

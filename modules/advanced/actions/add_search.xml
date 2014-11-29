@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>Construtec</ShortName>
+<Description>Pesquisar o Construtec</Description>
+<Url type="text/html"
+   template="http://www.construtec.org/index.php?spider={searchTerms}"
+/>  
+</OpenSearchDescription>
+

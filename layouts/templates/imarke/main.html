@@ -1,0 +1,58 @@
+<?php
+if($lang=='en'):
+	$trans[]='Contact us';
+	$trans[]='Login';
+	$trans[]="Research in Marketing and Strategy";
+elseif($lang=='pt'):
+	$trans[]='Contacto';
+	$trans[]='Area Reservada';
+	$trans[]="Investigação em Marketing e Estratégia";
+endif;
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{title}</title>
+<link rel="stylesheet" type="text/css" href="imarke/main.css" />
+<style type="text/css">
+<!--
+body {
+	background-color: #eeeeee;
+}
+-->
+</style></head>
+
+<body>
+<table width="791" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="bottom" colspan="2" bgcolor="#990000" style="background-image:url(imarke/header.jpg)" width="791" height="100"  /><font style="color:#FFE7DA; margin:0px 0px 0px 10px;font-weight:bold;font-size:120%;"><?=$trans[2];?></font></td>
+  </tr>
+  <tr>
+    <td align="right" colspan="2" bgcolor="#990000">{menu}
+    <div align="left">{lang}</div></td>
+  </tr>
+  
+  <tr>
+    <td width="200" valign="top" bgcolor="#FFFFFF" style="padding:5px 5px 5px 5px">
+	<?php
+    if(!isset($_GET['id'])):
+    ?>
+        <p align="center"><img src="imarke/minoo.jpg" width="120" /><br />
+          <br />
+    <?php
+    endif;
+    ?>
+    <h4><img src="http://www.imarke.moradadigital.com/layout/menu/layouts/horz_fire/seta.gif" /> <a href="<?=session($staticvars,'index.php?id=1');?>"><?=$trans[1];?></a></h4>
+    <h4><img src="http://www.imarke.moradadigital.com/layout/menu/layouts/horz_fire/seta.gif" /> <a href="<?=session($staticvars,'index.php?id=14&did=1');?>"><?=$trans[0];?></a></h4>
+    </p>
+    <p>{cell-1}</p>
+    </td>
+    <td valign="top" bordercolor="#000000" bgcolor="#FFFFFF" style="padding:5px 5px 5px 5px">{main}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" bgcolor="#990000"><font size="1" color="#ffffff" face="Verdana, Arial, Helvetica, sans-serif">&copy; 
+    2009</font></td>
+  </tr>
+</table>
+</body>
+</html>

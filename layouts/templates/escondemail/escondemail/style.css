@@ -1,0 +1,219 @@
+/* Leonardo Template CSS First Light Web Design 2007 */
+
+body {background: #000 url(escondemail/page_background.jpg) repeat;
+      color: #CCC;
+      font-size: 12px;
+	  font-family:Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;} /* Needed to center layout in old IE browsers. */
+
+acronym, abbr {cursor: help;
+               border-bottom: 1px dotted #334755;}
+
+h1, h2, h3, h4, h5, h6 {margin: 0 0 25px 0;
+                        padding: 0;}
+
+ul {list-style-type: square;}
+
+p {padding: 0;
+   margin: 0 0 25px 0;}
+
+img {border: 0;
+     margin: 0 0 25px 0;}
+       
+h1 {font-size: 34px;}
+h2 {font-size: 30px;}
+h3 {font-size: 26px;}
+h4 {font-size: 22px;}
+h5 {font-size: 18px;}
+h6 {font-size: 14px;}
+
+a {color: #334755; text-decoration: underline; background-color: #E7EAEB;}
+a:link {color: #334755; background-color: #E7EAEB;}
+a:visited {color: #5B7E97; background-color: #E7EAEB;}
+a:hover {color: #000; text-decoration: none; background-color: #E7EAEB;}
+            
+#container {width: 750px;
+            text-align: left;
+            padding: 5px 0 0;
+            margin: 10px auto;
+            background-color: #E7EAEB;
+            color: #334755;}
+
+#header {width: 738px;
+         height: 100px;
+         background: #E7EAEB url(escondemail/header_background.jpg) repeat-x;
+         color: #334755;
+         margin: 0 5px;
+         padding: 0;
+         border: 1px solid #334755;
+         position: relative;}
+
+#logo {float: left;
+       margin: 0 5px 0 0;
+       padding: 0;}
+
+#header h1 {margin: 36px 0 0 20px;
+            padding: 0;
+            font-size: 29px;
+            line-height: 30px;}
+
+#header h2 {margin: 1px 0 0 20px;
+            padding: 0;
+            font-size: 14px;
+            line-height: 15px;}
+
+/* Begin Search Form CSS */
+
+#search {position: absolute;
+         right: 20px;
+         top: 54px;}
+
+#search input.text {margin-right: 5px;
+                    vertical-align: middle;
+                    border: 2px outset #334755;
+                    padding: 0.25em;
+                    width: 135px;
+                    background-color: #E7EAEB;
+                    color: #334755;}
+
+#search input.submit
+ 
+{background: #829099 url(escondemail/menu_background.jpg) bottom left repeat-x;
+ color: #334755;
+ border: 2px outset #334755;
+ vertical-align: middle;
+ font-weight: bold;
+ padding: 0.4em;
+ font-size: 0.8em;}
+
+/* End Search Form CSS */
+
+/* Begin main navigation menu. */
+
+#menu {width: 738px;
+       height: 30px;
+       margin: 2px 5px 0;
+       background: #829099 url(escondemail/menu_background.jpg) repeat-x;
+       border: 1px solid #334755;}
+
+#menu ul {list-style-type: none;
+          text-align: center;
+          margin: 0;
+          padding: 0;}
+
+#menu li {display: inline;
+          margin: 0;
+          padding: 0;}
+
+#menu a {text-decoration: none;
+         height: 30px;
+         padding: 0 12px;
+         margin: 0;
+         line-height: 30px;
+         display: block !important;
+         float: left !important;
+         background: #829099 url(escondemail/button.jpg) repeat-x;
+         color: #334755;
+         font-size: 16px;
+         font-weight: bold;
+         border-left: 1px solid #334755;}
+
+#menu a.first {margin-left: 20px;}
+
+* html #menu a.first {margin-left: 10px} /* IE Hack */
+
+#menu a.last {border-right: 1px solid #334755;}
+
+#menu a:hover, #menu a#selected {background: #ACCBDF url(escondemail/button.jpg) repeat-x;
+                                 background-position: 0 -30px;
+                                 color: #000;}
+
+/* End main navigation menu. */ 
+
+/* The leftcolumn division is your main content division. */
+
+#leftcolumn {float: left;
+             width: 429px;
+             padding: 0;
+             margin: 0 0 0 25px;}
+
+* html #leftcolumn {margin: 0 0 0 13px} /* IE Hack */
+
+#rightcolumn {float: left;
+              width: 246px;
+              padding: 0;
+              margin: 0 0 0 25px;}
+
+#rightcolumn h5, #rightcolumn h6 {border-bottom: 1px solid #98A5AE;
+                                  padding: 0 0 2px 0;}
+
+#footer {width: 740px;
+         clear: both;
+         margin: 0 5px;
+         font-size: 11px;
+         text-align: center;}
+
+#footer p {padding: 5px 0;
+           margin: 0;}
+
+.left {float: left;
+       margin: 5px 5px 0 0;}
+
+.right {float: right;
+        margin: 5px 0 0 5px;}
+
+.justify {text-align: justify;}
+
+/* Begin topics list. It could instead be used for a list of links. */
+
+#topics {width: 246px;
+         margin-bottom: 25px;}
+
+#topics ul {margin: 0;
+            padding: 0;
+            list-style-type: none;}
+
+#topics li {margin: 0 0 1px;}
+
+#topics a {display: block;
+           padding: 3px 0 3px 10px;
+           width: 230px;
+           background: #829099 url(escondemail/topics_background.jpg) repeat-x;
+           color: #334755;
+           border-left: 5px solid #334755;
+           border-top: 1px solid #334755;
+           border-bottom: 1px solid #334755;
+           border-right: 1px solid #334755;
+           text-decoration: none;}
+
+#topics a:hover {border-left: 5px solid #4F6C7F;
+                 border-top: 1px solid #4F6C7F;
+                 border-bottom: 1px solid #4F6C7F;
+                 border-right: 1px solid #4F6C7F;
+                 background: #ACCBDF url(escondemail/topics_background.jpg) repeat-x;
+                 background-position: 0 -25px;
+                 color: #334755;}
+
+/* End topics list. */
+
+.date {float: right;
+       font-size: 11px;
+       margin: 7px 0 0;
+       font-style: italic;}
+
+.divider {width: 740px;
+          height: 11px;
+          clear: both;
+          margin: 2px 5px 0;
+          background: #E7EAEB url(escondemail/divider.jpg) repeat-x;
+          color: #334755;}
+
+.divider2 {margin: 0 0 25px;
+           border-bottom: 1px solid #98A5AE;}
+
+p.featured {border: 1px solid #98A5AE;
+            padding: 5px 5px 20px;
+            background: #E7EAEB url(escondemail/gradient.jpg) repeat-x;
+            color: #334755;}

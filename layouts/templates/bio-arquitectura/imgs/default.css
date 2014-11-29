@@ -1,0 +1,194 @@
+/* Open source XHTML/CSS template created by Olle Axelsson (http://olle-axelsson.se). Please leave credits. */
+
+body {
+	background-image: url(bg.png);
+	background-repeat: repeat-x;
+	background-color: #fff;
+	font-family: verdana, sans-serif;
+	font-size: .8em;
+	color: #7e7e7e;
+	padding: 0;
+	margin: 0;
+}
+
+a:link { text-decoration: none; color: #ab1a1a; padding: 0; margin: 0; }
+a:visited { text-decoration: none; color: #ab1a1a; padding: 0; margin: 0; }
+a:active { text-decoration: none; color: #ab1a1a; outline: 0; padding: 0; margin: 0; }
+a:hover { text-decoration: underline; color: #cd2020; outline: 0; padding: 0; margin: 0; }
+
+a.img:link { text-decoration: none; border: 0; }
+a.img:visited { text-decoration: none; border: 0; }
+a.img:active { text-decoration: none; border: 0; }
+a.img:hover { text-decoration: none; border: 0; }
+
+a.m:link { text-decoration: none; font-weight: bold; color: #383838; border-bottom: 0; padding: 0; margin: 0 10px 0 10px; }
+a.m:visited { text-decoration: none; font-weight: bold; color: #383838; border-bottom: 0; padding: 0; margin: 0 10px 0 10px; }
+a.m:active { text-decoration: none; font-weight: bold; color: #383838; border-bottom: 0; outline: 0; padding: 0; margin: 0 10px 0 10px; }
+a.m:hover { text-decoration: none; font-weight: bold; color: #bb1d1d; border-bottom: 0; outline: 0; padding: 0; margin: 0 10px 0 10px; }
+
+a.invsbl:link { text-decoration: none; color: #7e7e7e; border-bottom: 0; padding: 0; margin: 0; }
+a.invsbl:visited { text-decoration: none; color: #7e7e7e; border-bottom: 0; padding: 0; margin: 0; }
+a.invsbl:active { text-decoration: none; color: #7e7e7e; border-bottom: 0; outline: 0; padding: 0; margin: 0; }
+a.invsbl:hover { text-decoration: underline; color: #7e7e7e; border-bottom: 0; outline: 0; padding: 0; margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+	color:#000000;
+	font-family:"Trebuchet MS", Verdana, sans-serif;
+	font-variant:small-caps;
+}
+
+h1 {
+	font-size:36px;
+	vertical-align:middle;
+}
+
+h2 {
+	font-size:24px;
+	vertical-align:middle;
+}
+
+h3 {
+	font-size:18px;
+	vertical-align:middle;
+}
+
+h4 {
+	font-size:16px;
+	vertical-align:middle;
+}
+
+h5 {
+	font-size:14px;
+	vertical-align:middle;
+}
+
+h6 {
+	font-size:12px;
+	vertical-align:middle;
+}
+
+img { border: 0; }
+.img_text { float: left; border: 0; padding: 10px 12px 8px 0; }
+
+.in { text-indent: 12px; }
+
+form { padding: 0; margin: 0; }
+
+p { padding: 15px 0 0 0; margin: 0; }
+
+#ffscrollbarfix {
+	border: 0;
+	position: absolute;
+	top: 0;
+	bottom: -0.1px;
+	width: 1em;
+	z-index: -1;
+}
+
+#wrap { }
+
+.sheet {
+	width: 840px;
+	background-image: url(sheet.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	min-height: 520px;
+	height: auto !important;
+	height: 520px;
+	margin: 0 auto;
+}
+
+.banner {
+	padding: 56px 0 0 0;
+	margin: 0;
+	text-align: center;
+}
+
+.menu {
+	background-image: url(menu_bar.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding: 15px 20px 40px 20px;
+	margin: 0 auto;
+}
+
+	.menu_text { padding: 0 0  0 25px; }
+
+
+
+
+
+
+.content {
+	line-height: 160%;
+	width: 780px;
+	margin: 0 auto;
+}
+
+	.left {
+		float: left;
+		width: 20%;
+		margin: 5px 0 0 10px;
+	}
+
+		.box {
+			font-size: 89%;
+			margin: 0 0 15px 0;
+			padding: 10px;
+			background-repeat: repeat-x;
+			border: 1px solid #d4d4d4;
+		}
+
+	.right {
+		float: right;
+		width: 576px;
+		font-size: 91%;
+		margin: 0 16px 0 0;
+	}
+
+	.right_wrap {
+		float: right;
+		width: 592px;
+	}
+
+		.right_left {
+			float: left;
+			width: 411px;
+			font-size: 91%;
+			text-align: justify;
+		}
+
+		.right_right {
+			float: right;
+			width: 25%;
+			margin: 5px 9px 0 0;
+		}
+
+
+
+
+
+
+#footer {
+	clear: both;
+	width: 840px;
+	height: 120px;
+	font-size: 88%;
+	background-image: url(sheet_end.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin: 0 auto;
+}
+
+	.footer_left {
+		float: left;
+		width: 40%;
+		padding: 45px 0 0 40px;
+	}
+
+	.footer_right {
+		float: right;
+		width: 40%;
+		padding: 45px 40px 0 0;
+		text-align: right;
+	}

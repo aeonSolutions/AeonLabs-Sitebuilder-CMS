@@ -1,0 +1,131 @@
+body {
+	background-image:url(mundoindigo/bg.gif);
+	background-repeat:repeat-x;
+	color:#000000;
+	font-size : 11px;
+	font-weight:normal;
+	font-family:Verdana, Verdana, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+
+/*List defs*/
+UL {
+	MARGIN-TOP: 2px; MARGIN-BOTTOM: 6px
+}
+LI {
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	MARGIN-BOTTOM: 2px;
+}
+UL.ovr {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 2px;
+	MARGIN: 0px 0px 0px 16px;
+	PADDING-TOP: 3px;
+}
+UL.ovr LI {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 100%;
+	MARGIN: 6px 0px 0px;
+}
+
+/* text effects */
+.body_text{
+        color:#000000;
+        font-size : 11px;
+        font-weight:normal;
+		font-family:Verdana, Verdana, Helvetica, sans-serif;
+		TEXT-DECORATION: none;
+}
+.litle_text{
+        color: #000000;
+        font-size : 9px;
+        font-weight:normal;
+		font-family:Verdana;
+		TEXT-DECORATION: none;
+}
+.header_text_1{
+        color: #000000;
+        font-size : 12px;
+        font-weight : bolder;
+		font-family:Verdana;
+		TEXT-DECORATION: none;
+}
+
+.header_text_2{
+        color:#000000;
+        font-size : 13px;
+        font-weight : bolder;
+		font-family:Verdana;
+		TEXT-DECORATION: none;
+}
+
+.header_text_3{
+        color: #000000;
+        font-size : 14px;
+        font-weight : bolder;
+		font-family:Verdana;
+		TEXT-DECORATION: none;
+}
+
+.header_text_4{
+        color: #000000;
+        font-size : 16px;
+        font-weight : bolder;
+		font-family:Verdana;
+		TEXT-DECORATION: none;
+}/* end of text effects */
+
+/* forms definitions */
+.form_submit{
+	border-style : solid;
+	border-top-width : 1px;
+	border-right-width : 1px;
+	border-bottom-width : 1px;
+	border-left-width : 1px;		
+	color : #FFFFFF;
+	background: #2c4563;	
+   font-size : 9px;
+   font-weight : bolder;
+	font-family: normal normal Verdana;
+}
+
+.form_title{
+        color: #000000;
+        font-size : 9px;
+        font-weight : normal;
+        font-family: normal bolder Verdana;
+}
+
+.form_input{
+        color: #000000;
+        font-size : 9px;
+        font-weight : normal;
+}
+.form_text_area{
+        color: #000000;
+        font-size : 10px;
+        font-weight : normal;
+}
+
+.form_legend{
+        color: #000000;
+        font-size : 9px;
+        font-weight : normal;
+}
+/* end of form definitions */
+
+
+/* end of lateral modules table definitions  */
+
+.gradient{        
+	 color:#FF9933;
+}
+
+DIV#tiki-center {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	padding-bottom:10px;
+	padding-top:10px;
+}

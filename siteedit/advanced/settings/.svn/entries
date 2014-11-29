@@ -1,0 +1,115 @@
+9
+
+dir
+4
+svn://localhost/websites/sitebuilder/siteedit/Advanced/settings
+svn://localhost
+
+
+
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+misc.php
+file
+
+
+
+
+2008-07-16T16:02:19.208000Z
+e7debc36b31a0532436bc3dc6e64f302
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+cookies.php
+file
+
+
+
+
+2008-07-16T16:02:49.534000Z
+310114c9924482574ccbbe9223e3667e
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+start.php
+file
+
+
+
+
+2008-07-14T17:06:32.930000Z
+20e987b02acad91de06560110546ff13
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+paths.php
+file
+
+
+
+
+2008-07-16T16:02:12.762000Z
+89788730ffbe206270c7877131276f70
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+_notes
+dir
+
+lang.php
+file
+
+
+
+
+2008-07-16T16:02:34.327000Z
+15da6e83a2b40889938356b28d8ee6bd
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+smtp.php
+file
+
+
+
+
+2008-07-16T16:02:03.985000Z
+e117ff633b0c733c486d7db6f46fe86e
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+meta_tags.php
+file
+
+
+
+
+2008-07-16T16:02:27.096000Z
+eb441f069fdbe6ec0bea02390d1a9c99
+2008-07-24T16:46:47.690704Z
+4
+admin
+
+db.php
+file
+
+
+
+
+2008-07-16T16:02:42.046000Z
+5578fffd342c07f82b2f27af3b57032d
+2008-07-24T16:46:47.690704Z
+4
+admin
+

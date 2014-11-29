@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.1.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
+<script type="text/javascript">
+        $(function() {
+            $("#1, #2, #3").lavaLamp({
+                fx: "backout", 
+                speed: 700,
+                click: function(event, menuItem) {
+                   return true;
+                }
+            });
+        });
+    </script>
+<link href="lavalamp.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrap">
+  <div id="topbg"> </div>
+  <div id="wrap2">
+    <div id="topbar">
+      <h1 id="sitename">IPSW2009<span class="description">International PhD Student Workshop 2009</span></h1>
+      <div id="searchbar">
+        <form href="" class="searchform">
+          <p>
+            <input name="s" type="text" class="textbox" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" />
+          </p>
+        </form>
+      </div>
+    </div>
+    <div id="header">
+      <div id="headercontent"> </div>
+      <div id="topnav">
+        <ul class="lavaLampWithImage" id="1">
+		{menu}
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <div id="left">
+        <div class="post">
+          <div class="postheader"> </div>
+          <div class="postcontent">
+			{main}
+          </div>
+          <div class="postbottom"></div>
+        </div>
+      </div>
+      <div id="sidebar">
+		{cell-1} 
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="footer"> Copyright &copy; MoradaDigital.com | <a href="http://www.emailhide.org">Hide your email</a> | <a href="http://www.civil.uminho.pt/web/gmc">Constructions Materials Group</a> | <a href="http://www.uminho.pt">University of Minho</a>
+      <div class="credit"><a href="http://ramblingsoul.com">CSS Template</a> by ramblingsoul</div>
+    </div>
+  </div>
+  <div id="btmbg"> </div>
+</div>
+</body>
+</html>

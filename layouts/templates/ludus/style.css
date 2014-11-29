@@ -1,0 +1,145 @@
+/* CSS Template by gorotron */
+
+html, body {
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+body {
+	background-color:#EAEAEA;	
+}
+
+#container {
+	text-align:left;
+	margin:0 auto;
+	padding:5px 15px;
+	width:706px;
+	height:auto;
+	* height:100%;
+	background: url(ludus/bg2.gif) repeat-y;
+	font:11px Arial,Helvetica,sans-serif;
+	color:#666;
+}
+
+#banner {
+	margin:5px;
+	background:url(ludus/banner.jpg) no-repeat;
+	width:662px;
+	height:147px;
+	padding:10px 0 0 10px;
+}
+
+#dashed {
+	width:635px;
+	height:125px;
+	padding:5px;
+	border:1px dashed #FFF;
+} 
+
+#content {
+	width:676px;
+}
+
+#main {
+	width:485px;
+	min-height:auto;
+	float:left;
+	padding:10px;
+}
+
+#sideBar {
+	float:left;
+	width:141px;
+	min-height:250px;
+	height:auto;
+	float:left;
+	padding:10px 15px;
+	}
+
+#box {
+	width:126px;
+	height:auto;
+	padding:0 10px;
+	border:1px dotted #FC6;
+}
+
+#navBar {
+	list-style:none;
+	margin:5px 0;
+	padding:0;
+}
+
+#navBar a {
+	text-decoration:none;
+	padding:5px;
+	width:136px;
+	display:block;
+	color:#666;
+	border-bottom:1px dashed #FC6;
+}
+
+#navBar a:hover {
+	background:#DFF0F0;
+	color:#666;
+}
+
+#noLine a {
+	border-bottom:0;
+}
+
+h1 {
+	font-size:28px;
+	margin:0;
+	color:#000000;
+}
+
+h2 {
+	font-size:12px;
+	margin:0 0 0 5px;
+	color:#000000;
+}
+
+h3 {
+	font-size:16px;
+	margin:0;
+}
+
+.comments {
+	display:block;
+	width:485px;
+	text-align:right;
+	font-size:10px;
+	margin:0;
+	font-weight:normal;
+	color:#999;
+	padding:10px 0 15px;
+	border-top:1px dotted #FC6;
+}
+
+#clear {
+	clear:both;
+}
+
+p {
+	line-height:1.5em;
+}
+
+#copy, #copy a {
+	padding-top:5px;
+	text-decoration:none;
+	text-align:center;
+	font:10px Arial,Helvetica,sans-serif;
+	color:#666;
+}
+
+#copy a:hover {
+	color:#369;
+}
+
+#bottom {
+	margin:0 auto;
+	height:10px;
+	width:736px;
+	background:url(ludus/bg2c.gif) no-repeat;
+}

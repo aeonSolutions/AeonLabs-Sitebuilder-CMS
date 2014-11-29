@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="images/style.css" />
+</head>
+<body>
+<script type="text/javascript" >
+function $() {
+	var elements = new Array();
+	for (var i=0;i<arguments.length;i++) {
+		var element = arguments[i];
+		if (typeof element == 'string') element = document.getElementById(element);
+		if (arguments.length == 1) return element;
+		elements.push(element);
+	}
+	return elements;
+}
+
+var BoxHeights = {
+	maxh: 0,
+	boxes: Array(),
+	num: 0,
+	op_test: false,
+	equalise: function() {
+		this.num = arguments.length;
+		for (var i=0;i<this.num;i++) if (!$(arguments[i])) return;
+		this.boxes = arguments;
+		this.maxheight();
+		for (var i=0;i<this.num;i++) $(arguments[i]).style.height = this.maxh+"px";
+	},
+	maxheight: function() {
+		var heights = new Array();
+		for (var i=0;i<this.num;i++) {
+			if (navigator.userAgent.toLowerCase().indexOf('opera') == -1) {
+				heights.push($(this.boxes[i]).scrollHeight);
+			} else {
+				heights.push($(this.boxes[i]).offsetHeight);
+			}
+		}
+		heights.sort(this.sortNumeric);
+		this.maxh = heights[this.num-1];
+	},
+	sortNumeric: function(f,s) {
+		return f-s;
+	}
+}
+
+window.onload = function() {
+	BoxHeights.equalise('box','special');
+}
+</script>
+<div id="main">
+	<div id="logo_pic"><img  src="images/um_logo.jpg" alt="UM" width="70" height="35" /></div>
+  	<div id="logo">
+    	<strong>Universidade do Minho</strong><br />
+    	<span class="blue">Escola de Engenharia</span>
+  	</div>
+  	<ul id="menu">
+	{menu}
+  	</ul>
+  	<div id="intro_left">
+    	<p>&nbsp;</p>
+  	</div>
+  	<div id="intro_right">
+    	<p class="white">Department of Civil Engineering</p>
+    	<h1>Construction Materials Group</h1>
+    	<p>&nbsp;</p>
+  	</div>
+  	<div id="content_left">
+      <ul id="menu_left">
+		{cell-1}
+      </ul>
+	<div id="left">
+        <div class="box"></div>
+      </div>
+  </div>
+  <div id="right">
+    <div class="special">
+      {cell-2}
+    </div>
+  </div>
+  <div id="footer">
+    <p>Desenvolvido por <a href="http://www.migueltomas.moradadigital.com">Miguel Silva</a></p>
+    <br />
+  </div>
+</div>
+</body>
+</html>

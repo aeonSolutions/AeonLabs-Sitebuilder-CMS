@@ -1,0 +1,267 @@
+body {
+   margin:0;
+   font-family:"trebuchet MS";
+   font-size:11px;
+   color:#000000;
+   font-weight:normal;
+   background:url(images/top_bg.gif) repeat-x top;
+}
+h1,h2,h3,h4,p {
+   margin:0;
+   line-height:normal;
+   padding:0;
+}
+a {
+   text-decoration:none;   
+}
+#main {
+    margin: 0 auto;
+	width:963px;
+}
+#header{
+   height:92px;
+   background:url(images/food_top.jpg) no-repeat right;
+   margin-right:260px;
+}
+#header h1 {
+    font-size:30px;
+	float:left;
+	padding-top:35px;
+}
+#header h1 span.green{
+    font-size:30px;
+	color:#52B700;
+
+}
+#conts {
+   margin:0;
+   clear:both;
+}
+#leftCol {
+    width:738px;
+	float:left;
+	background:url(images/content_bg.gif) repeat-x top;
+	}
+	#topNav {
+	 margin: 0 auto;
+	 width:690px;
+	 margin-top:50px;
+	 height:75px;
+	}
+		#topNav a{
+	 margin: 0;
+	 font-size:18px;
+	 color:#000000;
+     padding-right:30px;
+	 height:60px;
+	 float:left;
+	 background:url(images/nav_line.gif) no-repeat  left top;
+	 padding-left:10px;
+	}
+			#topNav a span{
+			display:block;
+			font-size:11px;
+			text-align:justify;
+			line-height:1.0em;
+			width:100px;
+	}     
+	#topNav a.spacer1 {
+	width:90px;
+	}
+		#topNav a.spacer2 {
+	width:80px;
+	}
+			#topNav a.spacer3 {
+	width:80px;
+	}
+				#topNav a.spacer4 {
+	width:130px;
+	}
+					#topNav a.spacer5 {
+	width:100px;
+	}
+	#topNav a:hover{
+    color:#CE1C01;
+}
+	#banner {
+	background:url(images/banner_bg.jpg) no-repeat;
+	height:169px;
+	}
+	#banner h1 {
+	font-size:30px;
+	 color:#52B700;
+	 padding-left:20px;
+	 padding-top:30px;
+	 margin:0;
+	}
+		#banner p {
+         padding-left:20px;
+		 margin:0;
+		 display:block;
+		 width:290px;
+	}
+	#welcomeBlock-left {
+	float:left;
+	width:379px;
+	margin-top:20px;
+	margin-left:20px;
+	}
+	
+	#welcomeBlock-left h3 {
+	color:#D92001;
+	font-size:21px;
+	background:url(images/drop.gif) no-repeat left top;
+	height:30px;
+	padding-left:25px;
+	padding-top:5px;
+	
+	}
+	#welcomeBlock-left p.style1 {
+	  margin-left:25px;
+	  margin-top:10px;
+	}
+	#menu {
+	margin: 20px auto;
+	background:url(images/leftconts_bg.gif) no-repeat;
+	width:326px;
+	height:288px;
+	   }
+	   #menu h4{
+         padding-left:20px;
+		padding-top:10px;
+		color:#fff;
+		font-size:18px;
+		font-weight:normal;
+}
+	  
+	  .menuBox {
+		 margin-top:15px;
+		 height:85px;
+	  } 
+	  .menuBox .menu1 {
+	  background:url(images/menu1.gif) no-repeat;
+	  height:79px;
+	  float:left;
+	  width:141px;
+	  margin-left: 13px;
+	  }
+	  	  .menuBox .menu2 {
+	  background:url(images/menu2.gif) no-repeat;
+	  height:130px;
+	  float:left;
+	  width:141px;
+	  margin-left: 13px;
+	  }
+     .menuBox .menuText {
+	    width:171px;
+		float:left;
+	 }
+	      .menuBox .menuText p.head {
+         font-size:12px;
+         font-weight:bold;
+	 }
+	 #rightConts {
+	   float:left;
+	   width:200px;
+	 }
+	 	#rightConts h3 {
+	color:#D92001;
+	font-size:21px;
+	background:url(images/drop.gif) no-repeat left top;
+	height:30px;
+	padding-left:25px;
+	padding-top:5px;
+	
+	}
+	#onlineBlock-right {
+	    float:left;
+	    width:318px;
+		margin-top:20px;
+        padding-left:20px;
+	    background:url(images/right_conts_part.gif) repeat-y left;
+	}
+		#onlineBlock-right h3 {
+	color:#D92001;
+	font-size:21px;
+	background:url(images/online_booking.gif) no-repeat left top;
+	height:30px;
+	padding-left:30px;
+	padding-top:5px;
+	
+	}
+	.bookingBox {
+	   margin-top:25px;
+	}
+	
+#onlineBlock-right .bookingBox .box  {
+  height:25px;
+  clear:both;
+}
+#onlineBlock-right .bookingBox .box p,input {
+  float:left;
+}
+#onlineBlock-right .bookingBox .box p {
+
+ display:block;
+ width:62px;
+}
+#mesg {
+  margin:20px auto;
+  background:url(images/message.gif) no-repeat;
+  height:173px;
+  
+}
+#mesg p  {
+   display:block;
+   width:195px;
+   float:right;
+   padding-right:10px;
+}
+#mesg p strong {
+   font-size:12px;
+}
+
+
+	#rightCol {
+	  float:left;
+	  background:url(images/leftcol_bg.gif) no-repeat left 35px;	  
+	  width:225px; 
+	  height:787px;
+	}
+	.top {
+	margin-top:50px;
+	background:url(images/leftcol_leaveas.gif) no-repeat 20px top;
+	height:170px;
+   
+	}
+	.bottom {
+	  padding-left:15px;
+	   padding-right:15px;
+	}
+	  .bottom  h3{
+		background:url(images/welcomeImg2.gif) no-repeat left top;
+		padding-left:30px;
+		border-bottom:solid 3px #000;
+		height:20px;
+		 padding-bottom:5px;
+		 padding-top:5px;
+	}
+#footer {
+         background:url(images/footer_bg.gif) repeat-x;
+		 height:81px;
+		 clear:both;
+		 padding-top:20px;
+}
+	.footLinks {
+	 margin: 0 auto;
+	 width:660px;
+	}
+			.footLinks a{
+	 font-size:16px;
+	 color:#D92004;
+	 font-weight:bold;
+	 padding-right:35px;
+	}
+				.footLinks a:hover{
+      color:#FF3333;
+	}

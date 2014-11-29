@@ -1,0 +1,7 @@
+
+	<?PHP
+	// Meta Tags
+	$_SESSION['meta']['keywords']='';
+	$_SESSION['meta']['description']='';
+	$_SESSION['meta']['robots']='nofollow, index';
+	?>

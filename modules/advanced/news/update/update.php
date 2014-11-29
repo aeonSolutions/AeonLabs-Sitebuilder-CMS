@@ -1,0 +1,9 @@
+<?php
+$update[0]='admin';
+$update[1]='images';
+$update[2]='language';
+$update[3]='create_news.php';
+$update[4]='edit_news.php';
+$update[5]='main.php';
+$update[6]='system';
+?>

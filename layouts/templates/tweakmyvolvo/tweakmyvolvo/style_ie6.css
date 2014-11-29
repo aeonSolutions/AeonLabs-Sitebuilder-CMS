@@ -1,0 +1,30 @@
+
+#header #header-menu {
+	right: 0;
+	left: 34px;
+	width: 940px;
+}
+
+#header #header-menu ul {
+	float: right;
+}
+
+#header #header-menu ul li a {
+	float: left;
+}
+
+#header #header-menu ul li a:hover {
+	background: url("images/menu_left.gif") no-repeat;
+}
+
+#header #header-cats ul li a {
+	float: left;
+}
+
+#header #header-cats ul li a:hover {
+	background: url("images/cats_left.gif") no-repeat;
+}
+
+#sidebar ul li a {
+	height: 25px;
+}

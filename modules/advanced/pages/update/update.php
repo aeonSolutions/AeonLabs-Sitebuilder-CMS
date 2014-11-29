@@ -1,0 +1,10 @@
+<?php
+$update[0]='admin';
+$update[1]='images';
+$update[2]='system/errors';
+$update[3]='system/img';
+$update[4]='system/dtree.css';
+$update[5]='system/functions.php';
+$update[6]='update_db';
+$update[7]='main_iwfs.php';
+?>

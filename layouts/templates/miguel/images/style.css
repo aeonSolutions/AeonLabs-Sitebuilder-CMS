@@ -1,0 +1,109 @@
+body {
+	background: url("images/bkg.gif");
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 20px 0 20px 0;
+	color: #555555;
+}
+
+#wrapper {
+	text-align: left;
+	margin: 0px auto;
+	padding: 0px;
+	border:0;
+	width: 750px;
+	background: url("images/bg.gif") repeat-y;
+}
+
+
+#header {
+	background: url("images/head.jpg");
+	height: 205px;
+}
+#title {
+	font: bold 20px Georgia, Arial, Helvetica, sans-serif;
+	color:white;
+	padding: 70px 0 0 100px;
+}
+#content {
+	float: left;
+	width: 500px;
+	background: url("images/st.gif") top no-repeat;
+	padding: 34px 20px 0 25px;
+}
+
+#right { 
+	margin: 0;
+	float: left;
+	width: 165px;
+	height: 1%; /* Holly hack for Peekaboo Bug */
+	padding: 25px 20px 0 20px;
+	color: #555;
+}
+
+#footer {
+	clear: both;
+	background: #ffffff url("images/bgb.gif") bottom no-repeat;
+	height: 110px;
+	text-align: center;
+	padding: 20px 0 10px 0;
+}
+h1 {
+	font: bold 16px Georgia, Arial, Helvetica, sans-serif;
+	color: #660000;
+	background: url("images/bull0.gif") left no-repeat;
+	text-indent: 15px;
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+p {
+	padding: 0 0 5px 0;
+	margin: 0;
+}
+a:link, a:visited {
+	color: #600;
+	text-decoration: none;
+	}
+a:hover, a:visited:hover {
+	color: #966;
+	}
+#right h2 {
+	font: bold 12px Georgia, Arial, Helvetica, sans-serif;
+	padding: 10px 0 10px 0;
+	margin: 0;
+}
+ul {
+	margin:0;
+	padding: 10px 0 10px 20px;
+}
+ul li {
+	list-style: none;
+	line-height: 120%;
+	text-indent: 10px;
+	background: url(bull1.gif) left no-repeat;
+}
+#right ul {
+	margin:0;
+	padding:0 0 10px 0;
+}
+img {
+	border: none;
+}
+.hr {
+	background: url("images/hr.gif") bottom repeat-x;
+	border: none;
+	margin: 5px 0 5px 0;
+	padding: 0;
+	height: 2px;
+	font-size: 0px;
+	}
+#content p img {
+	float: left;
+	padding: 3px 5px 5px 0;
+}
+blockquote {
+	margin: 15px 30px 15px 10px;
+	padding-left: 20px;
+	border-left: 5px solid #ddd;
+	}
