@@ -21,7 +21,7 @@ check layouts/templates directory for a list of layouts examples
 
 
 ##Security
-Please report security issues to info@aeonlabs.de
+Please report security issues to info@aeonlabs.de make sure to include the error file or a full description of it.
 
 ##License
 Code is under the [Creative Commons ShareAlike Attribution international license](http://creativecommons.org/licenses/by-sa/4.0/); although some other licenses may apply.
