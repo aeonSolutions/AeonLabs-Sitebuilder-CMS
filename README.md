@@ -1,5 +1,5 @@
 ## FrameWork-Dev
-An experimental webpage platform with integrated CMS and back office control panel for multi webpage deployment and simultaneous management that let's you navigate pages by swiping or dragging as in a booklet, inspired by Flipboard.
+An experimental webpage platform with integrated CMS and back office control panel for multi webpage deployment and simultaneous management
 
 ## Version history
 
