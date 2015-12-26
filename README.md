@@ -1,9 +1,20 @@
 ## FrameWork-Dev
 An experimental webpage platform with integrated CMS and back office control panel for multi webpage deployment and simultaneous management
 
+## Milestones
+- upgrade authentication package for password less auth
+- add library for other types of databases
+- code clean up
+
 ## Version history
 Started upgrading to PHP 5.7
 
+## ToDo packages
+- Shopping cart
+- Payments terminal
+- Feedback rating system
+
+check modules directory for an up to date list of packages
 
 ##Security
 Please report security issues to info@aeonlabs.de
