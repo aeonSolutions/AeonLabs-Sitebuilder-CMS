@@ -4,6 +4,7 @@ An experimental webpage platform with integrated CMS and back office control pan
 ## Milestones
 - upgrade authentication package for password less auth
 - add library for other types of databases
+- add library for ajax support
 - code clean up
 
 ## Version history
@@ -15,6 +16,9 @@ Started upgrading to PHP 5.7
 - Feedback rating system
 
 check modules directory for an up to date list of packages
+## Layout & design
+check layouts directory for a list of layouts examples 
+
 
 ##Security
 Please report security issues to info@aeonlabs.de
