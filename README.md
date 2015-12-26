@@ -16,8 +16,8 @@ Started upgrading to PHP 5.7
 - Feedback rating system
 
 check modules directory for an up to date list of packages
-## Layout & design
-check layouts directory for a list of layouts examples 
+## Layout & Design
+check layouts/templates directory for a list of layouts examples 
 
 
 ##Security
