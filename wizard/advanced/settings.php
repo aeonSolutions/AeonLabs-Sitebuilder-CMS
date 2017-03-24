@@ -240,12 +240,12 @@ endif;
 //paths POST
 if(isset($_POST['save_paths'])):
 // store contents to local tmp file
-	if($_SESSION['error']['continue']==false):// first time here
+	if(!isset($_SESSION['error']['continue'])):// first time here
 		@unlink($globvars['local_root'].'tmp/paths.tmp');
 		$filename=$globvars['local_root'].'tmp/paths.tmp';
 		$_SESSION['paths']['site_path']=$_POST['local_root'];
 		$_SESSION['paths']['upload']=$_POST['upload'];
-		$tmp=$tmp[strlen($tmp)-1]<>'/' ? $tmp.'/' : $tmp;
+
 		$file_content="
 		<?PHP
 		// Paths Settings
@@ -274,7 +274,10 @@ if(isset($_POST['save_paths'])):
 	if ($loca_root[strlen($loca_root)-1]=='/' or $loca_root[strlen($loca_root)-1]=='\\'):
 		$loca_root=substr($loca_root,0,strlen($loca_root)-1);
 	endif;
-	if(!@mkdir($loca_root) and $_SESSION['error']['continue']==false):
+	
+	$loca_root=substr($globvars['local_root'],0,strpos($globvars['local_root'],"Sitebuilder")).$loca_root;
+	echo 'LINE 277:'.$loca_root;
+	if(!@mkdir($loca_root) and !isset($_SESSION['error']['continue'])):
 		$globvars['warnings']='Unable to create website main directory('.$loca_root.'). Already exists?';
 		add_error($globvars['warnings'],__LINE__,__FILE__);
 		$globvars['error']['critical']=true; // true if critical error occurs and code execution is not allowed

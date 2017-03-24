@@ -1,7 +1,7 @@
 <?php
 defined('ON_SiTe') or die('Direct Access to this location is not allowed.');
 $_SESSION['cerr']=array();
-if(!function_exists(strip_address)):
+if(!function_exists('strip_address')):
 	include_once($globvars['local_root'].'copyfiles/advanced/kernel/functions.php');
 endif;
 if(is_file($globvars['local_root'].'tmp/error_log_man.php')):

@@ -1,12 +1,1 @@
-<?php
-$datetime=array();
-$errormsg=array();
-$scriptname=array();
-$scriptlinenum=array();
-?>
-<?php
-$datetime[]='1403043251';
-$errormsg[]="Unable to setlocale to current charset:pt_PT";
-$scriptname[]='/home/boxvenue/public_html/sitebuilder/index.php';
-$scriptlinenum[]='115';
-?>
+<?php$datetime=array();$errormsg=array();$scriptname=array();$scriptlinenum=array();?><?php$datetime[]='1490366079';$errormsg[]="preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead";$scriptname[]='C:\xampp\htdocs\Sitebuilder\copyfiles\advanced\kernel\functions.php';$scriptlinenum[]='108';?><?php$datetime[]='1490366079';$errormsg[]="preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead";$scriptname[]='C:\xampp\htdocs\Sitebuilder\copyfiles\advanced\kernel\functions.php';$scriptlinenum[]='108';?><?php$datetime[]='1490366079';$errormsg[]="mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead";$scriptname[]='C:\xampp\htdocs\Sitebuilder\wizard\advanced\settings\db.php';$scriptlinenum[]='8';?><?php$datetime[]='1490366079';$errormsg[]="mysql_connect(): Access denied for user 'boxvenue_main'@'localhost' (using password: YES)";$scriptname[]='C:\xampp\htdocs\Sitebuilder\wizard\advanced\settings\db.php';$scriptlinenum[]='8';?>

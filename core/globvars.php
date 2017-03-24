@@ -81,5 +81,5 @@
 	endif;
 	
 	//session global vars
-	$_SESSION['error']['continue']==false;
+	$_SESSION['error']['continue']=false;
 ?>

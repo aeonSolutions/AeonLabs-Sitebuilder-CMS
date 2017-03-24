@@ -63,7 +63,7 @@ if (isset($_SESSION['user'])):
 		$globvars['error']['flag']=true; // true if error occur
 		$globvars['error']['type']='exclamation';// type in {exclamation, question, info, prohibited}
 		$globvars['warnings']='ERROR (Idx65) - not authenticated properly!';
-		include($local_root.'core/layout/login.php');
+		include($globvars['local_root'].'core/layout/login.php');
 		ob_end_flush();
 		exit;
 	endif;

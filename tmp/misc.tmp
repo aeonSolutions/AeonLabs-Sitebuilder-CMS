@@ -1,7 +1,7 @@
 
 	<?PHP
 	// General Settings
-	$_SESSION['misc']['site_name']="BoxVenue";
+	$_SESSION['misc']['site_name']="SurfSchool";
 	$_SESSION['misc']['site_version']="1.0";
-	$_SESSION['misc']['page_title']="Adversting";
+	$_SESSION['misc']['page_title']="Bem vindo Ã  escola de Surf";
 	?>

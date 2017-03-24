@@ -1,7 +1,7 @@
 
 		<?PHP
 		// Paths Settings
-		$_SESSION['paths']['site_path']='http://www.advertising.boxvenue.net';
-		$_SESSION['paths']['local_root']='/';
+		$_SESSION['paths']['site_path']='http://localhost/surf';
+		$_SESSION['paths']['local_root']='';
 		$_SESSION['paths']['upload']='upload';
 		?>
