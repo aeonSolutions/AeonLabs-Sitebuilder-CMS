@@ -7,7 +7,7 @@ if (isset($_POST['start'])):
 	unset($_SESSION['cookies']);
 	unset($_SESSION['smtp']);	
 	$_SESSION['settings']['start']=true;
-	if(is_file($globvars['local_root'].'tmp/smtp.tmp'))
+	if(is_file($globvars['local_root'].'tmp/smtp.tmp')):
 		unlink($globvars['local_root'].'tmp/smtp.tmp');
 	endif;
 	if(is_file($globvars['local_root'].'tmp/cookies.tmp')):

@@ -117,7 +117,7 @@ if(setlocale(LC_ALL,'pt_PT')):
 	$globvars['error']['type']='exclamation';// type in {exclamation, question, info, prohibited}
 endif;
 
-// funtion initialization
+// function initialization
 include_once($globvars['local_root'].'copyfiles/advanced/general/return_module_id.php');
 include_once($globvars['local_root'].'copyfiles/advanced/general/recursive_copy.php');
 include_once($globvars['local_root'].'copyfiles/advanced/kernel/functions.php'); 
@@ -357,6 +357,7 @@ if($globvars['site']['mode']=='wizard'):// wizard site builder
 			endfor;
 			$globvars['module']['location']=$globvars['wizard']['advanced'][$step]; // modules location to load
 			$menu_current=0;
+			echo 'LINE 360:'.$globvars['module']['location'].'<br/>';
 		else: // choose between simple or advanced website
 			$globvars['warnings']='<h3>Website Type</h3>';
 			$globvars['module']['location']='wizard/ws_selector.php';		
@@ -508,6 +509,7 @@ else: // edit site
 		endif;
 	endif;
 endif; // edit site
+
 if ($globvars['site']['directory']=='' and isset($globvars['site']['name']) and is_file($globvars['local_root'].'core/status.php')):
 	$globvars['error']['flag']=true; // true if error occur
 	$globvars['error']['type']='exclamation';// type in {exclamation, question, info, prohibited}
@@ -516,6 +518,7 @@ if ($globvars['site']['directory']=='' and isset($globvars['site']['name']) and 
 	ob_end_flush();
 	exit;
 endif;
+echo 'LINE 521:'.$globvars['module']['location'].'<br/>';
 if (isset($_GET['id'])):
 	if($_GET['id']=='error' ):
 		$globvars['error']['flag']=true; // true if error occur
@@ -544,8 +547,11 @@ if (isset($_GET['id'])):
 	endif;
 else: //unknown error  - redirect to main
 	$globvars['warnings']='<h3>Edit Website</h3>';
-	$globvars['module']['location']='siteedit/'.$globvars['site']['mode'].'/main.php';
+	// $globvars['module']['location']='siteedit/'.$globvars['site']['mode'].'/main.php';
+	echo 'LINE 548:'.$globvars['module']['location'];
 endif;
+
+
 if(isset($_GET['log'])):
 	// file location id
 	$globvars['module']['id']=isset($_GET['id']) ? $_GET['id'] : 0; // id
@@ -562,7 +568,6 @@ if(is_file(substr(__FILE__,0,strpos(__FILE__,"core")).'tmp/error_log_man.php')):
 	include_once(substr(__FILE__,0,strpos(__FILE__,"core")).'tmp/error_log_man.php');
 	$globvars['info']="Last page were generated ".count($scriptlinenum)." error(s). You should check'em out before continue!";
 endif;
-
 // layout
 include($globvars['local_root'].'core/layout/'.$globvars['layout']['main']);
 ob_end_flush();
