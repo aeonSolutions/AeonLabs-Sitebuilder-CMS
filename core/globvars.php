@@ -1,4 +1,10 @@
 <?php // Global variables environment
+	// returns the current hard drive directory not the root directory
+	$globvars['local_root']=substr(__FILE__,0,strpos(__FILE__,"core"));// local harddrive path with the final slash /
+
+	// load setup  config
+	include($globvars['local_root'].'core/config/config.php');
+
 //$globvars['']='';
 	//version
 	$globvars['version']='5.5';
@@ -40,22 +46,30 @@
 	$globvars['meta']['robots']='';
 	$globvars['meta']['page_title']='';
 	
+
+
 	// site main directory folders paths
-	// returns the current hard drive directory not the root directory
-	$globvars['local_root']=substr(__FILE__,0,strpos(__FILE__,"core"));// local harddrive path with the final slash /
-	$site_path=$_SERVER['REQUEST_URI'][strlen($_SERVER['REQUEST_URI'])-1]=='/' ? $_SERVER['REQUEST_URI'] : substr( $_SERVER['REQUEST_URI'], 0, strpos( $_SERVER['REQUEST_URI'], "sitebuilder" ));
+	if ($isOnRootAddress):
+		$site_path=$_SERVER['HTTP_HOST'];
+	else:
+		$site_path=$_SERVER['HTTP_HOST']."/sitebuilder";
+	endif;
+
 	if (strpos($site_path,"http://")===false):
-		$site_path='http://'.$_SERVER['HTTP_HOST'].$site_path;
+		$site_path='http://'.$site_path;;
 	endif;
-	if ($site_path[strlen($site_path)-1]=='/'):
-		$site_path=substr($site_path,0,strlen($site_path)-1);
-	endif;
+
+
 	//only for localhost addresses
 	if (strpos($site_path,"localhost")<>false  and strpos($site_path,"sitebuilder")===false):
 		$site_path.='/sitebuilder';
 	endif;
+
+
 	$globvars['site_path']=$site_path;// local harddrive path
 	$globvars['temp']=$globvars['local_root'].'/tmp';// local harddrive path
+
+
 
 	include_once($globvars['local_root']."copyfiles/advanced/general/db_class.php");
 

@@ -6,6 +6,7 @@
     <meta name="author" content="<?=$globvars['meta']['author']; ?>">
     <meta name="robots" content="<?=$globvars['meta']['robots']; ?>">
 
+
 	<link rel="stylesheet" href="<?=$globvars['site_path'];?>/core/layout/mdsbe/style.css" type="text/css" />
 	<title>WS-WaDE</title>
 </head>
@@ -14,7 +15,7 @@
 	<div id="content">
 		<div id="header">
 	  <div id="logo">
-				<h1><a href="#"><span class="title">WS-WaDE</span></a></h1>
+				<h1><a href="#"><span class="title">WS-WaDE </span></a></h1>
 			  <p>WebServer WebApp Development Environment</p>
 		  </div>
 		</div>		

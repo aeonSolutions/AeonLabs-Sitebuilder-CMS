@@ -42,7 +42,7 @@ font-size:1.2em;
 <body>
 <table width="100%" border="0" cellpadding="30">
   <tr>
-    <td><h1 style="color:#CCCCCC"><img src="<?=$globvars['site_path']?>/core/layout/login/logo.png" width="80" height="62" align="absmiddle" />Box Venue</h1></td>
+    <td><h1 style="color:#CCCCCC"><a href="http://www.aeonlabs.solutions">AeonLabs</a></h1></td>
     <td width="20" rowspan="2"><img src="<?=$globvars['site_path']?>/core/layout/login/vert_bar.png" width="20" height="500" /></td>
     <td align="right">&nbsp;</td>
   </tr>
