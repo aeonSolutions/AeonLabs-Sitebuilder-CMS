@@ -1,5 +1,5 @@
 ## FrameWork-Dev
-An experimental webpage platform with integrated CMS and webserver back office control panel for multi webpage deployment and simultaneous management
+An experimental platform with integrated CMS and back office control panel for websites deployment and management
 
 ## Milestones
 - upgrade authentication package for password less auth
