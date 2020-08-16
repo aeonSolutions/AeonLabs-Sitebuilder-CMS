@@ -1,4 +1,4 @@
-## FrameWork-Dev
+## SiteBuilder CMS
 An experimental platform with integrated CMS and back office control panel for websites deployment and management
 
 ## Milestones
