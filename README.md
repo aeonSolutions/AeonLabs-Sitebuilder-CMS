@@ -20,17 +20,18 @@ check modules directory for an up to date list of packages
 check layouts/templates directory for a list of layouts examples 
 
 
-##Security
+## Security
 Please report security issues to info@aeonlabs.de make sure to include the error file or a full description of it.
 
-##License
+## License
 Code is under the [Creative Commons ShareAlike Attribution international license](http://creativecommons.org/licenses/by-sa/4.0/); although some other licenses may apply on other developer's code.
 
-##View a demo
+## View a demo of the CMS
 To view a demonstration of the CMS platform [click here!](http://aeonlabs.solutions/sitebuilder/index.php)
-use the following credentials to login:
-username: admin
-password: 12345
+
+Use the following credentials to login:
+- username: admin
+- password: 12345
 
 
 [Visit AeonLabs!](http://www.aeonlabs.solutions)
