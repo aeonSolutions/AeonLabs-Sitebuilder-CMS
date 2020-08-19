@@ -2,7 +2,7 @@
 defined('ON_SiTe') or die('Direct Access to this location is not allowed.');
 include($globvars['site']['directory'].'kernel/staticvars.php');
 if(!is_dir($filename=$globvars['site']['directory'].'kernel/settings')):
-	mkdir($filename=$globvars['site']['directory'].'kernel/settings');
+	mkdir($filename=$globvars['site']['directory'].'kernel/settings', 0755, true);
 endif;
 $chg=false;
 if (isset($_POST['dl']) or isset($_POST['fl'])):
@@ -355,7 +355,7 @@ fclose($handle);
 function save_settings_menu($globvars){
 include($globvars['site']['directory'].'kernel/staticvars.php');
 if(isset($_POST['dm'])):
-	@mkdir($globvars['site']['directory'].'layout/menu');
+	@mkdir($globvars['site']['directory'].'layout/menu', 0755, true);
 	copyr($globvars['local_root'].'copyfiles/advanced/layout/menu',$globvars['site']['directory'].'/layout/menu',$globvars);
 	$file_content='
 	<?PHP
@@ -400,7 +400,7 @@ if(isset($_POST['nm'])):
 		$db->setquery("drop table menu, menu_layout");
 	endif;
 	if (is_dir($absolute_path.'/layout/menu')):
-		delr($absolute_path.'/layout/menu',$globvars);
+		delr($globvars,$absolute_path.'/layout/menu',$globvars);
 	endif;
 	$menu_type='static';		
 	$db->setquery("delete from module where link='menu/menu.php'");

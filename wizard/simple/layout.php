@@ -155,8 +155,8 @@ if (isset($_GET['type'])):
 			$handle = fopen($filename, 'a');
 			fwrite($handle, $file_content);
 			fclose($handle);
-			delr($_SESSION['directory'].'layout');
-			@mkdir($_SESSION['directory'].'layout');
+			delr($globvars,$_SESSION['directory'].'layout');
+			@mkdir($_SESSION['directory'].'layout', 0755, true);
 			echo $globvars['local_root'].'layouts/templates/'.$name[0].'-'.$_SESSION['directory'].'layout/'.$name[0];
 			if (is_dir($globvars['local_root'].'layouts/templates/'.$name[0])):
 				copyr($globvars['local_root'].'layouts/templates/'.$name[0],$_SESSION['directory'].'layout/'.$name[0],$globvars);
@@ -214,7 +214,7 @@ if (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4)://adi
 				endif;
 				$tmp=explode("/",$location);
 				if (!is_dir($globvars['local_root'].'/layouts/templates/'.$tmp[count($tmp)-2])):
-					mkdir($globvars['local_root'].'/layouts/templates/'.$tmp[count($tmp)-2]);
+					mkdir($globvars['local_root'].'/layouts/templates/'.$tmp[count($tmp)-2], 0755, true);
 				endif;
 				if (!$error):
 					$stream = fopen($location, "w");

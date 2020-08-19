@@ -18,8 +18,8 @@ elseif (isset($_POST['del_menu'])): // apagar menus
 	$name=explode(".",$menu_name[0][0]);
 	@unlink($staticvars['local_root'].'layout/menu/layouts/'.$menu_name[0][0]);
 	if (is_dir($staticvars['local_root'].'layout/menu/layouts/'.$name[0])):
-		delr($staticvars['local_root'].'layout/menu/layouts/'.$name[0]);
-		delr($staticvars['local_root'].'layout/menu/layouts/'.$name[0]);		
+		delr($globvars,$staticvars['local_root'].'layout/menu/layouts/'.$name[0]);
+		delr($globvars,$staticvars['local_root'].'layout/menu/layouts/'.$name[0]);		
 	endif;
 	$db->setquery("delete from menu_layout where cod_menu_layout='".$menu."'");
 	echo '<font class="body_text"> <font color="#FF0000">Skin Menu apagado</font></font>';

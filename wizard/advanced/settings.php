@@ -70,15 +70,17 @@ if (isset($_POST['start'])):
 			endif;
 		endif;
 		fclose($handle);
-		if(delr($globvars['site']['directory'].'email')==false):
-			$globvars['warnings']='Unable to delete file/directory:'.$globvars['site']['directory'].'email';
-			add_error($globvars['warnings'],__LINE__,__FILE__);
-			$globvars['error']['critical']=true; // true if critical error occurs and code execution is not allowed
-			$globvars['error']['type']='exclamation';// type in {exclamation, question, info, prohibited}
-			if($globvars['error']['critical']):
-				$_SESSION['cerr']=true;
-				header("Location: ".$_SERVER['REQUEST_URI']);
-				exit;
+    	if (is_dir($globvars,$globvars['site']['directory'].'email')):
+			if(delr($globvars,$globvars['site']['directory'].'email', $globvars)==false):
+				$globvars['warnings']='Unable to delete file/directory:'.$globvars['site']['directory'].'email';
+				add_error($globvars['warnings'],__LINE__,__FILE__);
+				$globvars['error']['critical']=true; // true if critical error occurs and code execution is not allowed
+				$globvars['error']['type']='exclamation';// type in {exclamation, question, info, prohibited}
+				if($globvars['error']['critical']):
+					$_SESSION['cerr']=true;
+					header("Location: ".$_SERVER['REQUEST_URI']);
+					exit;
+				endif;
 			endif;
 		endif;
 	endif;
@@ -104,7 +106,9 @@ if(isset($_POST['save_lang'])):
 	".'$'."_SESSION['language']['main']='".$_POST['main']."';
 	".'$'."_SESSION['language']['available']='".$_POST['available']."';
 	?>";
-	@unlink($filename);
+	if (is_file($filename)):
+		unlink($filename);
+	endif;
 	$handle = fopen($filename, 'a');
 	if(fwrite($handle, $file_content)==false):
 		$globvars['warnings']='Unable to write file:'.$filename;
@@ -131,7 +135,9 @@ if(isset($_POST['save_misc'])):
 	".'$'."_SESSION['misc']['site_version']=".'"'.utf8_encode($_POST['site_version']).'"'.";
 	".'$'."_SESSION['misc']['page_title']=".'"'.utf8_encode($_POST['page_title']).'"'.";
 	?>";
-	@unlink($filename);
+	if (is_file($filename)):
+		unlink($filename);
+	endif;
 	$handle = fopen($filename, 'a');
 	if(fwrite($handle, $file_content)==false):
 		$globvars['warnings']='Unable to write file:'.$filename;
@@ -241,7 +247,10 @@ endif;
 if(isset($_POST['save_paths'])):
 // store contents to local tmp file
 	if(!isset($_SESSION['error']['continue'])):// first time here
-		@unlink($globvars['local_root'].'tmp/paths.tmp');
+    	$delFile=$globvars['local_root'].'tmp/paths.tmp';
+		if (is_file($delFile)):
+			unlink($delFile);
+		endif;
 		$filename=$globvars['local_root'].'tmp/paths.tmp';
 		$_SESSION['paths']['site_path']=$_POST['local_root'];
 		$_SESSION['paths']['upload']=$_POST['upload'];
@@ -250,7 +259,7 @@ if(isset($_POST['save_paths'])):
 		<?PHP
 		// Paths Settings
 		".'$'."_SESSION['paths']['site_path']='".$_POST['site_path']."';
-		".'$'."_SESSION['paths']['local_root']='".$tmp."';
+		".'$'."_SESSION['paths']['local_root']='".$globvars['local_root']."'tmp';
 		".'$'."_SESSION['paths']['upload']='".$_POST['upload']."';
 		?>";
 		$handle = fopen($filename, 'a');
@@ -275,9 +284,9 @@ if(isset($_POST['save_paths'])):
 		$loca_root=substr($loca_root,0,strlen($loca_root)-1);
 	endif;
 	
-	$loca_root=substr($globvars['local_root'],0,strpos($globvars['local_root'],"Sitebuilder")).$loca_root;
+	$loca_root=substr($globvars['local_root'],0,strpos($globvars['local_root'],$globvars['directory_name'])).$loca_root;
 	echo 'LINE 277:'.$loca_root;
-	if(!@mkdir($loca_root) and !isset($_SESSION['error']['continue'])):
+	if(!@mkdir($loca_root, 0755, true) and !isset($_SESSION['error']['continue'], 0755, true)):
 		$globvars['warnings']='Unable to create website main directory('.$loca_root.'). Already exists?';
 		add_error($globvars['warnings'],__LINE__,__FILE__);
 		$globvars['error']['critical']=true; // true if critical error occurs and code execution is not allowed
@@ -317,14 +326,29 @@ if(isset($_POST['save_paths'])):
 
 	copyr($globvars['local_root'].'copyfiles/advanced/kernel',$loca_root.'/kernel',$globvars);
 	copyr($globvars['local_root'].'copyfiles/advanced/general',$loca_root.'/general',$globvars);
-	@mkdir($loca_root.'/layout');
-	@mkdir($loca_root.'/layout/templates');
-	@mkdir($loca_root.'/modules');
-	@mkdir($loca_root.'/tmp');
-	@mkdir($loca_root.'/sql');
-	@mkdir($loca_root.'/'.$_SESSION['paths']['upload']);
+	if (!is_dir($loca_root.'/layout')):
+		@mkdir($loca_root.'/layout', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/layout/templates')):
+		@mkdir($loca_root.'/layout/templates', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/modules')):
+		@mkdir($loca_root.'/modules', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/layout')):
+		@mkdir($loca_root.'/layout', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/tmp')):
+		@mkdir($loca_root.'/tmp', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/sql')):
+		@mkdir($loca_root.'/sql', 0755, true);
+	endif;
+	if (!is_dir($loca_root.'/'.$_SESSION['paths']['upload'])):
+		@mkdir($loca_root.'/'.$_SESSION['paths']['upload'], 0755, true);
+	endif;		
+
 	$_SESSION['directory']=$loca_root.'/';
-	
 endif;
 
 
@@ -456,7 +480,7 @@ if( is_file($globvars['local_root'].'tmp/misc.tmp') and is_file($globvars['local
 	endif;
 	fclose($handle);
 	if ($_SESSION['smtp']['enable']==false):
-		delr($globvars['site']['directory'].'email');
+		delr($globvars,$globvars['site']['directory'].'email');
 	else:
 		copyr($globvars['local_root'].'copyfiles/advanced/email',$globvars['site']['directory'].'email',$globvars);
 	endif;
@@ -525,7 +549,7 @@ else:
 	$_SESSION['misc']['site_name']='';	
 	//paths
 	$_SESSION['paths']['site_path']='http://www.';
-	$_SESSION['paths']['local_root']=substr(__FILE__,0,strpos(__FILE__,"sitebuilder"));
+	$_SESSION['paths']['local_root']=substr(__FILE__,0,strpos(__FILE__,$globvars['directory_name']));
 	$_SESSION['paths']['upload']='upload';
 	
 	// Meta tags
@@ -687,6 +711,7 @@ $to_do='style="border-bottom:#FF0000 solid 2px"';
 </table>
 <p></p><p></p>  <p></p>  
 <?php
+
 include($globvars['local_root'].'wizard/advanced/settings/'.$load[$set]);
 ?>
 

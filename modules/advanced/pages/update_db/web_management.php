@@ -63,12 +63,12 @@ elseif(isset($_POST['gravar_novo'])):
 	endif;
 elseif(isset($_POST['insert_cat'])):
 	if (is_dir($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name'])):
-		delr($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name']);
+		delr($globvars,$staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name']);
 	endif;
-	mkdir($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name']);
+	mkdir($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name'], 0755, true);
 	$lang=explode(";",$staticvars['language']['available']);
 	for($i=0;$i<count($lang);$i++):
-		mkdir($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name'].'/'.$lang[$i]);		
+		mkdir($staticvars['local_root'].'modules/pages/webpages/'.$_POST['cat_name'].'/'.$lang[$i], 0755, true);		
 	endfor;
 	echo '<font class="body_text"> <font color="#FF0000">Nova categoria Criada.</font></font><br>';		
 elseif (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4)://adicionar template ao directorio
@@ -94,7 +94,7 @@ elseif (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4):/
 	endif;
 	if (!is_dir($absolute_path.'/modules/pages/webpages/'.$only_dir_name)):
 			echo '<font class="body_text"> <font color="#FF0000">Directory created:'.$only_dir_name.'</font></font><br>';		
-		mkdir($absolute_path.'/modules/pages/webpages/'.$only_dir_name);
+		mkdir($absolute_path.'/modules/pages/webpages/'.$only_dir_name, 0755, true);
 	endif;
 
 	$dir_path = $absolute_path.'/modules/pages/webpages/'.$only_dir_name.'/';
@@ -125,7 +125,7 @@ elseif (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4):/
 				endif;
 				$tmp=explode("/",$location);
 				if (!is_dir($dir_path.$tmp[count($tmp)-2])):
-					mkdir($dir_path.$tmp[count($tmp)-2]);
+					mkdir($dir_path.$tmp[count($tmp)-2], 0755, true);
 				endif;
 				if (!$error):
 					$stream = fopen($location, "w");

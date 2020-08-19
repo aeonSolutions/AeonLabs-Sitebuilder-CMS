@@ -161,7 +161,7 @@ if($ex[0][0]==''):
 	if (is_dir($staticvars['local_root'].'modules/congressos/contents/'.$folder)):
 		@rmdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);
 	endif;
-	@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);	
+	@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);	
 	
 	$db->setquery("insert into congress_category set translations='en=mainpage||pt=mainpage', nome='mainpage', folder='mainpage'");
 	
@@ -170,7 +170,7 @@ if($ex[0][0]==''):
 	$ex=$db->getquery("select cod_category from congress_category where nome='mainpage'");
 	for($j=0;$j<count($lang);$j++):
 		$link=session($staticvars,$staticvars['site_path'].'/index.php?id='.$admin.'&cat='.$ex[0][0]);
-		mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j]);		
+		mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j], 0755, true);		
 		$file_content="<!-- mainpage -->".chr(13)."<h2>Main page</h2>
 		<?php
 		if(isset("."$"."_GET['lang'])):
@@ -203,9 +203,9 @@ for($i=1;$i<count($v);$i++):
 		$folder=substr($folder,0,$len);
 		if (is_dir($staticvars['local_root'].'modules/congressos/contents/'.$folder)):
 			$folder.= rand(1,1000);
-			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);
+			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);
 		else:
-			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);	
+			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);	
 		endif;
 		
 		$db->setquery("insert into congress_category set translations='en=".$v[$i]."||pt=', nome='".$v[$i]."', folder='".$folder."'");
@@ -215,7 +215,7 @@ for($i=1;$i<count($v);$i++):
 		$ex=$db->getquery("select cod_category from congress_category where nome='".$v[$i]."'");
 		for($j=0;$j<count($lang);$j++):
 			$link=session($staticvars,$staticvars['site_path'].'/index.php?id='.$admin.'&cat='.$ex[0][0]);
-			mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j]);		
+			mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j], 0755, true);		
 			$file_content="<!-- ".$v[$i]." -->".chr(13)."<h2>".$v[$i]."</h2>
 			<?php
 			if(isset("."$"."_GET['lang'])):

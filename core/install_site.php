@@ -763,7 +763,7 @@ endif;
 echo "<font class='body_text' color='#FF0000'>Success, Updates were changed!</font>";
 fclose($handle);
 // create  upload direcory
-mkdir($_POST['absolute_path'].'/'.$_POST['upload_dir_name']);
+mkdir($_POST['absolute_path'].'/'.$_POST['upload_dir_name'], 0755, true);
 };
 
 function create_tables($local_root){

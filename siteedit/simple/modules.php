@@ -38,7 +38,7 @@ if (isset($_POST['moduled'])):
 			$dirX=explode("/",$dir[$i]);
 			if (isset($_POST[$dirX[count($dirX)-1]])):
 				unset($_POST[$dirX[count($dirX)-1]]);
-				delr($globvars['site']['directory'].'modules/'.$dirX[count($dirX)-1]);
+				delr($globvars,$globvars['site']['directory'].'modules/'.$dirX[count($dirX)-1]);
 			endif;
 		endfor;
 		echo '</font></font>';

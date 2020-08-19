@@ -21,9 +21,9 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($staticvars['upload'].'/dictionary')):
-	mkdir($staticvars['upload'].'/dictionary');
+	mkdir($staticvars['upload'].'/dictionary', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/dictionary/images')):
-	mkdir($staticvars['upload'].'/dictionary/images');
+	mkdir($staticvars['upload'].'/dictionary/images', 0755, true);
 endif;
 ?>

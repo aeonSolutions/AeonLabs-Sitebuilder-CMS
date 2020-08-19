@@ -118,7 +118,7 @@ while ($row = mysql_fetch_row($result)):
 endwhile;
 mysql_free_result($result);
 if(!is_dir($globvars['site']['directory']."Sql")):
-	mkdir($globvars['site']['directory']."Sql");
+	mkdir($globvars['site']['directory']."Sql", 0755, true);
 endif;
 $file_name=$globvars['site']['directory']."Sql/".date("d-M-Y").".sql";
 @unlink($file_name);

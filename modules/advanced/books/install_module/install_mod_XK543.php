@@ -24,9 +24,9 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($staticvars['upload'].'/books')):
-	mkdir($staticvars['upload'].'/books');
+	mkdir($staticvars['upload'].'/books', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/books/images')):
-	mkdir($staticvars['upload'].'/books/images');
+	mkdir($staticvars['upload'].'/books/images', 0755, true);
 endif;
 ?>

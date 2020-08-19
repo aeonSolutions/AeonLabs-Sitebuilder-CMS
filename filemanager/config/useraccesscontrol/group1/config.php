@@ -1,6 +1,6 @@
 <?
 	$CONFIG['root_path'] = $globvars['local_root'];//This variable corresponds to the user files main directory, that will be showed by the filemanager application. Each action will be related with the subfiles of this folder. This path is relative to the "interfacelevel/" directory.
-	$CONFIG['root_path_name'] = 'sitebuilder';
+	$CONFIG['root_path_name'] = $globvars['directory_name'];
 	
 	$CONFIG['dir_templates_path'] = $globvars['local_root'].'filemanager/files/templates/dirs/';//This path is relative to the 'interfacelevel/' directory.
 	$CONFIG['dir_templates_path_name'] = 'templates';

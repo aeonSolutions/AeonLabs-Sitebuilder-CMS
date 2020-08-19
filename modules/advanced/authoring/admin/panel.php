@@ -3,8 +3,8 @@ if ( !defined('ON_SiTe')):
 echo 'not for direct access';
 exit;
 endif;
-if (is_file($staticvars['local_root'].'../sitebuilder/modules/advanced/authoring/admin/version.php')):
-	include($staticvars['local_root'].'../sitebuilder/modules/advanced/authoring/admin/version.php');
+if (is_file($staticvars['local_root'].'modules/advanced/authoring/admin/version.php')):
+	include($staticvars['local_root'].'modules/advanced/authoring/admin/version.php');
 	$server_version=$module_version;
 else:
 	$server_version='0.0';

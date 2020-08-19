@@ -34,12 +34,12 @@ if(isset($_GET['reset']) and is_file($local_root.'general/staticvars.php')):
 	$upload_dir_name=substr($upload_dir_name,$temp11+strlen("upload_dir_name")+2,abs($temp22-($temp11+strlen("upload_dir_name")+2)));
 	$upload_directory = $local_root.$upload_dir_name;
 	// all files in uploads directory
-	delr($upload_directory);
+	delr($globvars,$upload_directory);
 	@rmdir($upload_directory);
 	$msg.='Upload Directory deleted!<br>';
 	// all files in kernel/settings
-	delr($local_root.'kernel/settings');
-	@mkdir($local_root.'kernel/settings');
+	delr($globvars,$local_root.'kernel/settings');
+	@mkdir($local_root.'kernel/settings', 0755, true);
 	@unlink($local_root.'kernel/search_spiders.php');	
 	@unlink($local_root.'kernel/error_logging.php');	
 	@unlink($local_root.'kernel/stats_management.php');	
@@ -51,27 +51,27 @@ if(isset($_GET['reset']) and is_file($local_root.'general/staticvars.php')):
 	@unlink($local_root.'general/staticvars.php');	
 	$msg.='Configuration settings reseted!<br>';
 	// all files in layout/box_efects
-	delr($local_root.'layout/box_effects');
+	delr($globvars,$local_root.'layout/box_effects');
 	@rmdir($local_root.'/layout/box_effects');
 	// all files in layout/menu
-	delr($local_root.'layout/menu');
+	delr($globvars,$local_root.'layout/menu');
 	@rmdir($local_root.'/layout/menu');
 	// all files in layout/templates
-	delr($local_root.'layout/templates');
+	delr($globvars,$local_root.'layout/templates');
 	@rmdir($local_root.'/layout/templates');
-	@mkdir($local_root.'/layout/templates');
+	@mkdir($local_root.'/layout/templates', 0755, true);
 	$msg.='Layout files deleted!<br>';
 	// all files in modules
-	delr($local_root.'modules');
-	@mkdir($local_root.'modules');
+	delr($globvars,$local_root.'modules');
+	@mkdir($local_root.'modules', 0755, true);
 	$msg.='Modules deleted!<br>';
 	// all files in tmp 
-	delr($local_root.'tmp');
+	delr($globvars,$local_root.'tmp');
 	@mkdir($local_root.'tmp');
 	$msg.='Temporary files deleted!<br>';
 	// all files in sql 
-	delr($local_root.'sql');
-	@mkdir($local_root.'sql');
+	delr($globvars,$local_root.'sql');
+	@mkdir($local_root.'sql', 0755, true);
 	$msg.='Database backup files deleted!<br><br>';
 	$file_content='
 	<?PHP

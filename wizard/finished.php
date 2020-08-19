@@ -6,9 +6,9 @@ if(isset($_POST['cleanup'])):
 	unset($_SESSION['site']);
 	unset($_SESSION['type']);
 	unset($_SESSION['directory']);
-	delr($globvars['local_root'].'tmp');
+	delr($globvars,$globvars['local_root'].'tmp');
 	unlink($globvars['local_root'].'core/status.php');
-	mkdir($globvars['local_root'].'tmp');
+	mkdir($globvars['local_root'].'tmp', 0755, true);
 	header("Location: index.php?SID=".$_GET['SID']);
 	exit;
 endif;

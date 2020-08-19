@@ -20,11 +20,11 @@ elseif (isset($_POST['ums']) or isset($_POST['no_ums']))://alterar tipo de  ums
 			$db->setquery("drop table users, user_type");
 		endif;
 		if (is_dir($globvars['site']['directory'].'modules/authoring')):
-			delr($globvars['site']['directory'].'modules/authoring',$globvars);
+			delr($globvars,$globvars['site']['directory'].'modules/authoring',$globvars);
 			@rmdir($globvars['site']['directory'].'modules/authoring');
 		endif;
 		if (is_dir($globvars['site']['directory'].'modules/admin_panel')):
-			delr($globvars['site']['directory'].'modules/admin_panel',$globvars);
+			delr($globvars,$globvars['site']['directory'].'modules/admin_panel',$globvars);
 			@rmdir($globvars['site']['directory'].'modules/admin_panel');
 		endif;
 		$ug_type='static';		

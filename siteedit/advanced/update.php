@@ -9,7 +9,7 @@ endif;
 if(isset($_GET['update'])):
 	$module=$_GET['update'];
 	if($module=='editor'):
-		delr($globvars['site']['directory'].'editor');
+		delr($globvars,$globvars['site']['directory'].'editor');
 		copyr($globvars['local_root'].'copyfiles/editor',$globvars['site']['directory'].'editor',$globvars);
 		echo '<font class="body_text"> <font color="#FF0000">System Update Succeeded! ('.$module.')</font></font>';
 	elseif($module=='kernel'):
@@ -30,7 +30,7 @@ if(isset($_GET['update'])):
 		copyr($globvars['site']['directory'].'kernel/staticvars.php',$globvars['local_root'].'tmp/staticvars.php',$globvars);
 		copyr($globvars['site']['directory'].'kernel/features.php',$globvars['local_root'].'tmp/features.php',$globvars);
 		copyr($globvars['site']['directory'].'kernel/settings',$globvars['local_root'].'tmp/settings',$globvars);
-		delr($globvars['site']['directory'].'kernel');	
+		delr($globvars,$globvars['site']['directory'].'kernel');	
 		//make the update		
 		copyr($globvars['local_root'].'copyfiles/advanced/kernel',$globvars['site']['directory'].'kernel',$globvars);
 		copyr($globvars['local_root'].'tmp/settings',$globvars['site']['directory'].'kernel/settings',$globvars);
@@ -49,11 +49,11 @@ if(isset($_GET['update'])):
 		@unlink($globvars['local_root'].'tmp/features.php');
 		echo '<font class="body_text"> <font color="#FF0000">System Update Succeeded! ('.$module.')</font></font>';
 	elseif($module=='general'):
-		delr($globvars['site']['directory'].'general');
+		delr($globvars,$globvars['site']['directory'].'general');
 		copyr($globvars['local_root'].'copyfiles/advanced/general',$globvars['site']['directory'].'general',$globvars);
 		echo '<font class="body_text"> <font color="#FF0000">System Update Succeeded! ('.$module.')</font></font>';
 	elseif($module=='email'):
-		delr($globvars['site']['directory'].'email');
+		delr($globvars,$globvars['site']['directory'].'email');
 		copyr($globvars['local_root'].'copyfiles/advanced/email',$globvars['site']['directory'].'email',$globvars);
 		echo '<font class="body_text"> <font color="#FF0000">System Update Succeeded! ('.$module.')</font></font>';
 	elseif($module=='index'):
@@ -64,7 +64,7 @@ if(isset($_GET['update'])):
 		if(is_file($globvars['local_root'].'copyfiles/advanced/layout/update/update.php')):
 			include($globvars['local_root'].'copyfiles/advanced/layout/update/update.php');
 			for($h=0;$h<count($update);$h++):
-				delr($globvars['site']['directory'].'layout/'.$update[$h]);
+				delr($globvars,$globvars['site']['directory'].'layout/'.$update[$h]);
 				copyr($globvars['local_root'].'copyfiles/advanced/layout/'.$update[$h],$globvars['site']['directory'].'layout/'.$update[$h],$globvars);
 			endfor;
 			echo '<font class="body_text"> <font color="#FF0000">System Update Succeeded! ('.$module.')</font></font>';
@@ -75,7 +75,7 @@ if(isset($_GET['update'])):
 		if(is_file($globvars['local_root'].'modules/advanced/'.$module.'/update/update.php')):
 			include($globvars['local_root'].'modules/advanced/'.$module.'/update/update.php');
 			for($h=0;$h<count($update);$h++):
-				delr($globvars['site']['directory'].'modules/'.$module.'/'.$update[$h]);
+				delr($globvars,$globvars['site']['directory'].'modules/'.$module.'/'.$update[$h]);
 				copyr($globvars['local_root'].'modules/advanced/'.$module.'/'.$update[$h],$globvars['site']['directory'].'modules/'.$module.'/'.$update[$h],$globvars);
 			endfor;
 			echo '<font class="body_text"> <font color="#FF0000">Update Module Succeeded! ('.$module.')</font></font>';

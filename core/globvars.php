@@ -9,6 +9,9 @@
 	//version
 	$globvars['version']='5.5';
 	$globvars['name']='WS-WaDE';
+	$globvars['testing']=true;
+	$globvars['directory_name']="sitebuilder";
+
 	//language settings
 	$globvars['language']['main']='pt';// website main language
 	$globvars['language']['available']='en'; // available languages dot comma separated en;es;fr;
@@ -52,7 +55,7 @@
 	if ($isOnRootAddress):
 		$site_path=$_SERVER['HTTP_HOST'];
 	else:
-		$site_path=$_SERVER['HTTP_HOST']."/sitebuilder";
+		$site_path=$_SERVER['HTTP_HOST']."/".$globvars['directory_name'];
 	endif;
 
 	if (strpos($site_path,"http://")===false):
@@ -61,8 +64,8 @@
 
 
 	//only for localhost addresses
-	if (strpos($site_path,"localhost")<>false  and strpos($site_path,"sitebuilder")===false):
-		$site_path.='/sitebuilder';
+	if (strpos($site_path,"localhost")<>false  and strpos($site_path,$globvars['directory_name'])===false):
+		$site_path.='/'.$globvars['directory_name'];
 	endif;
 
 

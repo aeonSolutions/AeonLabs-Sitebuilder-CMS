@@ -28,9 +28,9 @@ include($globvars['local_root'].'core/functions.php');
 include($globvars['site']['directory'].'kernel/staticvars.php');
 include($globvars['local_root'].'core/functions/layout.php');
 
-delr($globvars['local_root'].'tmp/layout',$globvars);
+delr($globvars,$globvars['local_root'].'tmp/layout',$globvars);
 if(!is_dir($globvars['local_root'].'tmp/layout')):
-	mkdir($globvars['local_root'].'tmp/layout');
+	mkdir($globvars['local_root'].'tmp/layout', 0755, true);
 endif;
 copyr($globvars['site']['directory'].'layout/templates/'.$layout_dir[0], $globvars['local_root'].'tmp/layout/'.$layout_dir[0],$globvars);
 

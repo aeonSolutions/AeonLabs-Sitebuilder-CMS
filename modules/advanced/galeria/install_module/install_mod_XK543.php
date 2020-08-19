@@ -32,9 +32,9 @@ if (!is_dir($staticvars['upload'].'/galeria')):
 	mkdir($staticvars['upload'].'/galeria');
 endif;
 if (!is_dir($staticvars['upload'].'/galeria/images')):
-	mkdir($staticvars['upload'].'/galeria/images');
+	mkdir($staticvars['upload'].'/galeria/images', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/galeria/images/original')):
-	mkdir($staticvars['upload'].'/galeria/images/original');
+	mkdir($staticvars['upload'].'/galeria/images/original', 0755, true);
 endif;
 ?>

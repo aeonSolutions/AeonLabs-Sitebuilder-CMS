@@ -12,5 +12,7 @@
 <file name="functions.php" server="ftp.boxvenue.net//www/sitebuilder/" local="3485347279" remote="318763443878240172" Dst="-1" />
 <file name="error_log" server="ftp.boxvenue.net//www/sitebuilder/" local="3485275020" remote="318763443878171532" Dst="-1" />
 <file name="status.php" server="ftp.boxvenue.net//www/sitebuilder/" local="3485608500" remote="318763443878505012" Dst="-1" />
-<file name="globvars.php" server="92.204.68.8" local="132420609000000000" remote="132420284400000000" Dst="2" />
+<file name="globvars.php" server="92.204.68.8" local="132422395920000000" remote="132422071800000000" Dst="2" />
+<file name="log_viewer.php" server="92.204.68.8" local="132422427440000000" remote="132422103000000000" Dst="2" />
+<file name="install_site.php" server="92.204.68.8" local="132422414780000000" remote="132422090400000000" Dst="2" />
 </dwsync>

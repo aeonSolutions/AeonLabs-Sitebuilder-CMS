@@ -47,6 +47,11 @@ session_cache_expire (5);// 5 min
 session_cache_limiter('private');
 session_start();
 define('ON_SiTe', true);
+    header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
 
 // check session timeouts
 $filepath = ini_get('session.save_path').'/sess_'.session_id();    
@@ -76,6 +81,7 @@ else:
 	ob_end_flush();
 	exit;
 endif;
+
 // critial error found when processing Server code
 if(isset($_SESSION['cerr'])):
 	if($_SESSION['cerr']==true):
@@ -110,7 +116,7 @@ if($globvars['debugger']['enabled']==true or $_SESSION['debugger']==true):
 		$_SESSION['debugger']==array();
 	endif;
 endif;
-if(setlocale(LC_ALL,'pt_PT')):
+if(setlocale(LC_ALL,'en_EN')):
 	$globvars['warnings']="Unable to setlocale to current charset:".setlocale(LC_ALL,'pt_PT');
 	add_error($globvars['warnings'],__LINE__,__FILE__);
 	$globvars['error']['critical']=false; // true if critical error occurs and code execution is not allowed
@@ -556,7 +562,7 @@ if(isset($_GET['log'])):
 	$globvars['module']['location']="core/log_viewer.php";
 endif;		
 // include globalvars of the site to edit
-$globvars['site']['base']= substr($globvars['local_root'],0,strpos($globvars['local_root'],"sitebuilder"));
+$globvars['site']['base']= substr($globvars['local_root'],0,strpos($globvars['local_root'],$globvars['directory_name']));
 if (is_file($globvars['site']['directory'].'kernel/staticvars.php')):
 	include($globvars['site']['directory'].'kernel/staticvars.php');
 endif;

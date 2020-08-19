@@ -1,8 +1,8 @@
 <?php
 function build_page($globvars,$file){
 	include($globvars['local_root'].'copyfiles/advanced/general/recursive_copy.php');
-	delr($globvars['local_root'].'tmp');
-	@mkdir($globvars['local_root'].'tmp');
+	delr($globvars,$globvars['local_root'].'tmp');
+	@mkdir($globvars['local_root'].'tmp', 0755, true);
 
 	include_once($globvars['local_root'].'copyfiles/advanced/general/pass_generator.php');
 	$css_file_name=generate('5','No','Yes','No').'.css';

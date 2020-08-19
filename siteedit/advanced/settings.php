@@ -90,7 +90,7 @@ if(isset($_POST['save_paths'])):
 		$staticvars['site_path']=$_POST['site_path'];
 		$staticvars['local_root']=$tmp;
 		if (copyr($globvars['site']['directory'],$tmp,$globvars)):
-			delr($globvars['site']['directory']);
+			delr($globvars,$globvars['site']['directory']);
 		endif;
 	else:
 		$old_addr=explode("://",$staticvars['site_path']);
@@ -165,7 +165,7 @@ if(isset($_POST['save_paths'])):
 		$tmp2=stripslashes($_POST['upload']);
 		if ($staticvars['upload']<>$tmp2):
 			if (copyr($staticvars['upload'],$tmp2,$globvars)):
-				delr($staticvars['upload']);
+				delr($globvars,$staticvars['upload']);
 			endif;
 		endif;
 	endif;
@@ -196,7 +196,7 @@ if($write_file):
 	fwrite($handle, $file_content);
 	fclose($handle);
 	if ($staticvars['smtp']['enable']==false):
-		delr($globvars['site']['directory'].'general/email');
+		delr($globvars,$globvars['site']['directory'].'general/email');
 	else:
 		copyr($globvars['local_root'].'copyfiles/advanced/general/email',$globvars['site']['directory'].'general/email',$globvars);
 	endif;

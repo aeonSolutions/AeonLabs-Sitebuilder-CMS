@@ -9,8 +9,8 @@ if (isset($_POST['del_cat'])): // apagar
 	$ex=$db->getquery("select cod_category, nome, folder from congress_category where nome='".mysql_escape_string($_POST['nome'])."'");
 	if($ex[0][0]<>''):// apagar categoria
 		include($staticvars['local_root'].'general/recursive_copy.php');
-		 delr($staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
-		 @rmdir($staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
+		 delr($globvars,$staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
+		 @rmdir($staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2], 0755, true);
 		 $db->setquery("delete from congress_category where cod_category='".$ex[0][0]."'");
 		$db->setquery("delete from congress_category where cod_category='".$cat."'");
 		$db->setquery("delete from congress_menu where cod_category='".$cat."'");
@@ -25,19 +25,19 @@ elseif (isset($_POST['insert_cat']))://adicionar
 	$ex=$db->getquery("select cod_category, nome, folder from congress_category where nome='".mysql_escape_string($_POST['nome'])."'");
 	if($ex[0][0]<>''):// apagar categoria
 		include($staticvars['local_root'].'general/recursive_copy.php');
-		 delr($staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
+		 delr($globvars,$staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
 		 @rmdir($staticvars['local_root'].'modules/congressos/contents/'.$ex[0][2]);
 		 $db->setquery("delete from congress_category where cod_category='".$ex[0][0]."'");
 	endif;
 	if (!is_dir($staticvars['local_root'].'modules/congressos/contents')):
-		@mkdir($staticvars['local_root'].'modules/congressos/contents');
+		@mkdir($staticvars['local_root'].'modules/congressos/contents', 0755, true);
 	endif;
 	$folder=str_replace(" ","",normalize_chars(mysql_escape_string($_POST['nome'])));
 	$len= strlen($folder)>10 ? 10 : strlen($folder);
 	$folder=substr($folder,0,$len);
 	if (is_dir($staticvars['local_root'].'modules/congressos/contents/'.$folder)):
 		$folder.= rand(1,1000);
-		@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);
+		@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);
 	else:
 		@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);	
 	endif;
@@ -51,7 +51,7 @@ elseif (isset($_POST['insert_cat']))://adicionar
 	$ex=$db->getquery("select cod_category from congress_category where nome='".mysql_escape_string($_POST['nome'])."'");
 	for($i=0;$i<count($lang);$i++):
 		$link=session($staticvars,$staticvars['site_path'].'/index.php?id='.$admin.'&load=categories.php&cat='.$ex[0][0].'&goto='.$main);
-		mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$i]);		
+		mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$i], 0755, true);		
 		$filename=$staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$i].'/main.php';
 		$file_content="<!-- ".mysql_escape_string($_POST['nome'])." -->".chr(13)."<h2>".mysql_escape_string($_POST['nome'])."</h2>
 		<?php

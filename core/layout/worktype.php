@@ -2,7 +2,7 @@
 if (isset($_POST['edit'])):
 	$tmp=$_POST['website'];
 	$name=str_replace("[simple]","",str_replace("[advanced]","",$tmp));
-	$ndir=substr( $globvars['local_root'], 0, strpos( $globvars['local_root'], "sitebuilder" ) ).$name."/";
+	$ndir=substr( $globvars['local_root'], 0, strpos( $globvars['local_root'], $globvars['directory_name'] ) ).$name."/";
 	//code only for webhosting
 	if($name=='Boxvenue.net'):
 		$ndir='/home/boxvenue/public_html/';
@@ -64,7 +64,7 @@ if ($dir[0]<>''):
 	for($i=0;$i<count($dir);$i++):
 		$dirX=explode("/",$dir[$i]);
 		$install=true;
-		if (file_exists($globvars['local_root'].'../'.$dirX[count($dirX)-1].'/kernel/staticvars.php') and $dirX[count($dirX)-1]<>'sitebuilder'):
+		if (file_exists($globvars['local_root'].'../'.$dirX[count($dirX)-1].'/kernel/staticvars.php') and $dirX[count($dirX)-1]<>$globvars['directory_name']):
 			unset($staticvars);
 			include($globvars['local_root'].'../'.$dirX[count($dirX)-1].'/kernel/staticvars.php');
 			if (isset($staticvars['smtp']['enable'])):

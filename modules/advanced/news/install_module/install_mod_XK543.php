@@ -23,9 +23,9 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($upload_directory.'/news/images')):
-	@mkdir($upload_directory.'/news/images');
+	@mkdir($upload_directory.'/news/images', 0755, true);
 endif;
 if (!is_dir($upload_directory.'/news')):
-	@mkdir($upload_directory.'/news');
+	@mkdir($upload_directory.'/news', 0755, true);
 endif;
 ?>

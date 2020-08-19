@@ -16,6 +16,9 @@ if(is_file($globvars['local_root'].'tmp/error_log_man.php')):
 		echo chr('\t').$errormsg[$i].'<br />';
 		echo '<hr size="1">';
 	endfor;
+
+	echo "<pre>".@print_r(debug_backtrace(2),true)."</pre>";
+
 else:
 	$globvars['warnings']='Log file entries not found!';
 	$globvars['error']['type']='info';// type in {exclamation, question, info, prohibited}

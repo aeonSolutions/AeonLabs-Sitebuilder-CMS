@@ -68,9 +68,9 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($staticvars['upload'].'/items')):
-	mkdir($staticvars['upload'].'/items');
+	mkdir($staticvars['upload'].'/items', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/items/images')):
-	mkdir($staticvars['upload'].'/items/images');
+	mkdir($staticvars['upload'].'/items/images', 0755, true);
 endif;
 ?>

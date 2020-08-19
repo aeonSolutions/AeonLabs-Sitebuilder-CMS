@@ -305,7 +305,7 @@ class tinyimages {
 					}
 				} else {
 					
-					if(!file_exists(DIR.$this->folder.'/.thumbs')) mkdir(DIR.$this->folder.'/.thumbs');
+					if(!file_exists(DIR.$this->folder.'/.thumbs')) mkdir(DIR.$this->folder.'/.thumbs', 0755, true);
 					$thumb = DIR.$this->folder.'/.thumbs/100x100_'.$name.'.'.$ext;
 					
 					//$image = new files('tinyimages');
@@ -365,7 +365,7 @@ class tinyimages {
 			}
 		}
 		
-		if(mkdir(DIR.$this->folder.'/'.$input['name'])) { return array(); }
+		if(mkdir(DIR.$this->folder.'/'.$input['name']), 0755, true) { return array(); }
 		else {
 			if($input['lng']=='ru') {
 				array('error' => 'Не удалось создать папку');

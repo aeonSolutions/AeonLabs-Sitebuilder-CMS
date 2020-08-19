@@ -12,17 +12,17 @@ if(isset($_POST['submit'])):
 	if ($loca_root[strlen($loca_root)-1]=='/' or $loca_root[strlen($loca_root)-1]=='\\'):
 		$loca_root=substr($loca_root,0,strlen($loca_root)-1);
 	endif;
-	if(!@mkdir($loca_root) and !isset($_POST['resetdir'])):
+	if(!@mkdir($loca_root) and !isset($_POST['resetdir'], 0755, true)):
 		$error=true;
 		$msg='Unable to create website main directory. Already exists? ';
 	else:
-		if(!@mkdir($loca_root) and isset($_POST['resetdir'])):
-			delr($loca_root);
-			@mkdir($loca_root);
+		if(!@mkdir($loca_root) and isset($_POST['resetdir'], 0755, true)):
+			delr($globvars,$loca_root);
+			@mkdir($loca_root, 0755, true);
 		endif;
 		copyr($globvars['local_root'].'copyfiles/simple/kernel',$loca_root.'/kernel',$globvars);
-		mkdir($_POST['local_root'].'/layout');
-		mkdir($_POST['local_root'].'/modules');
+		mkdir($_POST['local_root'].'/layout', 0755, true);
+		mkdir($_POST['local_root'].'/modules', 0755, true);
 		@unlink($loca_root.'/index.php');
 		copy($globvars['local_root'].'copyfiles/simple/sa/index.php',$loca_root.'/index.php');
 		$_SESSION['directory']=$loca_root.'/';

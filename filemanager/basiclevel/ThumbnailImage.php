@@ -107,7 +107,7 @@ class ThumbnailImage {
 			if($basename != '.' && $basename != '..') {
 				$dir_dirname = dirname($dir_prefix_name);
 				if($this->createDirPrefix($dir_dirname))
-					return mkdir($dir_prefix_name);
+					return mkdir($dir_prefix_name, 0755, true);
 			}
 		}
 		return false;

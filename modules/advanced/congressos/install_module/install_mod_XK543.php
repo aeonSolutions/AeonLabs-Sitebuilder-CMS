@@ -176,28 +176,28 @@ $db->setquery("insert into user_type set name='gestorcongresso', cod_user_group=
 
 // create direcories needed
 if (!is_dir($staticvars['upload'].'/congress')):
-	@mkdir($staticvars['upload'].'/congress');
+	@mkdir($staticvars['upload'].'/congress', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/abstracts')):
-	@mkdir($staticvars['upload'].'/congress/abstracts');
+	@mkdir($staticvars['upload'].'/congress/abstracts', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/abstracts/reviews')):
-	@mkdir($staticvars['upload'].'/congress/abstracts/reviews');
+	@mkdir($staticvars['upload'].'/congress/abstracts/reviews', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/papers')):
-	@mkdir($staticvars['upload'].'/congress/papers');
+	@mkdir($staticvars['upload'].'/congress/papers', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/papers/reviews')):
-	@mkdir($staticvars['upload'].'/congress/papers/reviews');
+	@mkdir($staticvars['upload'].'/congress/papers/reviews', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/downloads')):
-	@mkdir($staticvars['upload'].'/congress/downloads');
+	@mkdir($staticvars['upload'].'/congress/downloads', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/system/logo')):
-	@mkdir($staticvars['upload'].'/congress/system/logo');
+	@mkdir($staticvars['upload'].'/congress/system/logo', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/congress/system/logo/original')):
-	@mkdir($staticvars['upload'].'/congress/system/logo/original');
+	@mkdir($staticvars['upload'].'/congress/system/logo/original', 0755, true);
 endif;
 
 ?>

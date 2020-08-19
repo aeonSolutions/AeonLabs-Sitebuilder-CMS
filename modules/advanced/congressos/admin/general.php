@@ -453,9 +453,9 @@ for($i=1;$i<count($v);$i++):
 		$folder=substr($folder,0,$len);
 		if (is_dir($staticvars['local_root'].'modules/congressos/contents/'.$folder)):
 			$folder.= rand(1,1000);
-			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);
+			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);
 		else:
-			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder);	
+			@mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder, 0755, true);	
 		endif;
 		
 		$db->setquery("insert into congress_category set translations='en=".$v[$i]."||pt=', nome='".$v[$i]."', folder='".$folder."'");
@@ -466,7 +466,7 @@ for($i=1;$i<count($v);$i++):
 		$ex=$db->getquery("select cod_category from congress_category where nome='".$v[$i]."'");
 		for($j=0;$j<count($lang);$j++):
 			$link=session($staticvars,$staticvars['site_path'].'/index.php?id='.$admin.'&load=categories.php&cat='.$ex[0][0].'&goto='.$main);
-			mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j]);		
+			mkdir($staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j], 0755, true);		
 			$file_content='<!-- '.$v[$i].' -->'.chr(13).'<h2>'.$v[$i].'</h2><h3 align="center">Para editar este ficheiro clique <a href="'.$link.'">aqui</a></h3>';
 			$filename=$staticvars['local_root'].'modules/congressos/contents/'.$folder.'/'.$lang[$j].'/main.php';
 			if (!$handle = fopen($filename, 'a')):

@@ -21,8 +21,8 @@ elseif (isset($_POST['del_skin'])): // apagar skins
 	$name=explode(".",$skin_name[0][0]);
 	@unlink($globvars['site']['directory'].'layout/templates/'.$skin_name[0][0]);
 	if (is_dir($globvars['site']['directory'].'layout/templates/'.$name[0])):
-		delr($globvars['site']['directory'].'layout/templates/'.$name[0]);
-		delr($globvars['site']['directory'].'layout/templates/'.$name[0]);		
+		delr($globvars,$globvars['site']['directory'].'layout/templates/'.$name[0]);
+		delr($globvars,$globvars['site']['directory'].'layout/templates/'.$name[0]);		
 	endif;
 	$db->setquery("delete from skin where cod_skin='".$skin."'");
 	$db->setquery("delete from skin_layout where cod_skin='".$skin."'");
@@ -50,7 +50,7 @@ elseif (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4):/
 	$tmp=explode(".",$name);	
 	$dir_path = $globvars['local_root'].'layouts/templates/'.$tmp[0].'/';
 	if (!is_dir(dirname($dir_path))):
-		mkdir(dirname($dir_path));
+		mkdir(dirname($dir_path), 0755, true);
 	endif;
 	
 	if (($link = zip_open($zip_path))):
@@ -63,7 +63,7 @@ elseif (isset($_FILES['add_template'])and $_FILES['add_template']['error']<>4):/
 				$extracted_file=normalize($extracted_file);
 				$path=dirname($dir_path.$extracted_file);
 				if (!is_dir(dirname($dir_path.$extracted_file))):
-					mkdir(dirname($dir_path.$extracted_file));
+					mkdir(dirname($dir_path.$extracted_file), 0755, true);
 				endif;
 				$stream = fopen($dir_path.$extracted_file, "w");
 				fwrite($stream, $data);
@@ -138,8 +138,8 @@ elseif (isset($_POST['add_skin_name']))://instalar skin (ja existente no directo
 	else://static
 		$name=explode(".",mysql_escape_string($_POST['add_skin_name']));
 		if (is_dir($globvars['site']['directory'].'layout/templates')):
-			delr($globvars['site']['directory'].'layout/templates');
-			@mkdir($globvars['site']['directory'].'layout/templates');
+			delr($globvars,$globvars['site']['directory'].'layout/templates', 0755, true);
+			@mkdir($globvars['site']['directory'].'layout/templates', 0755, true);
 		else:
 			mkdir($globvars['site']['directory'].'layout/templates');
 		endif;

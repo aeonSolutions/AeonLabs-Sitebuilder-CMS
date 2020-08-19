@@ -30,7 +30,7 @@ else:
     $fail = 0;
     $sizetotal = 0;
     $fifail = '';
-    if(!is_dir($dstdir)) mkdir($dstdir);
+    if(!is_dir($dstdir)) mkdir($dstdir, 0755, true);
     if($curdir = opendir($srcdir)):
         while($file = readdir($curdir)):
             if($file != '.' && $file != '..'):
@@ -77,7 +77,7 @@ else:
 endif;
 }
 
-function delr($source){
+function delr($globalvars, $source){
     if ($globalvars['debugger']===true):
 		echo '<font style=" font-size: 8px; font-family: Verdana; color: #FF0000">DEBUGGER ENABLED (copy functions) !<br><strong>srcdir:</strong> '.$srcdir.' <strong>To dstdir:</strong>'.$dstdir.'<br>';
 	endif;    // Simple del for a file
@@ -108,7 +108,7 @@ function delr($source){
             continue;
         endif;
         // Deep delete directories
-        delr($source."/".$entry);
+        delr($globvars,$source."/".$entry);
  		if (is_dir($source."/".$entry)):
 			@rmdir($source."/".$entry);
 		endif;

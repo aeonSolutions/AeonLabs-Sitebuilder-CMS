@@ -14,7 +14,7 @@ if (!include($staticvars['local_root'].'general/site_handler.php')):
 endif;
 if(isset($_POST['insert_cat'])):
 	if (is_dir($staticvars['local_root'].'modules/advertising/formats/'.$_POST['cat_name'])):
-		delr($staticvars['local_root'].'modules/advertising/formats/'.$_POST['cat_name']);
+		delr($globvars,$staticvars['local_root'].'modules/advertising/formats/'.$_POST['cat_name']);
 	endif;
 	echo '<font class="body_text"> <font color="#FF0000">Novo formato Criado.</font></font><br>';		
 endif;

@@ -7,6 +7,7 @@
 <file name="main.php" server="ftp.boxvenue.net//www/sitebuilder/" local="3485892842" remote="318763443878785752" Dst="-1" />
 <file name="login.php" server="ftp.boxvenue.net//www/sitebuilder/" local="3485890686" remote="318763443878783592" Dst="-1" />
 <file name="error.php" server="ftp.boxvenue.net//www/sitebuilder/" local="3485607430" remote="318763443878500332" Dst="-1" />
-<file name="main.php" server="92.204.68.8" local="132420593860000000" remote="132420269400000000" Dst="2" />
-<file name="login.php" server="92.204.68.8" local="132420636300000000" remote="132420312000000000" Dst="2" />
+<file name="main.php" server="92.204.68.8" local="132422362300000000" remote="132422038200000000" Dst="2" />
+<file name="login.php" server="92.204.68.8" local="132420776360000000" remote="132420451800000000" Dst="2" />
+<file name="worktype.php" server="92.204.68.8" local="132422399140000000" remote="132422074800000000" Dst="2" />
 </dwsync>

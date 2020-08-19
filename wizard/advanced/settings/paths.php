@@ -52,15 +52,15 @@ function cleanform ( form )
 <form name="form_paths" id="form_paths" class="form" action="<?=strip_address("set",$_SERVER['REQUEST_URI']).'&set=3';?>"  onsubmit="return checkform(this)" enctype="multipart/form-data" method="post">
   <p>
   <h4 id="t_url">URL Address</h4>
-<input onchange="cleanform(document.form_paths);" name="site_path" type="text" class="text" id="site_path" value="<?=$_SESSION['paths']['site_path'];?>" size="50">
+<input <?= $globvars['testing'] ? 'readonly="readonly"' :'';?>  onchange="cleanform(document.form_paths);" name="site_path" type="text" class="text" id="site_path" value="<?=$_SESSION['paths']['site_path']."aeonlabs.solutions/".$globvars['directory_name']."/testpage";?>" size="50">
     <br>
     <h4 id="t_root">Site location</h4>
-    <input onchange="cleanform(document.form_paths);" name="local_root" type="text" class="text" id="local_root" value="<?=$_SESSION['paths']['local_root'];?>" size="50">
+    <input <?= $globvars['testing'] ? 'readonly="readonly"' :'';?> onchange="cleanform(document.form_paths);" name="local_root" type="text" class="text" id="local_root" value="<?=$_SESSION['paths']['local_root'].$globvars['directory_name']."/testpage";?>" size="50">
     <br />
     <input type="checkbox" name="overwrite" id="overwrite" /> Overwrite folder if exists
 <br>
     <h4 id="t_upload">Uploads Directory</h4>
-    <input onchange="cleanform(document.form_paths);" name="upload" type="text" class="text" id="upload" value="<?=$_SESSION['paths']['upload'];?>" size="30">
+    <input <?= $globvars['testing'] ? 'readonly="readonly"' :'';?> onchange="cleanform(document.form_paths);" name="upload" type="text" class="text" id="upload" value="<?=$_SESSION['paths']['upload'];?>" size="30">
     <br>
     <br>
   </p>

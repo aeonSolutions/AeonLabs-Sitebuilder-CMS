@@ -7,7 +7,7 @@ class DirManager
 {
 	function createFile($file_name) {
 		 if(!empty($file_name) && !file_exists($file_name))
-			return mkdir($file_name);
+			return mkdir($file_name, 0755, true);
 		return true;
 	}
 	

@@ -78,12 +78,12 @@ $db->setquery("insert into user_type set name='revisor' cod_user_group='".$conte
 $db->setquery("insert into user_type set name='publisher' cod_user_group='".$auth_code."'");
 
 if (!is_dir($staticvars['upload'].'/publicacoes')):
-	@mkdir($staticvars['upload'].'/publicacoes');
+	@mkdir($staticvars['upload'].'/publicacoes', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/publicacoes/images')):
-	@mkdir($staticvars['upload'].'/publicacoes/images');
+	@mkdir($staticvars['upload'].'/publicacoes/images', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/publicacoes/ficheiros')):
-	@mkdir($staticvars['upload'].'/publicacoes/ficheiros');
+	@mkdir($staticvars['upload'].'/publicacoes/ficheiros', 0755, true);
 endif;
 ?>

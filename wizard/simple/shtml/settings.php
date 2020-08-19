@@ -6,13 +6,13 @@ if(isset($_POST['submit'])):
 	if ($loca_root[strlen($loca_root)-1]=='/' or $loca_root[strlen($loca_root)-1]=='\\'):
 		$loca_root=substr($loca_root,0,strlen($loca_root)-1);
 	endif;
-	if(!@mkdir($loca_root)):
+	if(!@mkdir($loca_root, 0755, true)):
 		$error=true;
 		$msg='Unable to create website main directory. Already exists?';
 	else:
 		copyr($globvars['local_root'].'copyfiles/simple/kernel',$loca_root.'/kernel',$globvars);
-		mkdir($_POST['local_root'].'/layout');
-		mkdir($_POST['local_root'].'/modules');
+		mkdir($_POST['local_root'].'/layout', 0755, true);
+		mkdir($_POST['local_root'].'/modules', 0755, true);
 		copy($globvars['local_root'].'copyfiles/simple/shtml/index.php',$loca_root.'/index.php');
 		$_SESSION['directory']=$loca_root.'/';
 		$filename=$loca_root.'/kernel/staticvars.php';
@@ -124,7 +124,7 @@ function cleanform ( form )
     <tr>
       <td align="right">&nbsp;</td>
       <td><h4 id="t_path">Site directory&nbsp;<br />
-          <input class="text" onchange="cleanform(document.form_settings)"  name="local_root" value="<?=substr( $globvars['local_root'], 0, strpos( $globvars['local_root'], "sitebuilder" ) );?>" type="text" id="local_root" tabindex="3" size="50" maxlength="255" />
+          <input class="text" onchange="cleanform(document.form_settings)"  name="local_root" value="<?=substr( $globvars['local_root'], 0, strpos( $globvars['local_root'], $globvars['directory_name'] ) );?>" type="text" id="local_root" tabindex="3" size="50" maxlength="255" />
       </h4>
 		   Local hard drive directory (Ex.: c:\www\mysite\)
       </td>

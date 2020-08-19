@@ -3,7 +3,7 @@ if ( !defined('ON_SiTe')):
 echo 'not for direct access';
 exit;
 endif;
-if (include($staticvars['local_root'].'../sitebuilder/modules/advanced/congressos/admin/version.php')):
+if (include($staticvars['local_root'].'modules/advanced/congressos/admin/version.php')):
 	$server_version=$module_version;
 else:
 	$server_version='0.0';

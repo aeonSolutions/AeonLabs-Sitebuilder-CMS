@@ -52,7 +52,7 @@ elseif ($type==2): // add new module
 		if (file_exists($local.'install_mod_XK543.php')):
 			include($globvars['local_root'].'general/recursive_copy.php');
 			include($local.'install_mod_XK543.php');
-			delr($absolute_path.'/modules/'.$module__path);
+			delr($globvars,$absolute_path.'/modules/'.$module__path);
 		endif;		
 		echo '<font class="body_text"> <font color="#FF0000">Novo Modulo Adicionado.</font></font>';
 	elseif($_POST['mod_user_type']=='none'):
@@ -80,7 +80,7 @@ elseif(isset($_POST['auto_delete'])):// automatic delete
 			$dirX=explode("/",$dir[$i]);
 			if (isset($_POST[$dirX[count($dirX)-1]])):
 				unset($_POST[$dirX[count($dirX)-1]]);
-				delr($globvars['site']['directory'].'modules/'.$dirX[count($dirX)-1]);
+				delr($globvars,$globvars['site']['directory'].'modules/'.$dirX[count($dirX)-1]);
 				@rmdir($globvars['site']['directory'].'modules/'.$dirX[count($dirX)-1]);
 				$query=$db->getquery("select cod_module from module where link regexp '".$dirX[count($dirX)-1]."'");
 				if($query[0][0]<>''):
@@ -169,7 +169,7 @@ elseif(isset($_POST['auto_install'])):// automatic install
 				// search for the install file
 				if (file_exists($globvars['local_root'].'/modules/advanced/'.$dirX[count($dirX)-1].'/install_module/install_mod_XK543.php')):
 					include_once($globvars['local_root'].'/modules/advanced/'.$dirX[count($dirX)-1].'/install_module/install_mod_XK543.php');
-					delr($globvars['site']['directory'].'/modules/'.$dirX[count($dirX)-1].'/install_module');
+					delr($globvars,$globvars['site']['directory'].'/modules/'.$dirX[count($dirX)-1].'/install_module');
 					@rmdir($globvars['site']['directory'].'/modules/'.$dirX[count($dirX)-1].'/install_module');
 				endif;
 				$install=true;
@@ -181,7 +181,7 @@ elseif(isset($_POST['auto_install'])):// automatic install
 					if ($editor_enabled==true):
 						copyr($globvars['local_root'].'/copyfiles/editor',$globvars['site']['directory'].'/editor',$globvars);
 						if (!is_dir($staticvars['upload'].'/editor/images')):
-							@mkdir($staticvars['upload'].'/editor/images');
+							@mkdir($staticvars['upload'].'/editor/images', 0755, true);
 						endif;
 					endif;
 				endif;
@@ -219,7 +219,7 @@ elseif (isset($_FILES['module_upload'])and $_FILES['module_upload']['error']<>4)
 		$module_name=explode(".",$name);
 		$module_name=$module_name[0];
 		if (!is_dir($absolute_path.'/modules/'.$module_name)):
-			mkdir($absolute_path.'/modules/'.$module_name);
+			mkdir($absolute_path.'/modules/'.$module_name, 0755, true);
 		endif;
 		if (($link = zip_open($zip_path))):
 			$message=0;
@@ -240,7 +240,7 @@ elseif (isset($_FILES['module_upload'])and $_FILES['module_upload']['error']<>4)
 					endif;
 					$tmp=explode("/",$location);
 					if (!is_dir($absolute_path.'/modules/'.$module_name.'/'.$tmp[count($tmp)-2])):
-						mkdir($absolute_path.'/modules/'.$module_name.'/'.$tmp[count($tmp)-2]);
+						mkdir($absolute_path.'/modules/'.$module_name.'/'.$tmp[count($tmp)-2], 0755, true);
 					endif;
 					if (@$stream = fopen($location, "w")):
 						fwrite($stream, $data);

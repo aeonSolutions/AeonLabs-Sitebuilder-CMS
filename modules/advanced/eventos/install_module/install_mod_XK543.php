@@ -37,9 +37,9 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($upload_directory.'/eventos')):
-	@mkdir($upload_directory.'/eventos');
+	@mkdir($upload_directory.'/eventos', 0755, true);
 endif;
 if (!is_dir($upload_directory.'/eventos/images')):
-	@mkdir($upload_directory.'/eventos/images');
+	@mkdir($upload_directory.'/eventos/images', 0755, true);
 endif;
 ?>

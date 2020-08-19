@@ -8,8 +8,8 @@ if ( !defined('ON_SiTe')):
 	exit;
 endif;
 
-if (is_file($staticvars['local_root'].'../sitebuilder/modules/advanced/admin_panel/version.php')):
-	include($staticvars['local_root'].'../sitebuilder/modules/advanced/admin_panel/version.php');
+if (is_file($staticvars['local_root'].'modules/advanced/admin_panel/version.php')):
+	include($staticvars['local_root'].'modules/advanced/admin_panel/version.php');
 	$server_version=$module_version;
 else:
 	$server_version='0.0';

@@ -60,12 +60,12 @@ endif;
 mysql_close($linker);
 // create direcories needed
 if (!is_dir($staticvars['upload'].'/produtos')):
-	mkdir($staticvars['upload'].'/produtos');
+	mkdir($staticvars['upload'].'/produtos', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/produtos/images')):
-	mkdir($staticvars['upload'].'/produtos/images');
+	mkdir($staticvars['upload'].'/produtos/images', 0755, true);
 endif;
 if (!is_dir($staticvars['upload'].'/produtos/images/original')):
-	mkdir($staticvars['upload'].'/produtos/images/original');
+	mkdir($staticvars['upload'].'/produtos/images/original', 0755, true);
 endif;
 ?>
