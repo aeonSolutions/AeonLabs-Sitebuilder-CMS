@@ -6,7 +6,7 @@ An experimental platform with integrated CMS and back office control panel for w
 [![](https://jitci.com/gh/aeonSolutions/Sitebuilder-CMS/svg)](https://jitci.com/gh/aeonSolutions/AeonLabs-Sitebuilder-CMS)
 ![](https://views.whatilearened.today/views/github/aeonSolutions/AeonLabs-Sitebuilder-CMS.svg)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/sitebuilder-cms/badge)](https://www.codefactor.io/repository/github/aeonsolutions/sitebuilder-cms)
+[![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
 
 ![GitHub all releases](https://img.shields.io/github/downloads/aeonSolutions/Sitebuilder-CMS/total?style=for-the-badge)
 ![GitHub search hit counter](https://img.shields.io/github/search/aeonSolutions/Sitebuilder-CMS/Sitebuilder-CMS?style=for-the-badge)
