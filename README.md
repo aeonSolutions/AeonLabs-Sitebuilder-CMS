@@ -2,9 +2,9 @@
 An experimental platform with integrated CMS and back office control panel for websites deployment and management
 
 
-[![1.0](https://jitpack.io/v/aeonSolutions/Sitebuilder-CMS.svg)](https://jitpack.io/#aeonSolutions/Sitebuilder-CMS)
-[![](https://jitci.com/gh/aeonSolutions/Sitebuilder-CMS/svg)](https://jitci.com/gh/aeonSolutions/Sitebuilder-CMS)
-![](https://views.whatilearened.today/views/github/aeonSolutions/Sitebuilder-CMS.svg)
+[![1.0](https://jitpack.io/v/aeonSolutions/Sitebuilder-CMS.svg)](https://jitpack.io/#aeonSolutions/AeonLabs-Sitebuilder-CMS)
+[![](https://jitci.com/gh/aeonSolutions/Sitebuilder-CMS/svg)](https://jitci.com/gh/aeonSolutions/AeonLabs-Sitebuilder-CMS)
+![](https://views.whatilearened.today/views/github/aeonSolutions/AeonLabs-Sitebuilder-CMS.svg)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/sitebuilder-cms/badge)](https://www.codefactor.io/repository/github/aeonsolutions/sitebuilder-cms)
 
