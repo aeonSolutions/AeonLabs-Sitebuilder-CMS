@@ -45,7 +45,7 @@ Use the following credentials to login:
 - password: 12345
 
 
-[Visit AeonLabs!](http://www.aeonlabs.solutions)
+[Visit AeonLabs!](http://www.aeonlabs.science)
 
 
 ### License
