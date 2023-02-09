@@ -1,14 +1,18 @@
-## SiteBuilder CMS
-An experimental platform with integrated CMS and back office control panel for websites deployment and management
-
-
-[![1.0](https://jitpack.io/v/aeonSolutions/Sitebuilder-CMS.svg)](https://jitpack.io/#aeonSolutions/AeonLabs-Sitebuilder-CMS)
-[![](https://jitci.com/gh/aeonSolutions/Sitebuilder-CMS/svg)](https://jitci.com/gh/aeonSolutions/AeonLabs-Sitebuilder-CMS)
 ![](https://views.whatilearened.today/views/github/aeonSolutions/AeonLabs-Sitebuilder-CMS.svg)
-
 [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
 
-![GitHub all releases](https://img.shields.io/github/downloads/aeonSolutions/Sitebuilder-CMS/total?style=for-the-badge)
+[![Telegram](https://img.shields.io/badge/join-telegram-blue.svg?style=for-the-badge)](https://t.me/+W4rVVa0_VLEzYmI0)
+ [![WhatsApp](https://img.shields.io/badge/join-whatsapp-green.svg?style=for-the-badge)](https://chat.whatsapp.com/FkNC7u83kuy2QRA5sqjBVg) 
+ [![Donate](https://img.shields.io/badge/donate-$-brown.svg?style=for-the-badge)](http://paypal.me/mtpsilva)
+ [![Say Thanks](https://img.shields.io/badge/Say%20Thanks-!-yellow.svg?style=for-the-badge)](https://saythanks.io/to/mtpsilva)
+![](https://views.whatilearened.today/views/github/aeonSolutions/PCB-Prototyping-Catalogue.svg)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#)
+[![GitHub Forks](https://img.shields.io/github/forks/aeonSolutions/PCB-Prototyping-Catalogue.svg?style=social&label=Fork&maxAge=2592000)](https://www.github.com/aeonSolutions/PCB-Prototyping-Catalogue/fork)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&label=Contributions&colorA=red&colorB=black	)](#)
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" data-canonical-src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="30" />](https://www.buymeacoffee.com/migueltomas)
+
+## SiteBuilder CMS
+An experimental platform with integrated CMS and back office control panel for websites deployment and management
 
 ## Milestones
 - upgrade authentication package for password less auth
