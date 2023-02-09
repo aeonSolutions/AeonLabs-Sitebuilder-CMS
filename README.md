@@ -9,8 +9,6 @@ An experimental platform with integrated CMS and back office control panel for w
 [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
 
 ![GitHub all releases](https://img.shields.io/github/downloads/aeonSolutions/Sitebuilder-CMS/total?style=for-the-badge)
-![GitHub search hit counter](https://img.shields.io/github/search/aeonSolutions/Sitebuilder-CMS/Sitebuilder-CMS?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/aeonSolutions/Sitebuilder-CMS?style=for-the-badge)
 
 ## Milestones
 - upgrade authentication package for password less auth
