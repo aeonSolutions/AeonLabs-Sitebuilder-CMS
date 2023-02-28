@@ -49,9 +49,12 @@ Use the following credentials to login:
 
 
 ### License
-Copyright 2021 Miguel Tomás under GPL license
+
+Before proceeding to download any of AeonLabs software solutions for open-source development and/or PCB hardware electronics solutions for open-hardware development make sure you are choosing the right license for your project. See [AeonLabs Solutions for Open Hardware & Source Development](https://github.com/aeonSolutions/PCB-Prototyping-Catalogue/wiki/AeonLabs-Solutions-for-Open-Hardware-&-Source-Development) for more information. 
+
 
 =====================================================================================
+
 ### Share this release
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fjitpack.io%2F&ref_src=twsrc%5Etfw&text=Version%201.0%20of%20AeonLabs-Common-Libraries-for-Android%20is%20now%20available%20on%20&tw_p=tweetbutton&url=http%3A%2F%2Fjitpack.io%2F%23aeonSolutions%2FAeonLabs-Common-Libraries-for-Android%2F1.0)
 
