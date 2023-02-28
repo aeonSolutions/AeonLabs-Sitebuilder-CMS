@@ -35,7 +35,9 @@ check layouts/templates directory for a list of layouts examples
 Please report security issues to mtpsilva@gmail.com make sure to include the error file or a full description of it.
 
 ## License
-Code is under the [Creative Commons ShareAlike Attribution international license](http://creativecommons.org/licenses/by-sa/4.0/); although some other licenses may apply on other developer's code.
+
+Before proceeding to download any of AeonLabs software solutions for open-source development and/or PCB hardware electronics solutions for open-hardware development make sure you are choosing the right license for your project. See [AeonLabs Solutions for Open Hardware & Source Development](https://github.com/aeonSolutions/PCB-Prototyping-Catalogue/wiki/AeonLabs-Solutions-for-Open-Hardware-&-Source-Development) for more information. 
+
 
 ## View a demo of the CMS
 To view a demonstration of the CMS platform [click here!](http://aeonlabs.solutions/sitebuilder/index.php)
