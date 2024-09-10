@@ -9,7 +9,14 @@
 [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" data-canonical-src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="30" />](https://www.buymeacoffee.com/migueltomas)
 
  **Navigation** | [AeonLabs Main Index](https://github.com/aeonSolutions/aeonSolutions/blob/main/aeonSolutions-Main-Index.md)  >> [Open Source Code Software](https://github.com/aeonSolutions/aeonlabs-open-software-catalogue)    >>  Site Builder
- 
+
+ <p align="right">
+   <img height="25" src="https://github.com/aeonSolutions/aeonSolutions/blob/main/media/language-icon.png"> 
+ <a href="https://github-com.translate.goog/aeonSolutions/aeonlabs-open-software-catalogue?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp">Change Language</a> <br>
+Last update: 10-09-2024 <br>
+<sub> <a href="https://www.rapidtables.com/convert/number/hex-to-binary.html?x=64">HEX to Bin Conveter</a> </sub>
+</p>
+
 ## SiteBuilder CMS [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
 An experimental platform with integrated CMS and back office control panel for website deployment and management
 
