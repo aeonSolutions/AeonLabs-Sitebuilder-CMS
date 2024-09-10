@@ -9,15 +9,15 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&label=Contributions&colorA=red&colorB=black	)](#)
 [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" data-canonical-src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="30" />](https://www.buymeacoffee.com/migueltomas)
 
- **Navigation** | [AeonLabs Main Index](https://github.com/aeonSolutions/aeonSolutions/blob/main/aeonSolutions-Main-Index.md)  >> [Open Source Code Software](https://github.com/aeonSolutions/aeonlabs-open-software-catalogue)    >>  Site Buider
+ **Navigation** | [AeonLabs Main Index](https://github.com/aeonSolutions/aeonSolutions/blob/main/aeonSolutions-Main-Index.md)  >> [Open Source Code Software](https://github.com/aeonSolutions/aeonlabs-open-software-catalogue)    >>  Site Builder
  
 ## SiteBuilder CMS [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
-An experimental platform with integrated CMS and back office control panel for websites deployment and management
+An experimental platform with integrated CMS and back office control panel for website deployment and management
 
 ## Milestones
-- upgrade authentication package for password less auth
+- upgrade authentication package for password-less auth
 - add library for other types of databases
-- add library for ajax support
+- add a library for Ajax support
 - code clean up
 
 ## Version history
@@ -28,9 +28,9 @@ Started upgrading to PHP 5.7
 - Payments terminal
 - Feedback rating system
 
-check modules directory for an up to date list of packages
+check the modules directory for an up-to-date list of packages
 ## Layout & Design
-check layouts/templates directory for a list of layouts examples 
+check layouts/templates directory for a list of layout examples 
 
 
 ## Security
@@ -39,7 +39,7 @@ Please report security issues to mtpsilva@gmail.com make sure to include the err
 ## View a demo of the CMS
 To view a demonstration of the CMS platform [click here!](http://aeonlabs.solutions/sitebuilder/index.php) (mo longer working)
 
-Use the following credentials to login:
+Use the following credentials to log in:
 - username: admin
 - password: 12345
 
@@ -67,7 +67,7 @@ You can also follow my GitHub Profile to stay updated about my latest projects: 
 <br>
 
 ### Be supportive of my dedication and work towards technology education and buy me a cup of coffee
-The PCB Desgin Files i provide here for anyone to use are free. If you like this Smart Device or use it, please consider buying me a cup of coffee, a slice of pizza or a book to help me study, eat and think new PCB design files.
+The PCB Design Files I provide here for anyone to use are free. If you like this Smart Device or use it, please consider buying me a cup of coffee, a slice of pizza or a book to help me study, eat and think new PCB design files.
 
 <p align+"left">
 <a href="https://www.buymeacoffee.com/migueltomas">
@@ -82,15 +82,15 @@ The PCB Desgin Files i provide here for anyone to use are free. If you like this
 <br />
 
 ### Make a donation on Paypal
-Make a donation on paypal and get a TAX refund*.
+Make a donation on PayPal and get a TAX refund*.
 
 [![](https://github.com/aeonSolutions/PCB-Prototyping-Catalogue/blob/main/paypal_small.png)](http://paypal.me/mtpsilva)
 
 <br>
 
-### Support all these open hardware projects and become a patreon  
-Liked any of my PCB KiCad Designs? Help and Support my open work to all by becomming a LDAD Patreon.
-In return I will give a free PCB design in KiCad to all patreon supporters. To learn more go to patreon.com. Link below.
+### Support all these open hardware projects and become a Patreon  
+Did you like any of my PCB KiCad Designs? Help and Support my open work to all by becoming an LDAD Patreon.
+In return, I will give a free PCB design in KiCad to all Patreon supporters. To learn more go to patreon.com. Link below.
 
 [![](https://github.com/aeonSolutions/PCB-Prototyping-Catalogue/blob/main/patreon_small.png)](https://www.patreon.com/ldad)
 
