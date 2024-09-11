@@ -25,7 +25,7 @@ An experimental platform with integrated CMS and back office control panel for w
 Between 2003 and 2007 I was a junior scientific researcher who implemented the first cloud solution for the [DECivil - Departamento de Engenharia Civil](https://www.linkedin.com/company/decivil-uminho/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_content_view%3BlfFKdabbQ1KVj7d1iWCZ3Q%3D%3D) at [Universidade do Minho](https://www.linkedin.com/school/universidade-do-minho/) in particular the very first web page of the construction materials group. This was back in ~2006, *the cloud* was a concept that only appeared a few years later. This CMS code was running on a Compaq ML370 Server installed at my home and running 24/7.
 In 2006 it was a CMS solution very similar to the WordPress solution of that time.
 
-Later, in 2009, as a PhD student, I programmed and installed this CMS code  the very first scientific article management platform with an online submission process and a back office with a *peer review* evaluation form,  much similar to the submission platform nowadays known as Elsevier. 
+Later, in 2009, as a PhD student, I programmed and installed this CMS code  the very first scientific article management platform with an online submission process and a back office with a *peer review* evaluation form,  much similar to the submission platform nowadays known as Elsevier.  See my [LinkedIn profile](https://www.linkedin.com/in/migueltomas) for more information about my work as a scientific researcher.
 
 The programming code can still be used today, although it needs some minor updates. It is available on this repository.
 
