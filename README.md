@@ -17,13 +17,15 @@ Last update: 10-09-2024 <br>
 <sub> <a href="https://www.rapidtables.com/convert/number/hex-to-binary.html?x=64">HEX to Bin Conveter</a> </sub>
 </p>
 
+<div align="justify">
+
 ## SiteBuilder CMS [![CodeFactor](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS/badge)](https://www.codefactor.io/repository/github/aeonsolutions/AeonLabs-Sitebuilder-CMS)
 An experimental platform with integrated CMS and back office control panel for website deployment and management.
 
-Between 2003 and 2007 I was a junior scientific researcher who implemented the first cloud solution for the [DECivil - Departamento de Engenharia Civil](https://www.linkedin.com/company/decivil-uminho/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_content_view%3BlfFKdabbQ1KVj7d1iWCZ3Q%3D%3D) at [Universidade do Minho](https://www.linkedin.com/school/universidade-do-minho/) in particular the very first web page of the construction materials group. This was back in the year ~2006, *the cloud* was a concept that only appeared a few years later. This CMS code was running on a Compaq ML370 Server installed at my home and running 24/7.
-In 2006 it was a CMS solution very similar to the WordPress solution of that time
+Between 2003 and 2007 I was a junior scientific researcher who implemented the first cloud solution for the [DECivil - Departamento de Engenharia Civil](https://www.linkedin.com/company/decivil-uminho/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_content_view%3BlfFKdabbQ1KVj7d1iWCZ3Q%3D%3D) at [Universidade do Minho](https://www.linkedin.com/school/universidade-do-minho/) in particular the very first web page of the construction materials group. This was back in ~2006, *the cloud* was a concept that only appeared a few years later. This CMS code was running on a Compaq ML370 Server installed at my home and running 24/7.
+In 2006 it was a CMS solution very similar to the WordPress solution of that time.
 
-In 2009, I programmed and installed this CMS code  the very first scientific article management platform with an online submission process and a back office with a *peer review* evaluation form,  much similar to the submission platform nowadays known as Elsevier. 
+Later, in 2009, as a PhD student, I programmed and installed this CMS code  the very first scientific article management platform with an online submission process and a back office with a *peer review* evaluation form,  much similar to the submission platform nowadays known as Elsevier. 
 
 The programming code can still be used today, although it needs some minor updates. It is available on this repository.
 
@@ -120,4 +122,5 @@ Did you like any of my PCB KiCad Designs? Help and support my open work by becom
 
 Before proceeding to download any of AeonLab's open-source code for software solutions and/or open hardware electronics for smart devices and data acquisition make sure you are choosing the right license for your project. See [AeonLabs Solutions for Open Hardware & Open Source Code](https://github.com/aeonSolutions/aeonSolutions/wiki/AeonLabs-Licensing) for more information. For commercial business solutions contact AeonLabs ℹ️ using the contacts above. Thank you 🙏.
 
+</div>
 
