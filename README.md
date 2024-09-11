@@ -27,7 +27,7 @@ In 2006 it was a CMS solution very similar to the WordPress solution of that tim
 
 Later, in 2009, as a PhD student, I programmed and installed this CMS code  the very first scientific article management platform with an online submission process and a back office with a *peer review* evaluation form,  much similar to the submission platform nowadays known as Elsevier.  See my [LinkedIn profile](https://www.linkedin.com/in/migueltomas) for more information about my work as a scientific researcher.
 
-The programming code can still be used today, although it needs some minor updates. It is available on this repository.
+The programming code can still be used today, although it needs some minor updates.
 
 
 ## Milestones
